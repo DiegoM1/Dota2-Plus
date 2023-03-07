@@ -156,17 +156,17 @@
 			children = (
 				225D19F729B7A372000E7E44 /* Models */,
 				225D19F629B7A369000E7E44 /* ViewModels */,
-				225D19F529B7A358000E7E44 /* ViewControllers */,
+				225D19F529B7A358000E7E44 /* Views */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
 		};
-		225D19F529B7A358000E7E44 /* ViewControllers */ = {
+		225D19F529B7A358000E7E44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				225D19F829B7A38C000E7E44 /* HomeView.swift */,
 			);
-			path = ViewControllers;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		225D19F629B7A369000E7E44 /* ViewModels */ = {
@@ -189,18 +189,18 @@
 				225D19FE29B7A47D000E7E44 /* Services */,
 				225D19FD29B7A463000E7E44 /* Models */,
 				225D19FC29B7A45E000E7E44 /* ViewModels */,
-				225D19FB29B7A456000E7E44 /* ViewControllers */,
+				225D19FB29B7A456000E7E44 /* Views */,
 			);
 			path = HeroesListViewController;
 			sourceTree = "<group>";
 		};
-		225D19FB29B7A456000E7E44 /* ViewControllers */ = {
+		225D19FB29B7A456000E7E44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				225D19FF29B7A491000E7E44 /* HeroesListView.swift */,
 				225D1A1329B7E4E1000E7E44 /* SearchableHeroListView.swift */,
 			);
-			path = ViewControllers;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		225D19FC29B7A45E000E7E44 /* ViewModels */ = {
@@ -233,17 +233,17 @@
 				225D1A0D29B7B583000E7E44 /* Services */,
 				225D1A0C29B7B57E000E7E44 /* Model */,
 				225D1A0B29B7B578000E7E44 /* ViewModel */,
-				225D1A0A29B7B571000E7E44 /* ViewControllers */,
+				225D1A0A29B7B571000E7E44 /* Views */,
 			);
 			path = HeroDetailViewController;
 			sourceTree = "<group>";
 		};
-		225D1A0A29B7B571000E7E44 /* ViewControllers */ = {
+		225D1A0A29B7B571000E7E44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				225D1A0E29B7B611000E7E44 /* HeroDetailView.swift */,
 			);
-			path = ViewControllers;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		225D1A0B29B7B578000E7E44 /* ViewModel */ = {
