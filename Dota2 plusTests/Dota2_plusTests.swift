@@ -9,22 +9,39 @@ import XCTest
 @testable import Dota2_plus
 
 final class Dota2_plusTests: XCTestCase {
-
+    var heroesListViewModel: HeroesListViewModel!
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        heroesListViewModel = HeroesListViewModel(apiService: DotaApiService())
+        if let path = Bundle.main.path(forResource: "heroesServiceResponse", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(filePath: path))
+                let dataDecoded = try? JSONDecoder().decode([HeroModel].self, from: data)
+                heroesListViewModel.heroesList = dataDecoded ?? [HeroModel]()
+            } catch {
+                print(error)
+            }
+        }
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        heroesListViewModel = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testFetchDataCorrectly() throws {
+        XCTAssertTrue(heroesListViewModel.heroesList.count > 0)
     }
+    
+    func testFilterByText() throws {
+        heroesListViewModel.filter("an")
+        XCTAssertEqual(heroesListViewModel.heroesListFiltered.first?.localizedName, "Anti-Mage")
+    }
+    
+    func testFilterByAttribute() throws {
+        heroesListViewModel.filterBy(atrribute: .agi)
+        XCTAssertEqual(heroesListViewModel.heroesListFiltered.randomElement()?.primaryAttribute, .agi)
+    }
+    
+    
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

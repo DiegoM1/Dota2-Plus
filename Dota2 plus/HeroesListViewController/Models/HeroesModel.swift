@@ -35,7 +35,7 @@ enum AttributeType: String, Decodable {
 }
 
 enum AttackType: String, Decodable {
-    case meele = "Meele"
+    case meele = "Melee"
     case ranged = "Ranged"
 }
 
@@ -43,7 +43,7 @@ struct HeroModel: Decodable, Identifiable {
     var id: Int
     var localizedName: String
     var primaryAttribute: AttributeType
-    var attackType: String
+    var attackType: AttackType
     
     enum CodingKeys: String, CodingKey {
         case id = "id"

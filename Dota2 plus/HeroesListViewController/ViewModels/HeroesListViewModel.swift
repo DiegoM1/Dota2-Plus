@@ -8,19 +8,29 @@
 import SwiftUI
 
 class HeroesListViewModel: ObservableObject {
+    var apiService: DotaApiServiceProtocol
     @Published var heroesListFiltered = [HeroModel]()
     @Published var filterActivated: AttributeType? = nil
     var heroesList: [HeroModel] = [] {
         didSet{
-            heroesListFiltered = heroesList
+            DispatchQueue.main.async {
+                self.heroesListFiltered = self.heroesList
+            }
         }
     }
     @Published var heroText = ""
-
+    
+    init(apiService: DotaApiServiceProtocol) {
+        self.apiService = apiService
+    }
+    
+    
     func fetchData() {
-        DispatchQueue.main.async {
-            Task {
-                await DotaApiService().fetchHerosData(&self.heroesList)
+        Task {
+            await DotaApiService().fetchHerosData { data in
+                if let data = data {
+                    self.heroesList = data
+                }
             }
         }
     }
@@ -33,7 +43,7 @@ class HeroesListViewModel: ObservableObject {
                 heroesListFiltered = heroesList
             }
         } else {
-            heroesListFiltered = heroesListFiltered.filter{ $0.localizedName.contains(text) }
+            heroesListFiltered = heroesList.filter{ $0.localizedName.lowercased().contains(text.lowercased()) }
         }
     }
     

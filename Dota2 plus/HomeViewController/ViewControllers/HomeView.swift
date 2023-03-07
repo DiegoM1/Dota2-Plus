@@ -8,13 +8,13 @@
 import UIKit
 import SwiftUI
 
-struct HomeViewController: View {
+struct HomeView: View {
     
     @State var heroesList = [HeroModel]()
     
     var body: some View {
         TabView{
-            HeroesListViewController(viewModel: HeroesListViewModel())
+            HeroesListView(viewModel: HeroesListViewModel(apiService: DotaApiService()))
                 .tabItem {
                     Image(systemName: "person")
                     Text("Heroes")
@@ -38,6 +38,6 @@ struct HomeViewController: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeViewController()
+        HomeView()
     }
 }

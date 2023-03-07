@@ -1,5 +1,5 @@
 //
-//  HeroesListViewController.swift
+//  SearchableHeroListView.swift
 //  Dota2 plus
 //
 //  Created by Diego Monteagudo Diaz on 7/03/23.
@@ -7,12 +7,24 @@
 
 import SwiftUI
 
-struct HeroesListViewController: View {
+struct SearchableHeroListView: View {
     @ObservedObject var viewModel: HeroesListViewModel
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack {
+        List(viewModel.heroesListFiltered) { hero in
+            NavigationLink {
+                HeroDetailView(name: hero.localizedName)
+            } label: {
+                HStack{
+                    Text(hero.localizedName)
+                        .font(.headline)
+                    Spacer()
+                    Image(hero.primaryAttribute.iconName())
+                }
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Menu("Filter") {
                     Button {
                         viewModel.filterBy(atrribute: AttributeType.agi)
                     } label: {
@@ -24,7 +36,6 @@ struct HeroesListViewController: View {
                             .frame(width: 12,height: 12)
                             .background(Circle().fill(viewModel.filterActivated == attribute ? attribute.foregroundColor() : .clear))
                     }
-                    Spacer()
                     Button {
                         viewModel.filterBy(atrribute: AttributeType.str)
                     } label: {
@@ -36,7 +47,6 @@ struct HeroesListViewController: View {
                             .frame(width: 12,height: 12)
                             .background(Circle().fill(viewModel.filterActivated == attribute ? attribute.foregroundColor() : .clear))
                     }
-                    Spacer()
                     Button {
                         viewModel.filterBy(atrribute: AttributeType.int)
                     } label: {
@@ -49,39 +59,17 @@ struct HeroesListViewController: View {
                             .background(Circle().fill(viewModel.filterActivated == attribute ? attribute.foregroundColor() : .clear))
                         
                     }
-
-                }
-                .padding(.horizontal, 32)
-                
-                List(viewModel.heroesListFiltered) { hero in
-                    NavigationLink {
-                        HeroDetailViewController(name: hero.localizedName)
-                    } label: {
-                        HStack{
-                            Text(hero.localizedName)
-                                .font(.headline)
-                            Spacer()
-                            Image(hero.primaryAttribute.iconName())
-                        }
-                    }
-                }
-                .listStyle(.plain)
-                .onAppear{
-                    viewModel.fetchData()
                 }
             }
-            .searchable(text: $viewModel.heroText)
-            .onChange(of: viewModel.heroText, perform: { newValue in
-                viewModel.filter(newValue)
-            })
-            .navigationTitle("Heroes")
-            .navigationBarTitleDisplayMode(.automatic)
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .listStyle(.plain)
+        .searchable(text: $viewModel.heroText, placement: .navigationBarDrawer(displayMode: .always))
     }
 }
 
-struct HeroesListVIewController_Previews: PreviewProvider {
+struct SearchableHeroListView_Previews: PreviewProvider {
     static var previews: some View {
-        HeroesListViewController(viewModel: HeroesListViewModel())
+        SearchableHeroListView(viewModel: HeroesListViewModel(apiService: DotaApiService()))
     }
 }

@@ -7,17 +7,20 @@
 
 import Foundation
 
-class DotaApiService {
-    
-    func fetchHerosData(_ heroesList: inout [HeroModel]) async {
+protocol DotaApiServiceProtocol {
+    func fetchHerosData(_ completion: @escaping ([HeroModel]?) -> ()) async
+}
+
+class DotaApiService: DotaApiServiceProtocol {
+    func fetchHerosData(_ completion: @escaping ([HeroModel]?) -> ()) async {
         do {
             let (data, _) = try await URLSession.shared.data(for: URLRequest(url: Constants.Urls.heroes))
             let heroesListData = try! JSONDecoder().decode([HeroModel].self, from: data)
-                heroesList = heroesListData
+            completion(heroesListData)
         }
         catch {
             print(error)
-            heroesList = [HeroModel]()
+            completion(nil)
         }
     }
 }
