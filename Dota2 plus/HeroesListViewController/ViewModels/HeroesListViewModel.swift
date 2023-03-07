@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 class HeroesListViewModel: ObservableObject {
     var apiService: DotaApiServiceProtocol
     @Published var heroesListFiltered = [HeroModel]()
@@ -26,11 +27,14 @@ class HeroesListViewModel: ObservableObject {
     
     
     func fetchData() {
-        Task {
-            await DotaApiService().fetchHerosData { data in
-                if let data = data {
-                    self.heroesList = data
-                }
+        let resource = Resource<[HeroModel]>(url: Constants.Urls.heroes) { data in
+            let decoded = try? JSONDecoder().decode([HeroModel].self, from: data)
+            return decoded!
+        }
+        
+        apiService.fetchData(request: resource) { data in
+            if let result = data {
+                self.heroesList = result
             }
         }
     }
