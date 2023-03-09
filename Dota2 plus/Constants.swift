@@ -18,7 +18,6 @@ struct Constants {
         
         static func heroLogoImage(_ name: String) -> URL {
             let name = name.replacingOccurrences(of: "npc_dota_hero_", with: "")
-            print("https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/\(name).png?")
             return URL(string: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/\(name).png?")!
         }
         

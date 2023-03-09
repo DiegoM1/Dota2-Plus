@@ -34,6 +34,17 @@ enum AttributeType: String, Decodable {
     }
 }
 
+enum RolesType: String, Decodable {
+    case carry = "Carry"
+    case escape = "Escape"
+    case nuker = "Nuker"
+    case durable = "Durable"
+    case disabler = "Disabler"
+    case initiator = "Initiator"
+    case support = "Support"
+    case pusher = "Pusher"
+}
+
 enum AttackType: String, Decodable {
     case meele = "Melee"
     case ranged = "Ranged"
@@ -45,6 +56,7 @@ struct HeroModel: Decodable, Identifiable {
     var localizedName: String
     var primaryAttribute: AttributeType
     var attackType: AttackType
+    var roles: [RolesType]
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -52,5 +64,6 @@ struct HeroModel: Decodable, Identifiable {
         case localizedName = "localized_name"
         case primaryAttribute = "primary_attr"
         case attackType = "attack_type"
+        case roles = "roles"
     }
 }
