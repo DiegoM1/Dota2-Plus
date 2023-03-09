@@ -21,11 +21,11 @@ struct Constants {
             print("https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/\(name).png?")
             return URL(string: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/\(name).png?")!
         }
+        
+        static func urlHeroLink(_ name: String) -> URL {
+            return URL(string: "https://www.dota2.com/hero/\(name)")!
+        }
     }
     
-    
-    static func urlHeroLink(_ name: String) -> URL {
-        return URL(string: "https://www.dota2.com/hero/\(name)")!
-    }
 
 }

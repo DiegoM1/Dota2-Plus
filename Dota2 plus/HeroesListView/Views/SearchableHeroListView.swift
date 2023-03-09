@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchableHeroListView: View {
-    @ObservedObject var viewModel: HeroesListViewModel
+    @StateObject var viewModel: HeroesListViewModel
     var body: some View {
         List(viewModel.heroesListFiltered) { hero in
             NavigationLink {

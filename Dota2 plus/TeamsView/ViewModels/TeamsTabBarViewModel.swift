@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 class TeamTabBarViewModel: ObservableObject {
     var fetchedTeams = [TeamModel]() {
         didSet {

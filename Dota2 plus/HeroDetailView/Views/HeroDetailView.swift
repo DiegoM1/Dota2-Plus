@@ -11,7 +11,7 @@ import WebKit
 struct HeroDetailView: View {
     var name: String
     var body: some View {
-        SwiftUIWebView(url: Constants.urlHeroLink(name))
+        SwiftUIWebView(url: Constants.Urls.urlHeroLink(name))
             .navigationBarTitleDisplayMode(.inline)
     }
 }
