@@ -19,10 +19,10 @@ struct HomeView: View {
                     Image(systemName: "person")
                     Text("Heroes")
                 }
-            Text("Items")
+            TeamsTabBarView(viewModel: TeamTabBarViewModel(service: DotaApiService()))
                 .tabItem {
                     Image(systemName: "pencil.slash")
-                    Text("Items")
+                    Text("Teams")
             }
             
             Text("Players")

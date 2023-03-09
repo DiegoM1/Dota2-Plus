@@ -29,12 +29,17 @@ class HeroesListViewModel: ObservableObject {
     func fetchData() {
         let resource = Resource<[HeroModel]>(url: Constants.Urls.heroes) { data in
             let decoded = try? JSONDecoder().decode([HeroModel].self, from: data)
-            return decoded!
+            guard let decoded = decoded else {
+                return [HeroModel]()
+            }
+            
+            return decoded
         }
-        
-        apiService.fetchData(request: resource) { data in
-            if let result = data {
-                self.heroesList = result
+        Task {
+            await apiService.fetchData(request: resource) { data in
+                if let result = data {
+                    self.heroesList = result
+                }
             }
         }
     }

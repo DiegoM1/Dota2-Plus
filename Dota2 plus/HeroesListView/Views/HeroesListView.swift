@@ -18,14 +18,21 @@ struct HeroesListView: View {
                         HeroDetailView(name: hero.localizedName)
                     } label: {
                         HStack{
+                            AsyncImage(url: Constants.Urls.heroLogoImage(hero.name)) {
+                                $0.image?
+                                    .resizable()
+                                    .frame(width: 50, height: 30)
+                            }
+                            
                             Text(hero.localizedName)
                                 .font(.headline)
                             Spacer()
                             Image(hero.primaryAttribute.iconName())
                         }
                     }
+                    .listRowBackground(Color("RedSoft"))
                 }
-                .listStyle(.plain)
+                .listStyle(.insetGrouped)
                 .onAppear{
                     viewModel.fetchData()
                 }
@@ -39,6 +46,7 @@ struct HeroesListView: View {
                     }
                 }
             }
+            .background(Color(#colorLiteral(red: 0.9733771682, green: 0.8993731141, blue: 0.9351933599, alpha: 1)))
             .onChange(of: viewModel.heroText, perform: { newValue in
                 viewModel.filter(newValue)
             })

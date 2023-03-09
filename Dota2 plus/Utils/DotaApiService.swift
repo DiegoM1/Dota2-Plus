@@ -13,11 +13,11 @@ struct Resource<T> {
 }
 
 protocol DotaApiServiceProtocol {
-    func fetchData<T>(request: Resource<T>, completion: @escaping (T?) -> ())
+    func fetchData<T>(request: Resource<T>, completion: @escaping (T?) -> ()) async
 }
 
 class DotaApiService: DotaApiServiceProtocol {
-    func fetchData<T>(request: Resource<T>, completion: @escaping (T?) -> ()) {
+    func fetchData<T>(request: Resource<T>, completion: @escaping (T?) -> ()) async {
         URLSession.shared.dataTask(with: request.url) { data, response, error in
             
             if let data = data {

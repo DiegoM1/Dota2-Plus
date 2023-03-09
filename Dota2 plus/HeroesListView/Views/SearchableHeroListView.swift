@@ -15,6 +15,11 @@ struct SearchableHeroListView: View {
                 HeroDetailView(name: hero.localizedName)
             } label: {
                 HStack{
+                    AsyncImage(url: Constants.Urls.heroLogoImage(hero.name)) {
+                            $0.image?
+                                .resizable()
+                                .frame(width: 35, height: 20)
+                        }
                     Text(hero.localizedName)
                         .font(.headline)
                     Spacer()

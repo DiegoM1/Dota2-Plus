@@ -41,12 +41,14 @@ enum AttackType: String, Decodable {
 
 struct HeroModel: Decodable, Identifiable {
     var id: Int
+    var name: String
     var localizedName: String
     var primaryAttribute: AttributeType
     var attackType: AttackType
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
+        case name = "name"
         case localizedName = "localized_name"
         case primaryAttribute = "primary_attr"
         case attackType = "attack_type"
