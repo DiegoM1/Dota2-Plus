@@ -14,7 +14,7 @@
 		225D19E629B79EA7000E7E44 /* Dota2_plusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D19E529B79EA7000E7E44 /* Dota2_plusUITests.swift */; };
 		225D19E829B79EA7000E7E44 /* Dota2_plusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D19E729B79EA7000E7E44 /* Dota2_plusUITestsLaunchTests.swift */; };
 		225D19F929B7A38C000E7E44 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D19F829B7A38C000E7E44 /* HomeView.swift */; };
-		225D1A0029B7A491000E7E44 /* HeroesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D19FF29B7A491000E7E44 /* HeroesListView.swift */; };
+		225D1A0029B7A491000E7E44 /* HeroesTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D19FF29B7A491000E7E44 /* HeroesTabBarView.swift */; };
 		225D1A0229B7A4A9000E7E44 /* HeroesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A0129B7A4A9000E7E44 /* HeroesModel.swift */; };
 		225D1A0629B7A647000E7E44 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A0529B7A647000E7E44 /* Constants.swift */; };
 		225D1A0829B7B37F000E7E44 /* HeroesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A0729B7B37F000E7E44 /* HeroesListViewModel.swift */; };
@@ -28,6 +28,8 @@
 		225D1A2129B8DD5A000E7E44 /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2029B8DD5A000E7E44 /* TeamModel.swift */; };
 		225D1A2329B8FD5A000E7E44 /* TeamsTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2229B8FD5A000E7E44 /* TeamsTabBarViewModel.swift */; };
 		225D1A2729B8FDE6000E7E44 /* TeamsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2629B8FDE6000E7E44 /* TeamsApiService.swift */; };
+		225D1A2929BB98BE000E7E44 /* HeroesGridCellsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2829BB98BE000E7E44 /* HeroesGridCellsView.swift */; };
+		225D1A2B29BB9969000E7E44 /* HeroesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2A29BB9969000E7E44 /* HeroesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +60,7 @@
 		225D19E529B79EA7000E7E44 /* Dota2_plusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dota2_plusUITests.swift; sourceTree = "<group>"; };
 		225D19E729B79EA7000E7E44 /* Dota2_plusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dota2_plusUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		225D19F829B7A38C000E7E44 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		225D19FF29B7A491000E7E44 /* HeroesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListView.swift; sourceTree = "<group>"; };
+		225D19FF29B7A491000E7E44 /* HeroesTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTabBarView.swift; sourceTree = "<group>"; };
 		225D1A0129B7A4A9000E7E44 /* HeroesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesModel.swift; sourceTree = "<group>"; };
 		225D1A0529B7A647000E7E44 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		225D1A0729B7B37F000E7E44 /* HeroesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewModel.swift; sourceTree = "<group>"; };
@@ -71,6 +73,8 @@
 		225D1A2029B8DD5A000E7E44 /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
 		225D1A2229B8FD5A000E7E44 /* TeamsTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabBarViewModel.swift; sourceTree = "<group>"; };
 		225D1A2629B8FDE6000E7E44 /* TeamsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsApiService.swift; sourceTree = "<group>"; };
+		225D1A2829BB98BE000E7E44 /* HeroesGridCellsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesGridCellsView.swift; sourceTree = "<group>"; };
+		225D1A2A29BB9969000E7E44 /* HeroesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,8 +211,10 @@
 		225D19FB29B7A456000E7E44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				225D19FF29B7A491000E7E44 /* HeroesListView.swift */,
+				225D19FF29B7A491000E7E44 /* HeroesTabBarView.swift */,
 				225D1A1329B7E4E1000E7E44 /* SearchableHeroListView.swift */,
+				225D1A2829BB98BE000E7E44 /* HeroesGridCellsView.swift */,
+				225D1A2A29BB9969000E7E44 /* HeroesListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -468,14 +474,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				225D1A1429B7E4E1000E7E44 /* SearchableHeroListView.swift in Sources */,
+				225D1A2929BB98BE000E7E44 /* HeroesGridCellsView.swift in Sources */,
 				225D1A2729B8FDE6000E7E44 /* TeamsApiService.swift in Sources */,
 				225D1A2329B8FD5A000E7E44 /* TeamsTabBarViewModel.swift in Sources */,
 				225D1A1229B7BB27000E7E44 /* SwiftUIWebView.swift in Sources */,
 				225D1A2129B8DD5A000E7E44 /* TeamModel.swift in Sources */,
+				225D1A2B29BB9969000E7E44 /* HeroesListView.swift in Sources */,
 				225D1A1D29B8D99B000E7E44 /* TeamsTabBarView.swift in Sources */,
 				225D19CB29B79EA6000E7E44 /* Dota2_plusApp.swift in Sources */,
 				225D1A0F29B7B611000E7E44 /* HeroDetailView.swift in Sources */,
-				225D1A0029B7A491000E7E44 /* HeroesListView.swift in Sources */,
+				225D1A0029B7A491000E7E44 /* HeroesTabBarView.swift in Sources */,
 				225D1A1A29B7FAA7000E7E44 /* DotaApiService.swift in Sources */,
 				225D1A0229B7A4A9000E7E44 /* HeroesModel.swift in Sources */,
 				225D19F929B7A38C000E7E44 /* HomeView.swift in Sources */,

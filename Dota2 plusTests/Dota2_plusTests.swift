@@ -9,14 +9,14 @@ import XCTest
 @testable import Dota2_plus
 
 final class Dota2_plusTests: XCTestCase {
-    var herosListViewModel: HeroesListViewModel!
+    var heroesListViewModel: HeroesListViewModel!
     override func setUpWithError() throws {
-        herosListViewModel = HeroesListViewModel(apiService: DotaApiService())
+        heroesListViewModel = HeroesListViewModel(apiService: DotaApiService())
         if let path = Bundle.main.path(forResource: "heroesServiceResponse", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(filePath: path))
                 let dataDecoded = try? JSONDecoder().decode([HeroModel].self, from: data)
-                herosListViewModel.heroesList = dataDecoded ?? [HeroModel]()
+                heroesListViewModel.heroesList = dataDecoded ?? [HeroModel]()
             } catch {
                 print(error)
             }
@@ -24,21 +24,21 @@ final class Dota2_plusTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        herosListViewModel = nil
+        heroesListViewModel = nil
     }
 
     func testFetchDataCorrectly() throws {
-        XCTAssertTrue(herosListViewModel.heroesList.count > 0)
+        XCTAssertTrue(heroesListViewModel.heroesList.count > 0)
     }
     
     func testFilterByText() throws {
-        herosListViewModel.filter("an")
-        XCTAssertEqual(herosListViewModel.heroesListFiltered.first?.localizedName, "Anti-Mage")
+        heroesListViewModel.filter("an")
+        XCTAssertEqual(heroesListViewModel.heroesListFiltered.first?.localizedName, "Anti-Mage")
     }
     
     func testFilterByAttribute() throws {
-        herosListViewModel.filterBy(atrribute: .agi)
-        XCTAssertEqual(herosListViewModel.heroesListFiltered.randomElement()?.primaryAttribute, .agi)
+        heroesListViewModel.filterBy(atrribute: .agi)
+        XCTAssertEqual(heroesListViewModel.heroesListFiltered.randomElement()?.primaryAttribute, .agi)
     }
     
     

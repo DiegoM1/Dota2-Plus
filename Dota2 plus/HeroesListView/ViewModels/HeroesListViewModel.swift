@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-
+@MainActor
 class HeroesListViewModel: ObservableObject {
     var apiService: DotaApiServiceProtocol
     @Published var heroesListFiltered = [HeroModel]()
