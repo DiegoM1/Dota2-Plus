@@ -9,60 +9,60 @@ import SwiftUI
 
 @MainActor
 class HeroesListViewModel: ObservableObject {
-    var apiService: DotaApiServiceProtocol
-    @Published var heroesListFiltered = [HeroModel]()
+    @Binding var heroList: [HeroModel]
+    @Binding var favoriteHeroList: [HeroModel]
+    @Published var heroesListFiltered: [HeroModel]
     @Published var filterActivated: AttributeType? = nil
-    var heroesList: [HeroModel] = [] {
-        didSet{
-            DispatchQueue.main.async {
-                self.heroesListFiltered = self.heroesList
-            }
-        }
-    }
+    
+    let userDefaults = UserDefaults.standard
+    
     @Published var heroText = ""
     
-    init(apiService: DotaApiServiceProtocol) {
-        self.apiService = apiService
-    }
-    
-    
-    func fetchData() {
-        let resource = Resource<[HeroModel]>(url: Constants.Urls.heroes) { data in
-            let decoded = try? JSONDecoder().decode([HeroModel].self, from: data)
-            guard let decoded = decoded else {
-                return [HeroModel]()
-            }
-            
-            return decoded
-        }
-        Task {
-            await apiService.fetchData(request: resource) { data in
-                if let result = data {
-                    self.heroesList = result
-                }
-            }
-        }
+    init(heroList: Binding<[HeroModel]>, favoriteHeroList: Binding<[HeroModel]>, filterActivated: AttributeType? = nil, heroText: String = "") {
+        _heroList = heroList
+        _favoriteHeroList = favoriteHeroList
+        self.filterActivated = filterActivated
+        self.heroText = heroText
+        _heroesListFiltered = Published(initialValue: heroList.wrappedValue)
     }
     
     func filter(_ text: String){
         if text == "" {
             if let filterActivated = filterActivated {
-                heroesListFiltered = heroesList.filter{ $0.primaryAttribute == filterActivated}
+                heroesListFiltered = heroList.filter{ $0.primaryAttribute == filterActivated}
             } else {
-                heroesListFiltered = heroesList
+                heroesListFiltered = heroList
             }
         } else {
-            heroesListFiltered = heroesList.filter{ $0.localizedName.lowercased().contains(text.lowercased()) }
+            heroesListFiltered = heroList.filter{ $0.localizedName.lowercased().contains(text.lowercased()) }
         }
     }
     
     func filterBy(atrribute: AttributeType) {
         if atrribute == filterActivated {
-            heroesListFiltered = heroesList
+            heroesListFiltered = heroList
             filterActivated = nil
             return
         }
         filterActivated = atrribute
-        heroesListFiltered = heroesList.filter{ $0.primaryAttribute == atrribute }
+        heroesListFiltered = heroList.filter{ $0.primaryAttribute == atrribute }
+    }
+    
+    func addOrRemoveFavoriteHero(_ hero: HeroModel) {
+        if !favoriteHeroList.contains(where: { $0.id == hero.id }) {
+            withAnimation() {
+                favoriteHeroList.append(hero)
+            }
+            
+            heroList.removeAll { $0.id == hero.id}
+        } else {
+            heroList.append(hero)
+            heroList = heroesListFiltered.sorted { $0.localizedName < $1.localizedName}
+            
+            withAnimation {
+                favoriteHeroList.removeAll{ $0.id == hero.id}
+            }
+            
+        }
     }
 }

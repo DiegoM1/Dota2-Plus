@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HeroesTabBarView: View {
-    @StateObject var viewModel: HeroesListViewModel
+    @ObservedObject var viewModel: HeroTabBarViewModel
     @State var moreToogle = false
     @State var alterView = false
     
@@ -16,9 +16,9 @@ struct HeroesTabBarView: View {
         NavigationView {
             VStack {
                 if alterView {
-                    HeroesGridCellsView(heroesList: viewModel.heroesListFiltered)
+                    HeroesGridCellsView(viewModel: HeroesGridCellsViewModel(heroList: $viewModel.heroesListFiltered, favoriteHeroList: $viewModel.favoriteHeroes))
                 } else {
-                    HeroesListView(heroList: viewModel.heroesListFiltered, moreToogle: $moreToogle)
+                    HeroesListView(viewModel: HeroesListViewModel(heroList: $viewModel.heroesListFiltered, favoriteHeroList: $viewModel.favoriteHeroes), moreToogle: $moreToogle)
                 }
             }
             .onAppear{
@@ -27,7 +27,7 @@ struct HeroesTabBarView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     NavigationLink {
-                        SearchableHeroListView(viewModel: viewModel)
+                        SearchableHeroListView(viewModel: HeroesListViewModel(heroList: $viewModel.heroesListFiltered, favoriteHeroList: $viewModel.favoriteHeroes))
                     }label: {
                         Image(systemName: "magnifyingglass")
                     }
@@ -49,14 +49,11 @@ struct HeroesTabBarView: View {
                         }label: {
                             Image(systemName: "plus")
                         }
-                        
                     }
                 }
-                
+
             }
-            .onChange(of: viewModel.heroText, perform: { newValue in
-                viewModel.filter(newValue)
-            })
+           
             .navigationTitle("Heroes")
             .navigationBarTitleDisplayMode(.automatic)
         }
@@ -65,6 +62,6 @@ struct HeroesTabBarView: View {
 
 struct HeroesListVIewController_Previews: PreviewProvider {
     static var previews: some View {
-        HeroesTabBarView(viewModel: HeroesListViewModel(apiService: DotaApiService()), moreToogle: true, alterView: true)
+        HeroesTabBarView(viewModel: HeroTabBarViewModel(apiService: DotaApiService()), moreToogle: true, alterView: true)
     }
 }

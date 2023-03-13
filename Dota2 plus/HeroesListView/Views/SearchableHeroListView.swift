@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchableHeroListView: View {
-    @StateObject var viewModel: HeroesListViewModel
+    @ObservedObject var viewModel: HeroesListViewModel
     var body: some View {
         List(viewModel.heroesListFiltered) { hero in
             NavigationLink {
@@ -67,14 +67,11 @@ struct SearchableHeroListView: View {
                 }
             }
         }
+        .onChange(of: viewModel.heroText, perform: { newValue in
+            viewModel.filter(newValue)
+        })
         .navigationBarTitleDisplayMode(.inline)
         .listStyle(.plain)
         .searchable(text: $viewModel.heroText, placement: .navigationBarDrawer(displayMode: .always))
-    }
-}
-
-struct SearchableHeroListView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchableHeroListView(viewModel: HeroesListViewModel(apiService: DotaApiService()))
     }
 }

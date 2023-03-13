@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TeamsTabBarView: View {
     
-    @StateObject var viewModel:  TeamTabBarViewModel
+    @ObservedObject var viewModel:  TeamTabBarViewModel
     @State var value: Int = 0
     var body: some View {
         NavigationStack {

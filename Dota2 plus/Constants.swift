@@ -22,6 +22,7 @@ struct Constants {
         }
         
         static func urlHeroLink(_ name: String) -> URL {
+            let name = name.replacingOccurrences(of: "npc_dota_hero_", with: "")
             return URL(string: "https://www.dota2.com/hero/\(name)")!
         }
     }

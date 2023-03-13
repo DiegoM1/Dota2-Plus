@@ -30,6 +30,8 @@
 		225D1A2729B8FDE6000E7E44 /* TeamsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2629B8FDE6000E7E44 /* TeamsApiService.swift */; };
 		225D1A2929BB98BE000E7E44 /* HeroesGridCellsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2829BB98BE000E7E44 /* HeroesGridCellsView.swift */; };
 		225D1A2B29BB9969000E7E44 /* HeroesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2A29BB9969000E7E44 /* HeroesListView.swift */; };
+		225D1A2D29BFC989000E7E44 /* HeroesGridCellsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2C29BFC989000E7E44 /* HeroesGridCellsViewModel.swift */; };
+		225D1A2F29BFCF83000E7E44 /* HeroTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2E29BFCF83000E7E44 /* HeroTabBarViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		225D1A2629B8FDE6000E7E44 /* TeamsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsApiService.swift; sourceTree = "<group>"; };
 		225D1A2829BB98BE000E7E44 /* HeroesGridCellsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesGridCellsView.swift; sourceTree = "<group>"; };
 		225D1A2A29BB9969000E7E44 /* HeroesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListView.swift; sourceTree = "<group>"; };
+		225D1A2C29BFC989000E7E44 /* HeroesGridCellsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesGridCellsViewModel.swift; sourceTree = "<group>"; };
+		225D1A2E29BFCF83000E7E44 /* HeroTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTabBarViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				225D1A0729B7B37F000E7E44 /* HeroesListViewModel.swift */,
+				225D1A2C29BFC989000E7E44 /* HeroesGridCellsViewModel.swift */,
+				225D1A2E29BFCF83000E7E44 /* HeroTabBarViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225D1A2F29BFCF83000E7E44 /* HeroTabBarViewModel.swift in Sources */,
 				225D1A1429B7E4E1000E7E44 /* SearchableHeroListView.swift in Sources */,
 				225D1A2929BB98BE000E7E44 /* HeroesGridCellsView.swift in Sources */,
 				225D1A2729B8FDE6000E7E44 /* TeamsApiService.swift in Sources */,
@@ -487,6 +494,7 @@
 				225D1A1A29B7FAA7000E7E44 /* DotaApiService.swift in Sources */,
 				225D1A0229B7A4A9000E7E44 /* HeroesModel.swift in Sources */,
 				225D19F929B7A38C000E7E44 /* HomeView.swift in Sources */,
+				225D1A2D29BFC989000E7E44 /* HeroesGridCellsViewModel.swift in Sources */,
 				225D1A0629B7A647000E7E44 /* Constants.swift in Sources */,
 				225D1A0829B7B37F000E7E44 /* HeroesListViewModel.swift in Sources */,
 			);

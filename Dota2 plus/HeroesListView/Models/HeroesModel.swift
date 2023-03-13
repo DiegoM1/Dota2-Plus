@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum AttributeType: String, Decodable {
+enum AttributeType: String, Codable {
     case agi, str, int
     
     func iconName() -> String {
@@ -34,7 +34,7 @@ enum AttributeType: String, Decodable {
     }
 }
 
-enum RolesType: String, Decodable {
+enum RolesType: String, Codable {
     case carry = "Carry"
     case escape = "Escape"
     case nuker = "Nuker"
@@ -45,12 +45,12 @@ enum RolesType: String, Decodable {
     case pusher = "Pusher"
 }
 
-enum AttackType: String, Decodable {
+enum AttackType: String, Codable {
     case meele = "Melee"
     case ranged = "Ranged"
 }
 
-struct HeroModel: Decodable, Identifiable {
+struct HeroModel: Codable, Identifiable {
     var id: Int
     var name: String
     var localizedName: String

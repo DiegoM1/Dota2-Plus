@@ -14,7 +14,7 @@ struct HomeView: View {
     
     var body: some View {
         TabView{
-            HeroesTabBarView(viewModel: HeroesListViewModel(apiService: DotaApiService()))
+            HeroesTabBarView(viewModel: HeroTabBarViewModel(apiService: DotaApiService()))
                 .tabItem {
                     Image(systemName: "person")
                     Text("Heroes")

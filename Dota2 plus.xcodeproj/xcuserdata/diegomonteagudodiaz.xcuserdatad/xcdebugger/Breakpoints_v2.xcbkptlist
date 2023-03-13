@@ -20,5 +20,53 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C43E442-43EE-4F7A-BCEB-1E2EFB025268"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dota2 plus/HeroesListView/ViewModels/HeroesGridCellsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "addOrRemoveFavoriteHero(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2C43E442-43EE-4F7A-BCEB-1E2EFB025268 - 51dd9b199545892f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dota2_plus.HeroesGridCellsViewModel.addOrRemoveFavoriteHero(Dota2_plus.HeroModel) -&gt; ()"
+                  moduleName = "Dota2 plus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegomonteagudodiaz/Documents/Dota2%20plus/Dota2%20plus/HeroesListView/ViewModels/HeroesGridCellsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "500">
+               </Location>
+               <Location
+                  uuid = "2C43E442-43EE-4F7A-BCEB-1E2EFB025268 - a8edb4ac20f9b95c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Dota2_plus.HeroModel) -&gt; Swift.Bool in Dota2_plus.HeroesGridCellsViewModel.addOrRemoveFavoriteHero(Dota2_plus.HeroModel) -&gt; ()"
+                  moduleName = "Dota2 plus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegomonteagudodiaz/Documents/Dota2%20plus/Dota2%20plus/HeroesListView/ViewModels/HeroesGridCellsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
