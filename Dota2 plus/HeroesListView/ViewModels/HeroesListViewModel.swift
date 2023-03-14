@@ -57,7 +57,7 @@ class HeroesListViewModel: ObservableObject {
             heroList.removeAll { $0.id == hero.id}
         } else {
             heroList.append(hero)
-            heroList = heroesListFiltered.sorted { $0.localizedName < $1.localizedName}
+            heroList = heroList.sorted { $0.localizedName < $1.localizedName}
             
             withAnimation {
                 favoriteHeroList.removeAll{ $0.id == hero.id}

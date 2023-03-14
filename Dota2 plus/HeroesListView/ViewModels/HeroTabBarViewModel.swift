@@ -11,8 +11,21 @@ class HeroTabBarViewModel: ObservableObject {
     var apiService: DotaApiServiceProtocol
     @Published var heroesListFiltered = [HeroModel]()
     @Published var filterActivated: AttributeType? = nil
-    @Published var favoriteHeroes = [HeroModel]()
+    @Published var favoriteHeroes = [HeroModel]() {
+        didSet {
+            let path = FileManager.default.urls(for: .documentDirectory,
+                                                in: .userDomainMask)[0].appendingPathExtension(fileName)
+            do {
+                
+             let data = try JSONEncoder().encode(favoriteHeroes) 
+                try data.write(to: path)
+             } catch {
+                 print(error)
+             }
+        }
+    }
     
+    private let fileName = "favoriteHeroes"
     let userDefaults = UserDefaults.standard
     
     var heroesList: [HeroModel] = [] {
@@ -30,6 +43,8 @@ class HeroTabBarViewModel: ObservableObject {
     
     
     func fetchData() {
+        
+        readFromFile()
         if heroesListFiltered.isEmpty {
             let resource = Resource<[HeroModel]>(url: Constants.Urls.heroes) { data in
                 let decoded = try? JSONDecoder().decode([HeroModel].self, from: data)
@@ -42,11 +57,24 @@ class HeroTabBarViewModel: ObservableObject {
             Task {
                 await apiService.fetchData(request: resource) { data in
                     if let result = data {
-                        self.heroesList = result
+                        self.heroesList = result.filter { value in !self.favoriteHeroes.contains { $0.id == value.id}}
                     }
                 }
             }
         }
+    }
+    
+    func readFromFile() {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                                  in: .userDomainMask)[0].appendingPathExtension(fileName)
+        
+        guard let data = try? Data(contentsOf: path) else {
+            return
+        }
+        if let decoded = try? JSONDecoder().decode([HeroModel].self, from: data) {
+            favoriteHeroes = decoded
+        }
+        
     }
     
 }
