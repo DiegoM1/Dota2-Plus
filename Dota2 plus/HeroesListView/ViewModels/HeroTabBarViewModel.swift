@@ -32,7 +32,10 @@ class HeroTabBarViewModel: ObservableObject {
         didSet{
             DispatchQueue.main.async {
                 self.heroesListFiltered = self.heroesList.sorted { $0.localizedName < $1.localizedName}
+                self.heroesListFiltered = self.heroesListFiltered.filter { value in !self.favoriteHeroes.contains { $0.id == value.id}}
+                
             }
+            
         }
     }
     @Published var heroText = ""
@@ -57,7 +60,7 @@ class HeroTabBarViewModel: ObservableObject {
             Task {
                 await apiService.fetchData(request: resource) { data in
                     if let result = data {
-                        self.heroesList = result.filter { value in !self.favoriteHeroes.contains { $0.id == value.id}}
+                        self.heroesList = result
                     }
                 }
             }

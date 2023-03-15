@@ -6,43 +6,53 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import Dota2_plus
 
-final class Dota2_plusTests: XCTestCase {
-    var heroesListViewModel: HeroTabBarViewModel!
+@MainActor  final class Dota2_plusTests: XCTestCase {
+    var heroTabBarViewModel: HeroTabBarViewModel!
+    var heroesListViewModel: HeroesListViewModel!
+    var heroesGridCellsViewModel : HeroesGridCellsViewModel!
     override func setUpWithError() throws {
-        heroesListViewModel = HeroTabBarViewModel(apiService: DotaApiService())
+        heroTabBarViewModel = HeroTabBarViewModel(apiService: DotaApiService())
         if let path = Bundle.main.path(forResource: "heroesServiceResponse", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(filePath: path))
                 let dataDecoded = try? JSONDecoder().decode([HeroModel].self, from: data)
-                heroesListViewModel.heroesList = dataDecoded ?? [HeroModel]()
+                heroTabBarViewModel.heroesList = dataDecoded ?? [HeroModel]()
             } catch {
                 print(error)
             }
         }
-    }
-
-    override func tearDownWithError() throws {
-        heroesListViewModel = nil
+        heroesGridCellsViewModel = HeroesGridCellsViewModel(heroList: .constant(heroTabBarViewModel.heroesList), favoriteHeroList: .constant(heroTabBarViewModel.favoriteHeroes))
+        heroesListViewModel = HeroesListViewModel(heroList: .constant(heroTabBarViewModel.heroesList), favoriteHeroList: .constant(heroTabBarViewModel.favoriteHeroes))
     }
 
     func testFetchDataCorrectly() throws {
-        XCTAssertTrue(heroesListViewModel.heroesList.count > 0)
+        XCTAssertTrue(heroTabBarViewModel.heroesList.count > 0)
     }
-//    
-//    func testFilterByText() throws {
-//        heroesListViewModel.filter("an")
-//        XCTAssertEqual(heroesListViewModel.heroesListFiltered.first?.localizedName, "Anti-Mage")
-//    }
-//    
-//    func testFilterByAttribute() throws {
-//        heroesListViewModel.filterBy(atrribute: .agi)
-//        XCTAssertEqual(heroesListViewModel.heroesListFiltered.randomElement()?.primaryAttribute, .agi)
-//    }
-//    
-//    
-
+    
+    func testFilterByText() throws {
+        heroesListViewModel.filter("an")
+        XCTAssertEqual(heroesListViewModel.heroesListFiltered.first?.localizedName, "Anti-Mage")
+    }
+    
+    func testFilterByAttribute() throws {
+        heroesListViewModel.filterBy(atrribute: .agi)
+        XCTAssertEqual(heroesListViewModel.heroesListFiltered.randomElement()?.primaryAttribute, .agi)
+    }
+    
+    func testAddOrRemoveFavoriteHero() throws {
+        let testHero = HeroModel(id: 1, name: "TestHero", localizedName: "TestHero", primaryAttribute: .agi, attackType: .meele, roles: [.carry,.disabler])
+        heroesListViewModel.addOrRemoveFavoriteHero(testHero)
+        
+        XCTAssertTrue(heroesListViewModel.heroList.contains{ $0.id == testHero.id})
+        
+        heroesGridCellsViewModel.addOrRemoveFavoriteHero(testHero)
+        
+        XCTAssertTrue(heroesGridCellsViewModel.heroList.contains{ $0.id == testHero.id})
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

@@ -25,7 +25,7 @@ struct HomeView: View {
                     Text("Teams")
             }
             
-            Text("Players")
+            PlayerView(viewModel: PlayerViewModel())
                 .tabItem {
                     Image(systemName: "shareplay")
                     Text("Players")

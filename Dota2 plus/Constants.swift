@@ -25,6 +25,10 @@ struct Constants {
             let name = name.replacingOccurrences(of: "npc_dota_hero_", with: "")
             return URL(string: "https://www.dota2.com/hero/\(name)")!
         }
+        
+        static func urlPlayer(_ id: Int) -> URL {
+            return URL(string: "https://api.opendota.com/api/players/\(id)")!
+        }
     }
     
 

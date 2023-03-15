@@ -27,7 +27,7 @@ struct HeroesTabBarView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     NavigationLink {
-                        SearchableHeroListView(viewModel: HeroesListViewModel(heroList: $viewModel.heroesListFiltered, favoriteHeroList: $viewModel.favoriteHeroes))
+                        SearchableHeroListView(viewModel: HeroesListViewModel(heroList: $viewModel.heroesList, favoriteHeroList: $viewModel.favoriteHeroes))
                     }label: {
                         Image(systemName: "magnifyingglass")
                     }

@@ -32,6 +32,9 @@
 		225D1A2B29BB9969000E7E44 /* HeroesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2A29BB9969000E7E44 /* HeroesListView.swift */; };
 		225D1A2D29BFC989000E7E44 /* HeroesGridCellsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2C29BFC989000E7E44 /* HeroesGridCellsViewModel.swift */; };
 		225D1A2F29BFCF83000E7E44 /* HeroTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2E29BFCF83000E7E44 /* HeroTabBarViewModel.swift */; };
+		225D1A3229C0E4A2000E7E44 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A3129C0E4A2000E7E44 /* PlayerView.swift */; };
+		225D1A3729C0E4C9000E7E44 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A3629C0E4C9000E7E44 /* PlayerModel.swift */; };
+		225D1A3929C0E613000E7E44 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A3829C0E613000E7E44 /* PlayerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		225D1A2A29BB9969000E7E44 /* HeroesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListView.swift; sourceTree = "<group>"; };
 		225D1A2C29BFC989000E7E44 /* HeroesGridCellsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesGridCellsViewModel.swift; sourceTree = "<group>"; };
 		225D1A2E29BFCF83000E7E44 /* HeroTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTabBarViewModel.swift; sourceTree = "<group>"; };
+		225D1A3129C0E4A2000E7E44 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		225D1A3629C0E4C9000E7E44 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		225D1A3829C0E613000E7E44 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 		225D19C929B79EA6000E7E44 /* Dota2 plus */ = {
 			isa = PBXGroup;
 			children = (
+				225D1A3029C0E467000E7E44 /* PlayerView */,
 				225D1A1B29B8D96D000E7E44 /* TeamsView */,
 				225D1A1829B7FA92000E7E44 /* Utils */,
 				225D1A1029B7BB19000E7E44 /* ViewRepresentable */,
@@ -347,6 +354,32 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		225D1A3029C0E467000E7E44 /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				225D1A3529C0E4B7000E7E44 /* Model */,
+				225D1A3329C0E4A6000E7E44 /* ViewModel */,
+				225D1A3129C0E4A2000E7E44 /* PlayerView.swift */,
+			);
+			path = PlayerView;
+			sourceTree = "<group>";
+		};
+		225D1A3329C0E4A6000E7E44 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				225D1A3829C0E613000E7E44 /* PlayerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		225D1A3529C0E4B7000E7E44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				225D1A3629C0E4C9000E7E44 /* PlayerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -485,9 +518,12 @@
 				225D1A2729B8FDE6000E7E44 /* TeamsApiService.swift in Sources */,
 				225D1A2329B8FD5A000E7E44 /* TeamsTabBarViewModel.swift in Sources */,
 				225D1A1229B7BB27000E7E44 /* SwiftUIWebView.swift in Sources */,
+				225D1A3229C0E4A2000E7E44 /* PlayerView.swift in Sources */,
 				225D1A2129B8DD5A000E7E44 /* TeamModel.swift in Sources */,
 				225D1A2B29BB9969000E7E44 /* HeroesListView.swift in Sources */,
 				225D1A1D29B8D99B000E7E44 /* TeamsTabBarView.swift in Sources */,
+				225D1A3729C0E4C9000E7E44 /* PlayerModel.swift in Sources */,
+				225D1A3929C0E613000E7E44 /* PlayerViewModel.swift in Sources */,
 				225D19CB29B79EA6000E7E44 /* Dota2_plusApp.swift in Sources */,
 				225D1A0F29B7B611000E7E44 /* HeroDetailView.swift in Sources */,
 				225D1A0029B7A491000E7E44 /* HeroesTabBarView.swift in Sources */,
@@ -655,6 +691,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dota2 plus/Preview Content\"";
+				DEVELOPMENT_TEAM = 2U49T83TPH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -667,7 +704,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "TararaSong.Dota2-plus";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dota2-plus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -683,6 +720,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dota2 plus/Preview Content\"";
+				DEVELOPMENT_TEAM = 2U49T83TPH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -695,7 +733,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "TararaSong.Dota2-plus";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dota2-plus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
