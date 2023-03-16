@@ -20,8 +20,6 @@
 		225D1A0F29B7B611000E7E44 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A0E29B7B611000E7E44 /* HeroDetailView.swift */; };
 		225D1A1229B7BB27000E7E44 /* SwiftUIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A1129B7BB27000E7E44 /* SwiftUIWebView.swift */; };
 		225D1A1429B7E4E1000E7E44 /* SearchableHeroListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A1329B7E4E1000E7E44 /* SearchableHeroListView.swift */; };
-		225D1A1629B7EC6B000E7E44 /* heroesServiceResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 225D1A1529B7EC6B000E7E44 /* heroesServiceResponse.json */; };
-		225D1A1729B7EDB5000E7E44 /* heroesServiceResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 225D1A1529B7EC6B000E7E44 /* heroesServiceResponse.json */; };
 		225D1A1A29B7FAA7000E7E44 /* DotaApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A1929B7FAA7000E7E44 /* DotaApiService.swift */; };
 		225D1A1D29B8D99B000E7E44 /* TeamsTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A1C29B8D99B000E7E44 /* TeamsTabBarView.swift */; };
 		225D1A2129B8DD5A000E7E44 /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A2029B8DD5A000E7E44 /* TeamModel.swift */; };
@@ -36,6 +34,8 @@
 		225D1A3929C0E613000E7E44 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A3829C0E613000E7E44 /* PlayerViewModel.swift */; };
 		225D1A3D29C195DB000E7E44 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A3C29C195DB000E7E44 /* HomeView.swift */; };
 		225D1A4029C2803D000E7E44 /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A3F29C2803D000E7E44 /* HeroDetailViewModel.swift */; };
+		225D1A4229C2B981000E7E44 /* heroesServiceResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 225D1A4129C2B981000E7E44 /* heroesServiceResponse.json */; };
+		225D1A4329C2B981000E7E44 /* heroesServiceResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 225D1A4129C2B981000E7E44 /* heroesServiceResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,6 @@
 		225D1A0E29B7B611000E7E44 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
 		225D1A1129B7BB27000E7E44 /* SwiftUIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWebView.swift; sourceTree = "<group>"; };
 		225D1A1329B7E4E1000E7E44 /* SearchableHeroListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableHeroListView.swift; sourceTree = "<group>"; };
-		225D1A1529B7EC6B000E7E44 /* heroesServiceResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = heroesServiceResponse.json; path = ../../heroesServiceResponse.json; sourceTree = "<group>"; };
 		225D1A1929B7FAA7000E7E44 /* DotaApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotaApiService.swift; sourceTree = "<group>"; };
 		225D1A1C29B8D99B000E7E44 /* TeamsTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabBarView.swift; sourceTree = "<group>"; };
 		225D1A2029B8DD5A000E7E44 /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		225D1A3829C0E613000E7E44 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		225D1A3C29C195DB000E7E44 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/HomeView.swift; sourceTree = "<group>"; };
 		225D1A3F29C2803D000E7E44 /* HeroDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModel.swift; sourceTree = "<group>"; };
+		225D1A4129C2B981000E7E44 /* heroesServiceResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heroesServiceResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +163,7 @@
 		225D19DA29B79EA7000E7E44 /* Dota2 plusTests */ = {
 			isa = PBXGroup;
 			children = (
-				225D1A1529B7EC6B000E7E44 /* heroesServiceResponse.json */,
+				225D1A4129C2B981000E7E44 /* heroesServiceResponse.json */,
 				225D19DB29B79EA7000E7E44 /* Dota2_plusTests.swift */,
 			);
 			path = "Dota2 plusTests";
@@ -439,7 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				225D1A1729B7EDB5000E7E44 /* heroesServiceResponse.json in Resources */,
+				225D1A4229C2B981000E7E44 /* heroesServiceResponse.json in Resources */,
 				225D19D229B79EA7000E7E44 /* Preview Assets.xcassets in Resources */,
 				225D19CF29B79EA7000E7E44 /* Assets.xcassets in Resources */,
 			);
@@ -449,7 +449,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				225D1A1629B7EC6B000E7E44 /* heroesServiceResponse.json in Resources */,
+				225D1A4329C2B981000E7E44 /* heroesServiceResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import SwiftUI
 class HeroDetailViewModel: ObservableObject {
     @Published var hero: HeroModel
     @Published var level = 1.0
+    
     var str: String {
         String(Int(Double(hero.baseStr) + (hero.strGain * (level - 1))))
     }
