@@ -36,13 +36,15 @@ struct PlayerView: View {
                         .foregroundColor(Color("Burgundy"))
                     
                 }
+                .onAppear {
+                    if viewModel.playerId != nil {
+                        viewModel.fetchData(viewModel.playerId ?? 0)
+                    }
+                }
                 .navigationTitle("Player")
                 .navigationBarTitleDisplayMode(.large)
             } else {
                 VStack {
-                    if viewModel.isLoading {
-                        ProgressView()
-                    }
                     if let profile = viewModel.player?.profile {
                         HStack {
                             AsyncImage(url: URL(string: profile.avatarfull)!) {
@@ -84,8 +86,6 @@ struct PlayerView: View {
                                     Text("MMR -> \(viewModel.player.mmrEstimate?["estimate"] ?? 0)")
                                 }
                             }
-                            
-                            
                         }
                         Spacer()
                     } else {
@@ -107,9 +107,6 @@ struct PlayerView: View {
                         }
                         
                     }
-                }
-                .onAppear {
-                    viewModel.fetchData(viewModel.playerId ?? 0)
                 }
             }
         }

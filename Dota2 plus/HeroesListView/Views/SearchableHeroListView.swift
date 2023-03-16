@@ -12,7 +12,7 @@ struct SearchableHeroListView: View {
     var body: some View {
         List(viewModel.heroesListFiltered) { hero in
             NavigationLink {
-                HeroDetailView(name: hero.localizedName)
+                HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
             } label: {
                 HStack{
                     AsyncImage(url: Constants.Urls.heroLogoImage(hero.name)) {
@@ -23,7 +23,7 @@ struct SearchableHeroListView: View {
                     Text(hero.localizedName)
                         .font(.headline)
                     Spacer()
-                    Image(hero.primaryAttribute.iconName())
+                    Image(hero.primaryAttr.iconName())
                 }
             }
         }

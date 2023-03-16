@@ -17,7 +17,7 @@ class PlayerViewModel: ObservableObject {
     @Published var player: PlayerModel!
     
     func fetchData(_ id: Int) {
-        UserDefaults.standard.set(id, forKey: "userId")
+        playerId = id
         let resource = Resource(url: Constants.Urls.urlPlayer(id)) { data in
             do {
                 let decoder = JSONDecoder()
@@ -36,7 +36,6 @@ class PlayerViewModel: ObservableObject {
            await DotaApiService().fetchData(request: resource) { data in
                 if let data = data {
                     self.player = data
-                    self.isLoading = false
                 }
             }
         }

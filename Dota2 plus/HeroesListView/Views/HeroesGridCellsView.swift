@@ -24,30 +24,30 @@ struct HeroesGridCellsView: View {
                                     GridItem(.flexible())], spacing: 4) {
                     ForEach(viewModel.favoriteHeroList, id: \.id) { hero in
                         NavigationLink {
-                            HeroDetailView(name: hero.name)
+                            HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
                         } label: {
                             VStack(alignment: .center) {
-                                AsyncImage(url: Constants.Urls.heroLogoImage(hero.name)) { image in
+                                HStack {
+                                    Spacer()
+                                    Image(systemName: viewModel.favoriteHeroList.contains{ $0.id == hero.id} ? "star.fill" : "star")
+                                        .foregroundColor(.yellow)
+                                        .onTapGesture {
+                                            viewModel.addOrRemoveFavoriteHero(hero)
+                                        }
+                                }
+                                AsyncImage(url: Constants.Urls.heroIconImage(hero.icon)) { image in
                                     image
                                         .resizable()
-                                        .overlay {
-                                            VStack(alignment: .center){
-                                                HStack {
-                                                    Spacer()
-                                                    Image(systemName: viewModel.favoriteHeroList.contains{ $0.id == hero.id} ? "star.fill" : "star")
-                                                        .foregroundColor(.yellow)
-                                                        .onTapGesture {
-                                                            viewModel.addOrRemoveFavoriteHero(hero)
-                                                        }
-                                                }
-                                                Spacer()
-                                                Text(hero.localizedName)
-                                                    .foregroundColor(.white)
-                                                    .font(.system(size: 12))
-                                                    .fontWeight(.bold)
-                                                    .fontDesign(.serif)
-                                            }
-                                        }
+                                        .scaledToFill()
+                                    
+                                        .frame(width: 50, height: 50)
+                                    
+                                    Spacer()
+                                    Text(hero.localizedName)
+                                        .foregroundColor(Color("Burgundy"))
+                                        .font(.system(size: 12))
+                                        .fontWeight(.bold)
+                                        .fontDesign(.serif)
                                 } placeholder: {
                                     Image(systemName: "photo.fill")
                                 }
@@ -71,36 +71,35 @@ struct HeroesGridCellsView: View {
                                 GridItem(.flexible())], spacing: 4) {
                 ForEach(viewModel.heroList, id: \.id) { hero in
                     NavigationLink {
-                        HeroDetailView(name: hero.name)
+                        HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
                     } label: {
                         VStack(alignment: .center) {
-                            AsyncImage(url: Constants.Urls.heroLogoImage(hero.name)) { image in
+                            HStack {
+                                Spacer()
+                                Image(systemName: viewModel.favoriteHeroList.contains{ $0.id == hero.id} ? "star.fill" : "star")
+                                    .foregroundColor(.yellow)
+                                    .onTapGesture {
+                                        viewModel.addOrRemoveFavoriteHero(hero)
+                                    }
+                            }
+                            AsyncImage(url: Constants.Urls.heroIconImage(hero.icon)) { image in
                                 image
                                     .resizable()
-                                    .overlay {
-                                        VStack(alignment: .center){
-                                            HStack {
-                                                Spacer()
-                                                Image(systemName: viewModel.favoriteHeroList.contains{ $0.id == hero.id} ? "star.fill" : "star")
-                                                    .foregroundColor(.yellow)
-                                                    .onTapGesture {
-                                                        viewModel.addOrRemoveFavoriteHero(hero)
-                                                    }
-                                            }
-                                            Spacer()
-                                            Text(hero.localizedName)
-                                                .foregroundColor(.white)
-                                                .font(.system(size: 12))
-                                                .fontWeight(.bold)
-                                                .fontDesign(.serif)
-                                        }
-                                    }
+                                    .scaledToFill()
+                                
+                                    .frame(width: 50, height: 50)
                             } placeholder: {
                                 Image(systemName: "photo.fill")
                             }
                             .frame(width: UIScreen.main.bounds.width / 5, height: UIScreen.main.bounds.height / 12)
                             
                             Spacer()
+                            
+                            Text(hero.localizedName)
+                                .foregroundColor(Color("Burgundy"))
+                                .font(.system(size: 12))
+                                .fontWeight(.bold)
+                                .fontDesign(.serif)
                         }
                     }
                 }

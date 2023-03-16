@@ -29,7 +29,7 @@ class HeroesListViewModel: ObservableObject {
     func filter(_ text: String){
         if text == "" {
             if let filterActivated = filterActivated {
-                heroesListFiltered = heroList.filter{ $0.primaryAttribute == filterActivated}
+                heroesListFiltered = heroList.filter{ $0.primaryAttr == filterActivated}
             } else {
                 heroesListFiltered = heroList
             }
@@ -45,7 +45,7 @@ class HeroesListViewModel: ObservableObject {
             return
         }
         filterActivated = atrribute
-        heroesListFiltered = heroList.filter{ $0.primaryAttribute == atrribute }
+        heroesListFiltered = heroList.filter{ $0.primaryAttr == atrribute }
     }
     
     func addOrRemoveFavoriteHero(_ hero: HeroModel) {

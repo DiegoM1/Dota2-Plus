@@ -53,7 +53,6 @@ struct HeroesTabBarView: View {
                 }
 
             }
-           
             .navigationTitle("Heroes")
             .navigationBarTitleDisplayMode(.automatic)
         }

@@ -17,7 +17,7 @@ struct HeroesListView: View {
                 Section("Favorites") {
                     ForEach(viewModel.favoriteHeroList) { hero in
                         NavigationLink {
-                            HeroDetailView(name: hero.name)
+                            HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
                         } label: {
                             VStack(alignment: .leading,spacing: 4) {
                                 HStack{
@@ -35,7 +35,7 @@ struct HeroesListView: View {
                                         .onTapGesture {
                                             viewModel.addOrRemoveFavoriteHero(hero)
                                         }
-                                    Image(hero.primaryAttribute.iconName())
+                                    Image(hero.primaryAttr.iconName())
                                 }
                             }
                         }
@@ -47,7 +47,7 @@ struct HeroesListView: View {
             Section {
                 ForEach(viewModel.heroList) { hero in
                     NavigationLink {
-                        HeroDetailView(name: hero.name)
+                        HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
                     } label: {
                         VStack(alignment: .leading,spacing: 4) {
                             HStack{
@@ -65,7 +65,7 @@ struct HeroesListView: View {
                                     .onTapGesture {
                                         viewModel.addOrRemoveFavoriteHero(hero)
                                     }
-                                Image(hero.primaryAttribute.iconName())
+                                Image(hero.primaryAttr.iconName())
                             }
                             if moreToogle {
                                 Rectangle()

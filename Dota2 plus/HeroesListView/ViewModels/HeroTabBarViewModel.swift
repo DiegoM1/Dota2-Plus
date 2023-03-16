@@ -50,12 +50,16 @@ class HeroTabBarViewModel: ObservableObject {
         readFromFile()
         if heroesListFiltered.isEmpty {
             let resource = Resource<[HeroModel]>(url: Constants.Urls.heroes) { data in
-                let decoded = try? JSONDecoder().decode([HeroModel].self, from: data)
-                guard let decoded = decoded else {
-                    return [HeroModel]()
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                do {
+                    let data = try decoder.decode([HeroModel].self, from: data)
+                    return data
+                }catch {
+                    print(error)
                 }
                 
-                return decoded
+                return nil
             }
             Task {
                 await apiService.fetchData(request: resource) { data in

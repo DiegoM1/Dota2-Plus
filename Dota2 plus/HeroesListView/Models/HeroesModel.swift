@@ -54,16 +54,38 @@ struct HeroModel: Codable, Identifiable {
     var id: Int
     var name: String
     var localizedName: String
-    var primaryAttribute: AttributeType
+    var primaryAttr: AttributeType
     var attackType: AttackType
     var roles: [RolesType]
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case name = "name"
-        case localizedName = "localized_name"
-        case primaryAttribute = "primary_attr"
-        case attackType = "attack_type"
-        case roles = "roles"
-    }
+    var img: String
+    var icon: String
+    var baseHealth: Int
+    var baseHealthRegen: Double
+    var baseMana: Int
+    var baseManaRegen: Double
+    var baseArmor: Double
+    var baseAttackMin: Int
+    var baseAttackMax: Int
+    var baseStr: Int
+    var baseAgi: Int
+    var baseInt: Int
+    var strGain: Double
+    var agiGain: Double
+    var intGain: Double
+    var attackRange: Int
+    var projectileSpeed: Int
+    var attackRate: Double
+    var baseAttackTime: Int
+    var attackPoint: Double
+    var moveSpeed: Int
+    var turnRate: Double?
+    var cmEnabled: Bool
+    var legs: Int
+    var dayVision: Int
+    var nightVision: Int
+    var turboPicks: Int
+    var turboWins: Int
+    var proBan: Int
+    var proWin: Int
+    var proPick: Int
 }
