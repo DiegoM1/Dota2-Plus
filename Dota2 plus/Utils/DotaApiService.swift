@@ -17,8 +17,14 @@ protocol DotaApiServiceProtocol {
 }
 
 class DotaApiService: DotaApiServiceProtocol {
+    let urlSession: URLSession
+    
+    init(urlSession: URLSession) {
+        self.urlSession = urlSession
+    }
+    
     func fetchData<T>(request: Resource<T>, completion: @escaping (T?) -> ()) async {
-        URLSession.shared.dataTask(with: request.url) { data, response, error in
+        urlSession.dataTask(with: request.url) { data, response, error in
             
             if let data = data {
                 DispatchQueue.main.async {

@@ -15,29 +15,16 @@ class PlayerViewModel: ObservableObject {
         }
     }
     @Published var player: PlayerModel!
+    var service: PlayerService
     
-    func fetchData(_ id: Int) {
-        playerId = id
-        let resource = Resource(url: Constants.Urls.urlPlayer(id)) { data in
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let data = try decoder.decode(PlayerModel.self, from: data)
-                return data
-            } catch {
-                print(error)
-            }
-            
-            return nil
-        }
-        
-        
-        Task {
-           await DotaApiService().fetchData(request: resource) { data in
-                if let data = data {
-                    self.player = data
-                }
-            }
+    init(service: PlayerService) {
+        self.service = service
+    }
+    
+    func fetchPlayerData() {
+        service.fetchData(playerId ?? 0) { data in
+            self.player = data
+            self.isLoading.toggle()
         }
     }
     

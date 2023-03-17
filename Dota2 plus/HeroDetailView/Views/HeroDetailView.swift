@@ -15,7 +15,7 @@ struct HeroDetailView: View {
         let hero = viewModel.hero
         VStack(spacing: 0) {
             HStack(alignment: .center, spacing: 0) {
-                AsyncImage(url: Constants.Urls.heroLogoImage(hero.name)) {
+                AsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
                     $0.image?
                         .resizable()
                         .cornerRadius(12)
@@ -25,10 +25,10 @@ struct HeroDetailView: View {
                 }
                 VStack {
                     HStack {
-                        Text(hero.localizedName)
+                        Text(hero.info.localizedName)
                             .fontWeight(.semibold)
                             .fontDesign(.serif)
-                        AsyncImage(url: Constants.Urls.heroIconImage(hero.icon))
+                        AsyncImage(url: Constants.Urls.heroIconImage(hero.info.icon))
                             .frame(width: 24, height: 24)
                     }
                     Rectangle()
@@ -37,17 +37,17 @@ struct HeroDetailView: View {
                     
                     HStack(spacing: 0) {
                         VStack{
-                            AttributeScaleView(attribute: .str, base: viewModel.str, gain: viewModel.level != 1 ? nil : hero.strGain)
-                            AttributeScaleView(attribute: .agi, base: viewModel.agi, gain: viewModel.level != 1 ? nil : hero.agiGain)
-                            AttributeScaleView(attribute: .int, base: viewModel.int, gain: viewModel.level != 1 ? nil : hero.intGain)
+                            AttributeScaleView(attribute: .str, base: viewModel.str, gain: viewModel.level != 1 ? nil : hero.healthStr.strGain)
+                            AttributeScaleView(attribute: .agi, base: viewModel.agi, gain: viewModel.level != 1 ? nil : hero.armorAgi.agiGain)
+                            AttributeScaleView(attribute: .int, base: viewModel.int, gain: viewModel.level != 1 ? nil : hero.manaInt.intGain)
                         }
                         
                         VStack {
                             HStack {
-                                Image(hero.attackType == .meele ? "sword" : "archery")
+                                Image(hero.info.attackType == .meele ? "sword" : "archery")
                                     .resizable()
                                     .frame(width: 24, height: 24)
-                                Text("\(hero.baseAttackMin) - \(hero.baseAttackMax)")
+                                Text("\(hero.attack.baseAttackMin) - \(hero.attack.baseAttackMax)")
                                     .fontWeight(.semibold)
                                 
                                 Spacer()
@@ -56,7 +56,7 @@ struct HeroDetailView: View {
                                 Image("running")
                                     .resizable()
                                     .frame(width: 24, height: 24)
-                                Text("\(hero.moveSpeed)")
+                                Text("\(hero.movement.speed)")
                                     .fontWeight(.semibold)
                                 
                                 Spacer()
@@ -140,7 +140,7 @@ struct HeroDetailView: View {
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("\(hero.localizedName)")
+                Text("\(hero.info.localizedName)")
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -151,33 +151,15 @@ struct HeroDetailView: View {
 
 struct HeroDetailsViewControlle_Previews: PreviewProvider {
     static var previews: some View {
-        HeroDetailView(viewModel: HeroDetailViewModel(hero: HeroModel(id: 1, name: "npc_dota_hero_antimage",
-                                                                      localizedName: "Anti-Mage",
-                                                                      primaryAttr: .agi,
-                                                                      attackType: .meele,
-                                                                      roles: [.carry,.escape,.nuker],
-                                                                      img: "/apps/dota2/images/dota_react/heroes/antimage.png?",
-                                                                      icon: "/apps/dota2/images/dota_react/heroes/icons/antimage.png?",
-                                                                      baseHealth: 200,
-                                                                      baseHealthRegen:
-                                                                        0.25,
-                                                                      baseMana: 75,
-                                                                      baseManaRegen: 0,
-                                                                      baseArmor: 0,
-                                                                      baseAttackMin: 29,
-                                                                      baseAttackMax: 33,
-                                                                      baseStr: 21,
-                                                                      baseAgi: 24,
-                                                                      baseInt: 12,
-                                                                      strGain: 1.6,
-                                                                      agiGain: 2.8,
-                                                                      intGain: 1.8,
-                                                                      attackRange: 150,
-                                                                      projectileSpeed: 0,
-                                                                      attackRate: 1.4,
-                                                                      baseAttackTime: 100,
-                                                                      attackPoint: 0.3,
-                                                                      moveSpeed: 310, cmEnabled: true, legs: 2, dayVision: 1800, nightVision: 800, turboPicks: 371300, turboWins: 202315, proBan: 194, proWin: 37, proPick: 80)))
+        HeroDetailView(viewModel: HeroDetailViewModel(hero: HeroOrganizationModel(info: HeroData(id: 1,
+                                                                                                 name: "npc_dota_hero_antimage",
+                                                                                                 localizedName: "Anti-mage", primaryAttr: .agi, attackType: .meele, roles:  [.carry,.escape,.nuker], img: "/apps/dota2/images/dota_react/heroes/antimage.png?", icon: "/apps/dota2/images/dota_react/heroes/icons/antimage.png?") ,
+                                                                                  healthStr: BaseHeroStatsStr(baseHealth: 200, baseHealthRegen: 0.25, baseStr: 21, strGain: 1.6),
+                                                                                  manaInt: BaseHeroStatsInt(baseMana: 75, baseManaRegen: 0, baseInt: 12, intGain: 1.8),
+                                                                                  armorAgi: BaseHeroStatsAgi(baseArmor: 0, agiGain: 2.0, baseAgi: 24),
+                                                                                  attack: AttackHero(baseAttackMin: 29, baseAttackMax: 33, attackRange: 150, projectileSpeed: 0, attackRate: 1.4, baseAttackTime: 100, attackPoint: 0.3),
+                                                                                  movement: MovementHero(speed: 310, legs: 2),
+                                                                                  draft: PicksWinRateHero(cmEnabled: true, turboPicks: 371300, turboWins: 202315, proBan: 194, proWin: 37, proPick: 80), vision:VisionHero(dayVision: 1800, nightVision: 800))))
     }
 }
 

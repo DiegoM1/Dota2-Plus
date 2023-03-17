@@ -13,54 +13,58 @@ struct HeroesTabBarView: View {
     @State var alterView = false
     
     var body: some View {
-        NavigationView {
-            VStack {
-                if alterView {
-                    HeroesGridCellsView(viewModel: HeroesGridCellsViewModel(heroList: $viewModel.heroesListFiltered, favoriteHeroList: $viewModel.favoriteHeroes))
-                } else {
-                    HeroesListView(viewModel: HeroesListViewModel(heroList: $viewModel.heroesListFiltered, favoriteHeroList: $viewModel.favoriteHeroes), moreToogle: $moreToogle)
-                }
-            }
-            .onAppear{
-                viewModel.fetchData()
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink {
-                        SearchableHeroListView(viewModel: HeroesListViewModel(heroList: $viewModel.heroesList, favoriteHeroList: $viewModel.favoriteHeroes))
-                    }label: {
-                        Image(systemName: "magnifyingglass")
+        NavigationStack {
+            if viewModel.isLoading {
+                ProgressView()
+                    .onAppear {
+                        viewModel.fetchHeroesData()
+                    }
+            } else {
+                VStack {
+                    if alterView {
+                        HeroesGridCellsView(viewModel: HeroesGridCellsViewModel(heroList: $viewModel.heroesListFiltered, favoriteHeroList: $viewModel.favoriteHeroes))
+                    } else {
+                        HeroesListView(viewModel: HeroesListViewModel(heroList: $viewModel.heroesListFiltered, favoriteHeroList: $viewModel.favoriteHeroes), moreToogle: $moreToogle)
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack {
-                        Button {
-                            alterView.toggle()
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        NavigationLink {
+                            SearchableHeroListView(viewModel: HeroesListViewModel(heroList: $viewModel.heroesList, favoriteHeroList: $viewModel.favoriteHeroes))
                         }label: {
-                            if !alterView {
-                                Image(systemName: "square.grid.3x3.bottommiddle.fill")
-                            } else {
-                                Image(systemName: "list.bullet.clipboard")
+                            Image(systemName: "magnifyingglass")
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        HStack {
+                            Button {
+                                alterView.toggle()
+                            }label: {
+                                if !alterView {
+                                    Image(systemName: "square.grid.3x3.bottommiddle.fill")
+                                } else {
+                                    Image(systemName: "list.bullet.clipboard")
+                                }
+                            }
+                            Button {
+                                alterView = false
+                                moreToogle.toggle()
+                            }label: {
+                                Image(systemName: "plus")
                             }
                         }
-                        Button {
-                            alterView = false
-                            moreToogle.toggle()
-                        }label: {
-                            Image(systemName: "plus")
-                        }
                     }
+                    
                 }
-
+                .navigationTitle("Heroes")
+                .navigationBarTitleDisplayMode(.automatic)
             }
-            .navigationTitle("Heroes")
-            .navigationBarTitleDisplayMode(.automatic)
         }
     }
 }
 
 struct HeroesListVIewController_Previews: PreviewProvider {
     static var previews: some View {
-        HeroesTabBarView(viewModel: HeroTabBarViewModel(apiService: DotaApiService()), moreToogle: true, alterView: true)
+        HeroesTabBarView(viewModel: HeroTabBarViewModel(apiService: HeroTabBarService(dotaService: DotaApiService(urlSession: .shared))), moreToogle: true, alterView: true)
     }
 }

@@ -15,27 +15,40 @@ struct HeroesListView: View {
         List() {
             if !viewModel.favoriteHeroList.isEmpty {
                 Section("Favorites") {
-                    ForEach(viewModel.favoriteHeroList) { hero in
+                    ForEach(viewModel.favoriteHeroList, id: \.info.id) { hero in
                         NavigationLink {
                             HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
                         } label: {
                             VStack(alignment: .leading,spacing: 4) {
                                 HStack{
-                                    AsyncImage(url: Constants.Urls.heroLogoImage(hero.name)) {
+                                    AsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
                                         $0.image?
                                             .resizable()
                                             .frame(width: 50, height: 30)
                                     }
                                     
-                                    Text(hero.localizedName)
+                                    Text(hero.info.localizedName)
                                         .font(.headline)
                                     Spacer()
-                                    Image(systemName: viewModel.favoriteHeroList.contains(where: { $0.id == hero.id}) ? "star.fill" : "star")
+                                    Image(systemName: viewModel.favoriteHeroList.contains(where: { $0.info.id == hero.info.id }) ? "star.fill" : "star")
                                         .foregroundColor(.yellow)
                                         .onTapGesture {
                                             viewModel.addOrRemoveFavoriteHero(hero)
                                         }
-                                    Image(hero.primaryAttr.iconName())
+                                    Image(hero.info.primaryAttr.iconName())
+                                }
+                                if moreToogle {
+                                    Rectangle()
+                                        .fill(.black)
+                                        .frame(height: 1)
+                                    HStack {
+                                        ForEach(hero.info.roles, id: \.self) { roles in
+                                            Text(roles.rawValue)
+                                                .font(.system(size: 12))
+                                                .fontDesign(.serif)
+                                            Spacer()
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -45,34 +58,34 @@ struct HeroesListView: View {
             }
             
             Section {
-                ForEach(viewModel.heroList) { hero in
+                ForEach(viewModel.heroList, id: \.info.id) { hero in
                     NavigationLink {
                         HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
                     } label: {
                         VStack(alignment: .leading,spacing: 4) {
                             HStack{
-                                AsyncImage(url: Constants.Urls.heroLogoImage(hero.name)) {
+                                AsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
                                     $0.image?
                                         .resizable()
                                         .frame(width: 50, height: 30)
                                 }
                                 
-                                Text(hero.localizedName)
+                                Text(hero.info.localizedName)
                                     .font(.headline)
                                 Spacer()
-                                Image(systemName: viewModel.favoriteHeroList.contains(where: { $0.id == hero.id}) ? "star.fill" : "star")
+                                Image(systemName: viewModel.favoriteHeroList.contains(where: { $0.info.id == hero.info.id }) ? "star.fill" : "star")
                                     .foregroundColor(.yellow)
                                     .onTapGesture {
                                         viewModel.addOrRemoveFavoriteHero(hero)
                                     }
-                                Image(hero.primaryAttr.iconName())
+                                Image(hero.info.primaryAttr.iconName())
                             }
                             if moreToogle {
                                 Rectangle()
                                     .fill(.black)
                                     .frame(height: 1)
                                 HStack {
-                                    ForEach(hero.roles, id: \.self) { roles in
+                                    ForEach(hero.info.roles, id: \.self) { roles in
                                         Text(roles.rawValue)
                                             .font(.system(size: 12))
                                             .fontDesign(.serif)

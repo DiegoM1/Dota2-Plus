@@ -10,20 +10,20 @@ import SwiftUI
 struct SearchableHeroListView: View {
     @ObservedObject var viewModel: HeroesListViewModel
     var body: some View {
-        List(viewModel.heroesListFiltered) { hero in
+        List(viewModel.heroesListFiltered, id: \.info.id) { hero in
             NavigationLink {
                 HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
             } label: {
                 HStack{
-                    AsyncImage(url: Constants.Urls.heroLogoImage(hero.name)) {
+                    AsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
                             $0.image?
                                 .resizable()
                                 .frame(width: 35, height: 20)
                         }
-                    Text(hero.localizedName)
+                    Text(hero.info.localizedName)
                         .font(.headline)
                     Spacer()
-                    Image(hero.primaryAttr.iconName())
+                    Image(hero.info.primaryAttr.iconName())
                 }
             }
         }

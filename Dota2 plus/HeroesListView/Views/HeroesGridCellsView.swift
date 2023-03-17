@@ -22,20 +22,20 @@ struct HeroesGridCellsView: View {
                                     GridItem(.flexible()),
                                     GridItem(.flexible()),
                                     GridItem(.flexible())], spacing: 4) {
-                    ForEach(viewModel.favoriteHeroList, id: \.id) { hero in
+                    ForEach(viewModel.favoriteHeroList, id: \.info.id) { hero in
                         NavigationLink {
                             HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
                         } label: {
                             VStack(alignment: .center) {
                                 HStack {
                                     Spacer()
-                                    Image(systemName: viewModel.favoriteHeroList.contains{ $0.id == hero.id} ? "star.fill" : "star")
+                                    Image(systemName: viewModel.favoriteHeroList.contains{ $0.info.id == hero.info.id } ? "star.fill" : "star")
                                         .foregroundColor(.yellow)
                                         .onTapGesture {
                                             viewModel.addOrRemoveFavoriteHero(hero)
                                         }
                                 }
-                                AsyncImage(url: Constants.Urls.heroIconImage(hero.icon)) { image in
+                                AsyncImage(url: Constants.Urls.heroIconImage(hero.info.icon)) { image in
                                     image
                                         .resizable()
                                         .scaledToFill()
@@ -43,7 +43,7 @@ struct HeroesGridCellsView: View {
                                         .frame(width: 50, height: 50)
                                     
                                     Spacer()
-                                    Text(hero.localizedName)
+                                    Text(hero.info.localizedName)
                                         .foregroundColor(Color("Burgundy"))
                                         .font(.system(size: 12))
                                         .fontWeight(.bold)
@@ -69,20 +69,20 @@ struct HeroesGridCellsView: View {
                                 GridItem(.flexible()),
                                 GridItem(.flexible()),
                                 GridItem(.flexible())], spacing: 4) {
-                ForEach(viewModel.heroList, id: \.id) { hero in
+                ForEach(viewModel.heroList, id: \.info.id) { hero in
                     NavigationLink {
                         HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
                     } label: {
                         VStack(alignment: .center) {
                             HStack {
                                 Spacer()
-                                Image(systemName: viewModel.favoriteHeroList.contains{ $0.id == hero.id} ? "star.fill" : "star")
+                                Image(systemName: viewModel.favoriteHeroList.contains{ $0.info.id == hero.info.id } ? "star.fill" : "star")
                                     .foregroundColor(.yellow)
                                     .onTapGesture {
                                         viewModel.addOrRemoveFavoriteHero(hero)
                                     }
                             }
-                            AsyncImage(url: Constants.Urls.heroIconImage(hero.icon)) { image in
+                            AsyncImage(url: Constants.Urls.heroIconImage(hero.info.icon)) { image in
                                 image
                                     .resizable()
                                     .scaledToFill()
@@ -95,7 +95,7 @@ struct HeroesGridCellsView: View {
                             
                             Spacer()
                             
-                            Text(hero.localizedName)
+                            Text(hero.info.localizedName)
                                 .foregroundColor(Color("Burgundy"))
                                 .font(.system(size: 12))
                                 .fontWeight(.bold)

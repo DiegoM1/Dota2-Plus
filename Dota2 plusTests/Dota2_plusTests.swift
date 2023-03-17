@@ -13,8 +13,9 @@ import SwiftUI
     var heroTabBarViewModel: HeroTabBarViewModel!
     var heroesListViewModel: HeroesListViewModel!
     var heroesGridCellsViewModel : HeroesGridCellsViewModel!
+    
     override func setUpWithError() throws {
-        heroTabBarViewModel = HeroTabBarViewModel(apiService: DotaApiService())
+        heroTabBarViewModel = HeroTabBarViewModel(apiService: DotaApiService(urlSession: .shared))
         if let path = Bundle.main.path(forResource: "heroesServiceResponse", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(filePath: path))
@@ -75,11 +76,11 @@ import SwiftUI
         
         heroesListViewModel.addOrRemoveFavoriteHero(testHero)
         
-        XCTAssertTrue(heroesListViewModel.heroList.contains{ $0.id == testHero.id})
+        XCTAssertTrue(heroesListViewModel.heroList.contains{ $0.id == testHero.id })
         
         heroesGridCellsViewModel.addOrRemoveFavoriteHero(testHero)
         
-        XCTAssertTrue(heroesGridCellsViewModel.heroList.contains{ $0.id == testHero.id})
+        XCTAssertTrue(heroesGridCellsViewModel.heroList.contains{ $0.id == testHero.id })
     }
     
     func testPerformanceExample() throws {

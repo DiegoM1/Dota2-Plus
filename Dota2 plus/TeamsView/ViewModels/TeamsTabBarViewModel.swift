@@ -9,40 +9,28 @@ import SwiftUI
 
 @MainActor
 class TeamTabBarViewModel: ObservableObject {
+    
+    @Published var topFiveTeams = [TeamModel]()
+    @Published var teams = [TeamModel]()
+    @Published var isLoading = true
+    
     var fetchedTeams = [TeamModel]() {
         didSet {
             dataConstruction()
         }
     }
-    @Published var topFiveTeams = [TeamModel]()
-    @Published var teams = [TeamModel]()
-    var service: DotaApiServiceProtocol!
+    var service: TeamsApiService
     
-    init(service: DotaApiServiceProtocol) {
+    init(service: TeamsApiService) {
         self.service = service
     }
     
-    
-    
-    func fetchTeamData() {
-        let request = Resource<[TeamModel]>(url: Constants.Urls.teams) { data in
-            let decoded = try? JSONDecoder().decode([TeamModel].self, from: data)
-            guard let decoded = decoded else {
-                return []
-            }
-            return decoded
-        }
-        
-        Task {
-            await service.fetchData(request: request) { data in
-                if var result = data {
-                    result.removeAll { $0.name == "" }
-                    result.removeAll { $0.name.contains("CyberBonch")}
-                    var resultPrefix = Array(result.prefix(100))
-                    self.orderConstruction(&resultPrefix)
-                    self.fetchedTeams = resultPrefix
-                }
-            }
+    func fetchTeamsData() {
+        service.fetchTeamData { data in
+            var teams = data
+            self.orderConstruction(&teams)
+            self.fetchedTeams = teams
+            self.isLoading = false
         }
     }
     

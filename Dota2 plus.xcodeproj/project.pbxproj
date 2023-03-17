@@ -36,6 +36,9 @@
 		225D1A4029C2803D000E7E44 /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A3F29C2803D000E7E44 /* HeroDetailViewModel.swift */; };
 		225D1A4229C2B981000E7E44 /* heroesServiceResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 225D1A4129C2B981000E7E44 /* heroesServiceResponse.json */; };
 		225D1A4329C2B981000E7E44 /* heroesServiceResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 225D1A4129C2B981000E7E44 /* heroesServiceResponse.json */; };
+		225D1A4629C3885E000E7E44 /* HeroTabBarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4529C3885E000E7E44 /* HeroTabBarService.swift */; };
+		225D1A4929C3D0A2000E7E44 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4829C3D0A2000E7E44 /* PlayerService.swift */; };
+		225D1A4B29C4B350000E7E44 /* HeroModelOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4A29C4B350000E7E44 /* HeroModelOrganization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		225D1A3C29C195DB000E7E44 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/HomeView.swift; sourceTree = "<group>"; };
 		225D1A3F29C2803D000E7E44 /* HeroDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModel.swift; sourceTree = "<group>"; };
 		225D1A4129C2B981000E7E44 /* heroesServiceResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heroesServiceResponse.json; sourceTree = "<group>"; };
+		225D1A4529C3885E000E7E44 /* HeroTabBarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTabBarService.swift; sourceTree = "<group>"; };
+		225D1A4829C3D0A2000E7E44 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		225D1A4A29C4B350000E7E44 /* HeroModelOrganization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModelOrganization.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +195,7 @@
 		225D19FA29B7A436000E7E44 /* HeroesListView */ = {
 			isa = PBXGroup;
 			children = (
+				225D1A4429C38850000E7E44 /* Service */,
 				225D19FD29B7A463000E7E44 /* Models */,
 				225D19FC29B7A45E000E7E44 /* ViewModels */,
 				225D19FB29B7A456000E7E44 /* Views */,
@@ -221,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				225D1A0129B7A4A9000E7E44 /* HeroesModel.swift */,
+				225D1A4A29C4B350000E7E44 /* HeroModelOrganization.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 		225D1A3029C0E467000E7E44 /* PlayerView */ = {
 			isa = PBXGroup;
 			children = (
+				225D1A4729C3D06B000E7E44 /* Service */,
 				225D1A3529C0E4B7000E7E44 /* Model */,
 				225D1A3329C0E4A6000E7E44 /* ViewModel */,
 				225D1A3129C0E4A2000E7E44 /* PlayerView.swift */,
@@ -333,6 +342,22 @@
 				225D1A3F29C2803D000E7E44 /* HeroDetailViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		225D1A4429C38850000E7E44 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				225D1A4529C3885E000E7E44 /* HeroTabBarService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		225D1A4729C3D06B000E7E44 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				225D1A4829C3D0A2000E7E44 /* PlayerService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,6 +494,7 @@
 			files = (
 				225D1A2F29BFCF83000E7E44 /* HeroTabBarViewModel.swift in Sources */,
 				225D1A1429B7E4E1000E7E44 /* SearchableHeroListView.swift in Sources */,
+				225D1A4629C3885E000E7E44 /* HeroTabBarService.swift in Sources */,
 				225D1A2929BB98BE000E7E44 /* HeroesGridCellsView.swift in Sources */,
 				225D1A2729B8FDE6000E7E44 /* TeamsApiService.swift in Sources */,
 				225D1A2329B8FD5A000E7E44 /* TeamsTabBarViewModel.swift in Sources */,
@@ -478,6 +504,8 @@
 				225D1A2129B8DD5A000E7E44 /* TeamModel.swift in Sources */,
 				225D1A2B29BB9969000E7E44 /* HeroesListView.swift in Sources */,
 				225D1A1D29B8D99B000E7E44 /* TeamsTabBarView.swift in Sources */,
+				225D1A4929C3D0A2000E7E44 /* PlayerService.swift in Sources */,
+				225D1A4B29C4B350000E7E44 /* HeroModelOrganization.swift in Sources */,
 				225D1A3729C0E4C9000E7E44 /* PlayerModel.swift in Sources */,
 				225D1A3929C0E613000E7E44 /* PlayerViewModel.swift in Sources */,
 				225D19CB29B79EA6000E7E44 /* Dota2_plusApp.swift in Sources */,
