@@ -64,7 +64,7 @@ class HeroTabBarService {
          }
     }
     
-    private func heroModelOrganizationConstructo(_ heroesModel: [HeroModel]) -> [HeroOrganizationModel] {
+    func heroModelOrganizationConstructo(_ heroesModel: [HeroModel]) -> [HeroOrganizationModel] {
         return heroesModel.map { HeroOrganizationModel(info: HeroData(id: $0.id
                                                                       , name: $0.name,
                                                                       localizedName: $0.localizedName,

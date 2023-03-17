@@ -39,6 +39,7 @@
 		225D1A4629C3885E000E7E44 /* HeroTabBarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4529C3885E000E7E44 /* HeroTabBarService.swift */; };
 		225D1A4929C3D0A2000E7E44 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4829C3D0A2000E7E44 /* PlayerService.swift */; };
 		225D1A4B29C4B350000E7E44 /* HeroModelOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4A29C4B350000E7E44 /* HeroModelOrganization.swift */; };
+		225D1A4D29C4D07E000E7E44 /* DotaApiService_unitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4C29C4D07E000E7E44 /* DotaApiService_unitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		225D1A4529C3885E000E7E44 /* HeroTabBarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTabBarService.swift; sourceTree = "<group>"; };
 		225D1A4829C3D0A2000E7E44 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		225D1A4A29C4B350000E7E44 /* HeroModelOrganization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModelOrganization.swift; sourceTree = "<group>"; };
+		225D1A4C29C4D07E000E7E44 /* DotaApiService_unitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotaApiService_unitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			children = (
 				225D1A4129C2B981000E7E44 /* heroesServiceResponse.json */,
 				225D19DB29B79EA7000E7E44 /* Dota2_plusTests.swift */,
+				225D1A4C29C4D07E000E7E44 /* DotaApiService_unitTests.swift */,
 			);
 			path = "Dota2 plusTests";
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225D1A4D29C4D07E000E7E44 /* DotaApiService_unitTests.swift in Sources */,
 				225D19DC29B79EA7000E7E44 /* Dota2_plusTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

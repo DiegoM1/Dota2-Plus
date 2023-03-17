@@ -20,8 +20,6 @@ class HeroTabBarViewModel: ObservableObject {
         }
     }
     
-    let userDefaults = UserDefaults.standard
-    
     var heroesList: [HeroOrganizationModel] = [] {
         didSet{
             DispatchQueue.main.async {
@@ -36,14 +34,18 @@ class HeroTabBarViewModel: ObservableObject {
         self.apiService = apiService
     }
     
-    func fetchHeroesData() {
-        
-        apiService.readFromFile { data in
-            self.favoriteHeroes = data
-        }
+    func fetchHeroesData() async {
+        await fetchFromFileHeroesData()
         apiService.fetchData { data in
             self.heroesList = data
             self.isLoading = false
+        }
+    }
+    func fetchFromFileHeroesData() async {
+        apiService.readFromFile { data in
+            DispatchQueue.main.async {
+                self.favoriteHeroes = data
+            }
         }
     }
 }

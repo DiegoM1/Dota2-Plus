@@ -17,7 +17,9 @@ struct HeroesTabBarView: View {
             if viewModel.isLoading {
                 ProgressView()
                     .onAppear {
-                        viewModel.fetchHeroesData()
+                        Task {
+                            await viewModel.fetchHeroesData()
+                        }
                     }
             } else {
                 VStack {
