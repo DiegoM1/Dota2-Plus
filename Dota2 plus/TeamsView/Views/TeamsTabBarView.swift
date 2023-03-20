@@ -15,7 +15,7 @@ struct TeamsTabBarView: View {
         NavigationStack {
             if viewModel.isLoading {
                 ProgressView()
-                    .onAppear{
+                    .task {
                         viewModel.fetchTeamsData()
                     }
             } else {

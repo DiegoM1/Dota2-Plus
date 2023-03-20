@@ -16,7 +16,7 @@ struct PlayerView: View {
         NavigationStack {
             if viewModel.isLoading {
                 ProgressView()
-                    .onAppear {
+                    .task {
                         viewModel.fetchPlayerData()
                     }
             } else {
@@ -44,7 +44,7 @@ struct PlayerView: View {
                             .foregroundColor(Color("Burgundy"))
                         
                     }
-                    .onAppear {
+                    .task {
                         if viewModel.playerId != nil {
                             viewModel.fetchPlayerData()
                         }

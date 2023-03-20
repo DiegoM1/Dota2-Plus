@@ -136,6 +136,46 @@ struct HeroDetailView: View {
                 
             }
             .padding(.horizontal)
+            HStack {
+                Text("Hero vision: ")
+                Spacer()
+                Image(systemName: "sun.max.fill")
+                Text(String(hero.vision.dayVision))
+                    .bold()
+                Text("/")
+                Image(systemName: "moon.fill")
+                Text(String(hero.vision.nightVision))
+                    .bold()
+            }
+            .padding()
+            
+            VStack(spacing: 16) {
+                    Text("Captain Mode & Winrate Information:")
+                        .bold()
+                
+                HStack {
+                    Text("Captains Mode enabled:")
+                    Spacer()
+                    Text(hero.draft.cmEnabled ? "YES" : "NO")
+                        .bold()
+                }
+                
+                HStack {
+                    Text("Pro games winrate:")
+                    Spacer()
+                    Text("\(viewModel.proWinratePercentage) %")
+                        .bold()
+                }
+                
+                HStack {
+                    Text("Turbo games winrate:")
+                    Spacer()
+                    Text("\(viewModel.turboWinratePercentage) %")
+                        .bold()
+                }
+                
+            }
+            .padding(.horizontal)
             Spacer()
         }
         .toolbar {
@@ -143,6 +183,7 @@ struct HeroDetailView: View {
                 Text("\(hero.info.localizedName)")
             }
         }
+        .toolbarBackground(.visible, for: .tabBar)
         .navigationBarTitleDisplayMode(.inline)
         .background(Color("Gray"))
         .foregroundColor(.white)

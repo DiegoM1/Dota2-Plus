@@ -35,6 +35,16 @@ class HeroDetailViewModel: ObservableObject {
         String(Int(Double(hero.manaInt.baseMana) + ((Double(hero.manaInt.baseInt) + (hero.manaInt.intGain * (level - 1))) * 12.0)))
     }
     
+    var proWinratePercentage: String {
+        let winrate = Double(hero.draft.proWin) * 100.00 / Double(hero.draft.proPick)
+        return String(format: "%.2f", winrate)
+    }
+    
+    var turboWinratePercentage: String {
+        let winrate = Double(hero.draft.turboWins) * 100.00 / Double(hero.draft.turboPicks)
+        return String(format: "%.2f", winrate)
+    }
+    
     init(hero: HeroOrganizationModel) {
         self.hero = hero
     }

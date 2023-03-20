@@ -16,10 +16,8 @@ struct HeroesTabBarView: View {
         NavigationStack {
             if viewModel.isLoading {
                 ProgressView()
-                    .onAppear {
-                        Task {
-                            await viewModel.fetchHeroesData()
-                        }
+                    .task{
+                        await viewModel.fetchHeroesData()
                     }
             } else {
                 VStack {
@@ -62,11 +60,5 @@ struct HeroesTabBarView: View {
                 .navigationBarTitleDisplayMode(.automatic)
             }
         }
-    }
-}
-
-struct HeroesListVIewController_Previews: PreviewProvider {
-    static var previews: some View {
-        HeroesTabBarView(viewModel: HeroTabBarViewModel(apiService: HeroTabBarService(dotaService: DotaApiService(urlSession: .shared))), moreToogle: true, alterView: true)
     }
 }

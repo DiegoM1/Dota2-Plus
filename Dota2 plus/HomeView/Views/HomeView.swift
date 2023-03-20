@@ -31,6 +31,8 @@ struct HomeView: View {
                     Text("Players")
                 }
         }
+        .toolbar(.visible, for: .tabBar)
+        .toolbarBackground(Color.blue, for: .tabBar)
     }
 }
 
