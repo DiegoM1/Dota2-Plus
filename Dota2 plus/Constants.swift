@@ -11,7 +11,7 @@ struct Constants {
     struct Urls {
         static var heroes = URL(string:"\(baseStringUrl)/api/heroStats")!
         static var teams = URL(string: "\(baseStringUrl)/api/teams")!
-        static var abilities = URL(string: "\(baseStringUrl)/api/constants/hero_abilities")!
+        static var lore = URL(string: "\(baseStringUrl)/api/constants/hero_lore")!
         
         static func teamLogoUrlGenerator(_ id: Int) -> URL {
             return URL(string: "https://steamcdn-a.akamaihd.net/apps/dota2/images/team_logos/\(id).png?")!
@@ -27,7 +27,8 @@ struct Constants {
         }
         
         static func urlHeroLink(_ name: String) -> URL {
-            let name = name.replacingOccurrences(of: "npc_dota_hero_", with: "")
+            var name = name.replacingOccurrences(of: "npc_dota_hero_", with: "")
+            name = name.replacingOccurrences(of: " ", with: "")
             return URL(string: "https://www.dota2.com/hero/\(name)")!
         }
         

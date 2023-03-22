@@ -12,7 +12,7 @@ struct SearchableHeroListView: View {
     var body: some View {
         List(viewModel.heroesListFiltered, id: \.info.id) { hero in
             NavigationLink {
-                HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
+                HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
             } label: {
                 HStack{
                     AsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {

@@ -40,6 +40,7 @@
 		225D1A4929C3D0A2000E7E44 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4829C3D0A2000E7E44 /* PlayerService.swift */; };
 		225D1A4B29C4B350000E7E44 /* HeroModelOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4A29C4B350000E7E44 /* HeroModelOrganization.swift */; };
 		225D1A4D29C4D07E000E7E44 /* DotaApiService_unitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4C29C4D07E000E7E44 /* DotaApiService_unitTests.swift */; };
+		22F080AB29CA0927004A80EB /* HeroDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F080AA29CA0927004A80EB /* HeroDetailService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		225D1A4829C3D0A2000E7E44 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		225D1A4A29C4B350000E7E44 /* HeroModelOrganization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModelOrganization.swift; sourceTree = "<group>"; };
 		225D1A4C29C4D07E000E7E44 /* DotaApiService_unitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotaApiService_unitTests.swift; sourceTree = "<group>"; };
+		22F080AA29CA0927004A80EB /* HeroDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 		225D1A0929B7B564000E7E44 /* HeroDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				22F080A929CA0918004A80EB /* Service */,
 				225D1A3E29C28030000E7E44 /* ViewModel */,
 				225D1A0A29B7B571000E7E44 /* Views */,
 			);
@@ -359,6 +362,14 @@
 			isa = PBXGroup;
 			children = (
 				225D1A4829C3D0A2000E7E44 /* PlayerService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		22F080A929CA0918004A80EB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				22F080AA29CA0927004A80EB /* HeroDetailService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -519,6 +530,7 @@
 				225D1A2D29BFC989000E7E44 /* HeroesGridCellsViewModel.swift in Sources */,
 				225D1A4029C2803D000E7E44 /* HeroDetailViewModel.swift in Sources */,
 				225D1A0629B7A647000E7E44 /* Constants.swift in Sources */,
+				22F080AB29CA0927004A80EB /* HeroDetailService.swift in Sources */,
 				225D1A0829B7B37F000E7E44 /* HeroesListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

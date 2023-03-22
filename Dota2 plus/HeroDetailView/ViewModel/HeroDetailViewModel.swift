@@ -8,8 +8,16 @@
 import SwiftUI
 
 class HeroDetailViewModel: ObservableObject {
+    var apiService: HeroDetailService
     @Published var hero: HeroOrganizationModel
     @Published var level = 1.0
+    @Published var loreHolder: String = ""
+    @Published var showLore = false
+    
+    init(apiService: HeroDetailService, hero: HeroOrganizationModel ) {
+        self.apiService = apiService
+        self.hero = hero
+    }
     
     var str: String {
         String(Int(Double(hero.healthStr.baseStr) + (hero.healthStr.strGain * (level - 1))))
@@ -45,7 +53,13 @@ class HeroDetailViewModel: ObservableObject {
         return String(format: "%.2f", winrate)
     }
     
-    init(hero: HeroOrganizationModel) {
-        self.hero = hero
+    func fetchAbilitiesData() {
+        let name = hero.info.name.replacingOccurrences(of: "npc_dota_hero_", with: "")
+        apiService.fetchData { data in
+            guard let lore = data[name] else {
+                return
+            }
+            self.loreHolder = lore
+        }
     }
 }

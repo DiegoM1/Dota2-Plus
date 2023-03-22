@@ -24,7 +24,7 @@ struct HeroesGridCellsView: View {
                                     GridItem(.flexible())], spacing: 4) {
                     ForEach(viewModel.favoriteHeroList, id: \.info.id) { hero in
                         NavigationLink {
-                            HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
+                            HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
                         } label: {
                             VStack(alignment: .center) {
                                 HStack {
@@ -71,7 +71,7 @@ struct HeroesGridCellsView: View {
                                 GridItem(.flexible())], spacing: 4) {
                 ForEach(viewModel.heroList, id: \.info.id) { hero in
                     NavigationLink {
-                        HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
+                        HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
                     } label: {
                         VStack(alignment: .center) {
                             HStack {

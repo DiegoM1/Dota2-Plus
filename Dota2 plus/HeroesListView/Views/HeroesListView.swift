@@ -17,7 +17,7 @@ struct HeroesListView: View {
                 Section("Favorites") {
                     ForEach(viewModel.favoriteHeroList, id: \.info.id) { hero in
                         NavigationLink {
-                            HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
+                            HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
                         } label: {
                             VStack(alignment: .leading,spacing: 4) {
                                 HStack{
@@ -60,7 +60,7 @@ struct HeroesListView: View {
             Section {
                 ForEach(viewModel.heroList, id: \.info.id) { hero in
                     NavigationLink {
-                        HeroDetailView(viewModel: HeroDetailViewModel(hero: hero))
+                        HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
                     } label: {
                         VStack(alignment: .leading,spacing: 4) {
                             HStack{
