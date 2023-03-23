@@ -14,10 +14,13 @@ struct Resource<T> {
 
 protocol DotaApiServiceProtocol {
     func fetchData<T>(request: Resource<T>, completion: @escaping (T?) -> ()) async
+    func readFromFile(completion: @escaping ([HeroOrganizationModel]) -> ())
+    func saveData(_ favorite: [HeroOrganizationModel])
 }
 
 class DotaApiService: DotaApiServiceProtocol {
     let urlSession: URLSession
+    private let fileName = "favoriteHeroes"
     
     init(urlSession: URLSession) {
         self.urlSession = urlSession
@@ -34,5 +37,29 @@ class DotaApiService: DotaApiServiceProtocol {
                 completion(nil)
             }
         }.resume()
+    }
+    
+    func readFromFile(completion: @escaping ([HeroOrganizationModel]) -> ()) {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)[0].appendingPathExtension(fileName)
+        
+        guard let data = try? Data(contentsOf: path) else {
+            return
+        }
+        if let decoded = try? JSONDecoder().decode([HeroOrganizationModel].self, from: data) {
+            completion(decoded)
+        }
+    }
+    
+    func saveData(_ favorite: [HeroOrganizationModel]) {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)[0].appendingPathExtension(fileName)
+        do {
+            
+         let data = try JSONEncoder().encode(favorite)
+            try data.write(to: path)
+         } catch {
+             print(error)
+         }
     }
 }

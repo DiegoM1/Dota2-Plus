@@ -30,6 +30,19 @@ struct HeroDetailView: View {
                                 .fontDesign(.serif)
                             AsyncImage(url: Constants.Urls.heroIconImage(hero.info.icon))
                                 .frame(width: 24, height: 24)
+                            Button {
+                                Task {
+                                    await viewModel.AddOrRemoveFavoriteHero()
+                                }
+                            } label: {
+                                if viewModel.isFavoriteHero {
+                                    Image(systemName: "star.fill")
+                                        .foregroundColor(.yellow)
+                                } else {
+                                    Image(systemName: "star")
+                                }
+                            }
+
                         }
                         Rectangle()
                             .fill(.black)
@@ -196,7 +209,7 @@ struct HeroDetailView: View {
                 }.padding(.vertical, 40)
             }
             .task {
-                viewModel.fetchAbilitiesData()
+                viewModel.fetchHeroData()
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {

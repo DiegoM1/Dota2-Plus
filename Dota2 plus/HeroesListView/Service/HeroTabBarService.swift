@@ -11,7 +11,6 @@ import SwiftUI
 
 class HeroTabBarService {
     var dotaService: DotaApiServiceProtocol
-    private let fileName = "favoriteHeroes"
     
     init(dotaService: DotaApiServiceProtocol) {
         self.dotaService = dotaService
@@ -38,30 +37,6 @@ class HeroTabBarService {
                 }
             }
         }
-    }
-    
-    func readFromFile(completion: @escaping ([HeroOrganizationModel]) -> ()) {
-        let path = FileManager.default.urls(for: .documentDirectory,
-                                            in: .userDomainMask)[0].appendingPathExtension(fileName)
-        
-        guard let data = try? Data(contentsOf: path) else {
-            return
-        }
-        if let decoded = try? JSONDecoder().decode([HeroOrganizationModel].self, from: data) {
-            completion(decoded)
-        }
-    }
-    
-    func saveData(_ favorite: [HeroOrganizationModel]) {
-        let path = FileManager.default.urls(for: .documentDirectory,
-                                            in: .userDomainMask)[0].appendingPathExtension(fileName)
-        do {
-            
-         let data = try JSONEncoder().encode(favorite)
-            try data.write(to: path)
-         } catch {
-             print(error)
-         }
     }
     
     func heroModelOrganizationConstructo(_ heroesModel: [HeroModel]) -> [HeroOrganizationModel] {

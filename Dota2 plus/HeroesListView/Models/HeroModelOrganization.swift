@@ -16,6 +16,7 @@ struct HeroOrganizationModel: Codable {
     var movement: MovementHero
     var draft: PicksWinRateHero
     var vision: VisionHero
+    var isFavorite: Bool = false
 }
 
 struct HeroData: Codable {

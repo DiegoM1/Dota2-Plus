@@ -16,7 +16,7 @@ class HeroTabBarViewModel: ObservableObject {
     @Published var heroText = ""
     @Published var favoriteHeroes = [HeroOrganizationModel]() {
         didSet {
-            apiService.saveData(favoriteHeroes)
+            apiService.dotaService.saveData(favoriteHeroes)
         }
     }
     
@@ -42,7 +42,7 @@ class HeroTabBarViewModel: ObservableObject {
         }
     }
     func fetchFromFileHeroesData() async {
-        apiService.readFromFile { data in
+        apiService.dotaService.readFromFile { data in
             DispatchQueue.main.async {
                 self.favoriteHeroes = data
             }

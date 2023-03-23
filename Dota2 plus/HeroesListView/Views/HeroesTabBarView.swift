@@ -56,6 +56,9 @@ struct HeroesTabBarView: View {
                     }
                     
                 }
+                .task{
+                    await viewModel.fetchHeroesData()
+                }
                 .navigationTitle("Heroes")
                 .navigationBarTitleDisplayMode(.automatic)
             }

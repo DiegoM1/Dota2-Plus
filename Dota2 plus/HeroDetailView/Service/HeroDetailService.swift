@@ -9,6 +9,7 @@ import Foundation
 
 class HeroDetailService {
     var dotaService: DotaApiServiceProtocol
+    private let fileName = "favoriteHeroes"
     
     init(dotaService: DotaApiServiceProtocol) {
         self.dotaService = dotaService
@@ -34,5 +35,31 @@ class HeroDetailService {
                 }
             }
         }
+    }
+    
+    func readFromFile(completion: @escaping ([HeroOrganizationModel]) -> ()) {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)[0].appendingPathExtension(fileName)
+        
+        guard let data = try? Data(contentsOf: path) else {
+            return
+        }
+        if let decoded = try? JSONDecoder().decode([HeroOrganizationModel].self, from: data) {
+            completion(decoded)
+        }
+    }
+    
+    func saveData(_ favorite: [HeroOrganizationModel]) async -> Bool {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)[0].appendingPathExtension(fileName)
+        do {
+            
+         let data = try JSONEncoder().encode(favorite)
+            try data.write(to: path)
+            return true
+         } catch {
+             print(error)
+             return false
+         }
     }
 }

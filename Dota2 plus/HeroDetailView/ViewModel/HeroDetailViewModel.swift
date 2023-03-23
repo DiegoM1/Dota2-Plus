@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
-
+@MainActor
 class HeroDetailViewModel: ObservableObject {
     var apiService: HeroDetailService
     @Published var hero: HeroOrganizationModel
     @Published var level = 1.0
     @Published var loreHolder: String = ""
+    var favoritesHolder = [HeroOrganizationModel]()
+    @Published var isFavoriteHero = false
     @Published var showLore = false
     
     init(apiService: HeroDetailService, hero: HeroOrganizationModel ) {
@@ -53,13 +55,40 @@ class HeroDetailViewModel: ObservableObject {
         return String(format: "%.2f", winrate)
     }
     
-    func fetchAbilitiesData() {
+    func fetchHeroData() {
+        apiService.readFromFile { data in
+            self.favoritesHolder = data
+            self.isFavoriteHero = data.contains { $0.info.id == self.hero.info.id }
+        }
+        
         let name = hero.info.name.replacingOccurrences(of: "npc_dota_hero_", with: "")
         apiService.fetchData { data in
             guard let lore = data[name] else {
                 return
             }
             self.loreHolder = lore
+        }
+    }
+    
+    func AddOrRemoveFavoriteHero() async {
+        if isFavoriteHero {
+            favoritesHolder.removeAll { $0.info.id == hero.info.id }
+            let value = await apiService.saveData(favoritesHolder)
+            // Just a small work with await response values and how to bad paths.
+            
+            if value {
+                isFavoriteHero = false
+            } else {
+                isFavoriteHero = true
+            }
+        } else {
+            favoritesHolder.append(hero)
+            let value = await apiService.saveData(favoritesHolder)
+            if value {
+                isFavoriteHero = true
+            } else {
+                isFavoriteHero = false
+            }
         }
     }
 }
