@@ -94,7 +94,7 @@ struct HeroDetailView: View {
                         ForEach(viewModel.hero.info.roles, id: \.self) { role in
                             Spacer()
                             Text(role.rawValue)
-                                .font(.system(size: 20))
+                                .font(.system(size: 11))
                                 .bold()
                             Spacer()
                         }
