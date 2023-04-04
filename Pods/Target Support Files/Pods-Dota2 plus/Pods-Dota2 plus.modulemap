@@ -1,0 +1,6 @@
+framework module Pods_Dota2_plus {
+  umbrella header "Pods-Dota2 plus-umbrella.h"
+
+  export *
+  module * { export * }
+}

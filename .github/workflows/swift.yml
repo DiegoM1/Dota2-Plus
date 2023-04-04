@@ -1,0 +1,31 @@
+# This workflow will build a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
+name: Swift
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+   swiftLint:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Bundle
+      run: bundle install
+    - name: Dependencies
+      run: pod install
+    - name: Run swiftlint
+      run: bundle exec fastlane lint
+   build:
+    needs: swiftLint
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Bundle
+      run: bundle install
+    - name: Build
+      run: bundle exec fastlane tests
