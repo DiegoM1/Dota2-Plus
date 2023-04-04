@@ -1,0 +1,868 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0A75334262C2DF4CA4A7EA7A287C0CA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		172B407B1B1858A71175741A97DDB740 /* Pods-Dota2 plus-Dota2 plusUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8FBE69D178BD257E29B7240E06663BB /* Pods-Dota2 plus-Dota2 plusUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2881412A025C8E7712E16E23422242E9 /* Pods-Dota2 plus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B0850F36631348893AC78953BB733 /* Pods-Dota2 plus-dummy.m */; };
+		3B2EE1E59A1D526598A7E88DCFEF3879 /* Pods-Dota2 plus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB90DCAE721E8F432BBB12015A354DE8 /* Pods-Dota2 plus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		634B09F277AE6A9430C7DA27EEAF75C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		655818533761C0508FD716187ADB200B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		8332CF4C39FC971C7C62E3C18C22DA88 /* Pods-Dota2 plus-Dota2 plusUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD516506484689F8E8713389FA95FDAD /* Pods-Dota2 plus-Dota2 plusUITests-dummy.m */; };
+		972D8CD4E4B54DEC44999F0D8EBD4CAA /* Pods-Dota2 plusTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 608D1D70F354407371529E3B8DAB1062 /* Pods-Dota2 plusTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B876CEC537A44AFE4CFB38F766302DF8 /* Pods-Dota2 plusTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBF006397FDDEF46354028D51371E9D /* Pods-Dota2 plusTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		504923BD4DC8107518FC17A423663DD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+		797FA85B9FE02BFD153FADCFC8AF80CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+		A6D161B0C9B04619CC7EFF585E63E820 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 058F75AD163AD7D2439864ABB5CEB5D6;
+			remoteInfo = "Pods-Dota2 plus";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		003524B3D3842406141552FD9703B9E6 /* Pods-Dota2 plusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dota2 plusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F77DA5E25B159A471D1FFA62867A28C /* Pods-Dota2 plusTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Dota2 plusTests.modulemap"; sourceTree = "<group>"; };
+		335E39C241F98A7FC42A090185356D87 /* Pods-Dota2 plus-Dota2 plusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dota2 plus-Dota2 plusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3C629FF042B83E51496CCA52784D86A9 /* Pods-Dota2 plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dota2 plus.debug.xcconfig"; sourceTree = "<group>"; };
+		3CBF006397FDDEF46354028D51371E9D /* Pods-Dota2 plusTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Dota2 plusTests-dummy.m"; sourceTree = "<group>"; };
+		3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		3F41C9DAFBD62DDF3CBCFCFC4CB0DC68 /* Pods-Dota2 plusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dota2 plusTests.release.xcconfig"; sourceTree = "<group>"; };
+		435772C28FBD8C09DDEAB4C657470020 /* Pods-Dota2 plus-Dota2 plusUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dota2 plus-Dota2 plusUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		577BD88445C4431A4132BA67DE23BA18 /* Pods-Dota2 plus-Dota2 plusUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Dota2 plus-Dota2 plusUITests.modulemap"; sourceTree = "<group>"; };
+		5CD2D0C61E8E8E203333511EAB1ACC36 /* Pods-Dota2 plus-Dota2 plusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dota2 plus-Dota2 plusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		608D1D70F354407371529E3B8DAB1062 /* Pods-Dota2 plusTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Dota2 plusTests-umbrella.h"; sourceTree = "<group>"; };
+		666B0850F36631348893AC78953BB733 /* Pods-Dota2 plus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Dota2 plus-dummy.m"; sourceTree = "<group>"; };
+		6E1F6729D868A60A15E3C56EF5367BB6 /* Pods-Dota2 plus-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Dota2 plus-acknowledgements.markdown"; sourceTree = "<group>"; };
+		714FC6458C96BCBF0A318685B76851B2 /* Pods-Dota2 plusTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Dota2 plusTests"; path = Pods_Dota2_plusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		74D830898EC7CA69420BF6969E6F3E8A /* Pods-Dota2 plus-Dota2 plusUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dota2 plus-Dota2 plusUITests-Info.plist"; sourceTree = "<group>"; };
+		7B2538283C59F3EC80260288C1FEA2F5 /* Pods-Dota2 plus-Dota2 plusUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Dota2 plus-Dota2 plusUITests"; path = Pods_Dota2_plus_Dota2_plusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		85B68E2003F04761CEC61752C408D93C /* Pods-Dota2 plusTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dota2 plusTests-Info.plist"; sourceTree = "<group>"; };
+		8DDF14993DD3946E75A67EC6E44E0539 /* Pods-Dota2 plus */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Dota2 plus"; path = Pods_Dota2_plus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A153C054572D958C4C20F2FBF6E0BA7 /* Pods-Dota2 plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dota2 plus.release.xcconfig"; sourceTree = "<group>"; };
+		9C3AC793ED8BABF1ACA76F5C94AC5216 /* Pods-Dota2 plus-Dota2 plusUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Dota2 plus-Dota2 plusUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A8FBE69D178BD257E29B7240E06663BB /* Pods-Dota2 plus-Dota2 plusUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Dota2 plus-Dota2 plusUITests-umbrella.h"; sourceTree = "<group>"; };
+		AB90DCAE721E8F432BBB12015A354DE8 /* Pods-Dota2 plus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Dota2 plus-umbrella.h"; sourceTree = "<group>"; };
+		B687F63CCCAFC36317995490C38FEBC5 /* Pods-Dota2 plus-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dota2 plus-acknowledgements.plist"; sourceTree = "<group>"; };
+		BBC4CDEF599FC7C4DB4B9D496D2D3FF9 /* Pods-Dota2 plusTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Dota2 plusTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CD516506484689F8E8713389FA95FDAD /* Pods-Dota2 plus-Dota2 plusUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Dota2 plus-Dota2 plusUITests-dummy.m"; sourceTree = "<group>"; };
+		D6FA3D72697C7F3FDF732A27295E88F1 /* Pods-Dota2 plus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dota2 plus-Info.plist"; sourceTree = "<group>"; };
+		DB005580317E44D83DF20D3E6BF70750 /* Pods-Dota2 plus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Dota2 plus.modulemap"; sourceTree = "<group>"; };
+		E120715C21FBAFBA1E82D87BC03960F8 /* Pods-Dota2 plusTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dota2 plusTests-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D7B8D88356611531E12B5FE816D2932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A75334262C2DF4CA4A7EA7A287C0CA1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9552B2CA5C63CF5DACD00A868BE732C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				634B09F277AE6A9430C7DA27EEAF75C0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A99FB078DB09817164BE336D8877736E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655818533761C0508FD716187ADB200B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09A86E1424BE1330DBDB076CF4599551 /* Pods-Dota2 plus-Dota2 plusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				577BD88445C4431A4132BA67DE23BA18 /* Pods-Dota2 plus-Dota2 plusUITests.modulemap */,
+				9C3AC793ED8BABF1ACA76F5C94AC5216 /* Pods-Dota2 plus-Dota2 plusUITests-acknowledgements.markdown */,
+				435772C28FBD8C09DDEAB4C657470020 /* Pods-Dota2 plus-Dota2 plusUITests-acknowledgements.plist */,
+				CD516506484689F8E8713389FA95FDAD /* Pods-Dota2 plus-Dota2 plusUITests-dummy.m */,
+				74D830898EC7CA69420BF6969E6F3E8A /* Pods-Dota2 plus-Dota2 plusUITests-Info.plist */,
+				A8FBE69D178BD257E29B7240E06663BB /* Pods-Dota2 plus-Dota2 plusUITests-umbrella.h */,
+				335E39C241F98A7FC42A090185356D87 /* Pods-Dota2 plus-Dota2 plusUITests.debug.xcconfig */,
+				5CD2D0C61E8E8E203333511EAB1ACC36 /* Pods-Dota2 plus-Dota2 plusUITests.release.xcconfig */,
+			);
+			name = "Pods-Dota2 plus-Dota2 plusUITests";
+			path = "Target Support Files/Pods-Dota2 plus-Dota2 plusUITests";
+			sourceTree = "<group>";
+		};
+		0F2E0AE0E7B9165FC6AA6A85F7FACAB0 /* Pods-Dota2 plus */ = {
+			isa = PBXGroup;
+			children = (
+				DB005580317E44D83DF20D3E6BF70750 /* Pods-Dota2 plus.modulemap */,
+				6E1F6729D868A60A15E3C56EF5367BB6 /* Pods-Dota2 plus-acknowledgements.markdown */,
+				B687F63CCCAFC36317995490C38FEBC5 /* Pods-Dota2 plus-acknowledgements.plist */,
+				666B0850F36631348893AC78953BB733 /* Pods-Dota2 plus-dummy.m */,
+				D6FA3D72697C7F3FDF732A27295E88F1 /* Pods-Dota2 plus-Info.plist */,
+				AB90DCAE721E8F432BBB12015A354DE8 /* Pods-Dota2 plus-umbrella.h */,
+				3C629FF042B83E51496CCA52784D86A9 /* Pods-Dota2 plus.debug.xcconfig */,
+				9A153C054572D958C4C20F2FBF6E0BA7 /* Pods-Dota2 plus.release.xcconfig */,
+			);
+			name = "Pods-Dota2 plus";
+			path = "Target Support Files/Pods-Dota2 plus";
+			sourceTree = "<group>";
+		};
+		4E5CC02BD0BC62A18156218F4DF09918 /* Pods-Dota2 plusTests */ = {
+			isa = PBXGroup;
+			children = (
+				0F77DA5E25B159A471D1FFA62867A28C /* Pods-Dota2 plusTests.modulemap */,
+				BBC4CDEF599FC7C4DB4B9D496D2D3FF9 /* Pods-Dota2 plusTests-acknowledgements.markdown */,
+				E120715C21FBAFBA1E82D87BC03960F8 /* Pods-Dota2 plusTests-acknowledgements.plist */,
+				3CBF006397FDDEF46354028D51371E9D /* Pods-Dota2 plusTests-dummy.m */,
+				85B68E2003F04761CEC61752C408D93C /* Pods-Dota2 plusTests-Info.plist */,
+				608D1D70F354407371529E3B8DAB1062 /* Pods-Dota2 plusTests-umbrella.h */,
+				003524B3D3842406141552FD9703B9E6 /* Pods-Dota2 plusTests.debug.xcconfig */,
+				3F41C9DAFBD62DDF3CBCFCFC4CB0DC68 /* Pods-Dota2 plusTests.release.xcconfig */,
+			);
+			name = "Pods-Dota2 plusTests";
+			path = "Target Support Files/Pods-Dota2 plusTests";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7A10041BD08C32DB0A13E3A1ED635298 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0F2E0AE0E7B9165FC6AA6A85F7FACAB0 /* Pods-Dota2 plus */,
+				09A86E1424BE1330DBDB076CF4599551 /* Pods-Dota2 plus-Dota2 plusUITests */,
+				4E5CC02BD0BC62A18156218F4DF09918 /* Pods-Dota2 plusTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */,
+				7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
+		9255E3147F48E34511C43E07FF6D388F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DDF14993DD3946E75A67EC6E44E0539 /* Pods-Dota2 plus */,
+				7B2538283C59F3EC80260288C1FEA2F5 /* Pods-Dota2 plus-Dota2 plusUITests */,
+				714FC6458C96BCBF0A318685B76851B2 /* Pods-Dota2 plusTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D96179D43A67C5D5323B0682D32C133C /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				965877409E01FB3D85D85E90E6B30185 /* Pods */,
+				9255E3147F48E34511C43E07FF6D388F /* Products */,
+				7A10041BD08C32DB0A13E3A1ED635298 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D96179D43A67C5D5323B0682D32C133C /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		11AD56BD75A2D179E609CC5C975EF866 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				972D8CD4E4B54DEC44999F0D8EBD4CAA /* Pods-Dota2 plusTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47823DB0BD7D94EB5D9448F476C7D6FD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172B407B1B1858A71175741A97DDB740 /* Pods-Dota2 plus-Dota2 plusUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFCB2445EEF041665ABF10CC9EB8DB00 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B2EE1E59A1D526598A7E88DCFEF3879 /* Pods-Dota2 plus-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		058F75AD163AD7D2439864ABB5CEB5D6 /* Pods-Dota2 plus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30299BED3F856201A8C81814DD835F03 /* Build configuration list for PBXNativeTarget "Pods-Dota2 plus" */;
+			buildPhases = (
+				EFCB2445EEF041665ABF10CC9EB8DB00 /* Headers */,
+				E277FA385DB57140DA0558AFA9F26CF4 /* Sources */,
+				1D7B8D88356611531E12B5FE816D2932 /* Frameworks */,
+				D91FB1D26D4591DA6C8EB8746A219513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3603530DF37BA3BC0B00F1372CBD106F /* PBXTargetDependency */,
+			);
+			name = "Pods-Dota2 plus";
+			productName = Pods_Dota2_plus;
+			productReference = 8DDF14993DD3946E75A67EC6E44E0539 /* Pods-Dota2 plus */;
+			productType = "com.apple.product-type.framework";
+		};
+		DD171817608BDB17D0527123259D2386 /* Pods-Dota2 plus-Dota2 plusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93E6313927A2322B289F88AFFE3183BE /* Build configuration list for PBXNativeTarget "Pods-Dota2 plus-Dota2 plusUITests" */;
+			buildPhases = (
+				47823DB0BD7D94EB5D9448F476C7D6FD /* Headers */,
+				FD13C3BFD687CEFBAE98C912537C17D8 /* Sources */,
+				A99FB078DB09817164BE336D8877736E /* Frameworks */,
+				7FD2961CAFF940DEBF2F52B8B1BF79FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EBE64C990F7885CE9BEAAA7E3328B7B /* PBXTargetDependency */,
+			);
+			name = "Pods-Dota2 plus-Dota2 plusUITests";
+			productName = Pods_Dota2_plus_Dota2_plusUITests;
+			productReference = 7B2538283C59F3EC80260288C1FEA2F5 /* Pods-Dota2 plus-Dota2 plusUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		E2C3C32A6624EA0EF0DDF20CAEEAC2E9 /* Pods-Dota2 plusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42CAE7C437899346FE3260E4EEE1C969 /* Build configuration list for PBXNativeTarget "Pods-Dota2 plusTests" */;
+			buildPhases = (
+				11AD56BD75A2D179E609CC5C975EF866 /* Headers */,
+				7923131C8B069C1E9D3BEAEE7CA8A2CA /* Sources */,
+				9552B2CA5C63CF5DACD00A868BE732C3 /* Frameworks */,
+				988EAC11A44F059D0288F7BE69D48BB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C4E4C3033CEE3992CDA42507036BA2C /* PBXTargetDependency */,
+			);
+			name = "Pods-Dota2 plusTests";
+			productName = Pods_Dota2_plusTests;
+			productReference = 714FC6458C96BCBF0A318685B76851B2 /* Pods-Dota2 plusTests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 9255E3147F48E34511C43E07FF6D388F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				058F75AD163AD7D2439864ABB5CEB5D6 /* Pods-Dota2 plus */,
+				DD171817608BDB17D0527123259D2386 /* Pods-Dota2 plus-Dota2 plusUITests */,
+				E2C3C32A6624EA0EF0DDF20CAEEAC2E9 /* Pods-Dota2 plusTests */,
+				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FD2961CAFF940DEBF2F52B8B1BF79FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		988EAC11A44F059D0288F7BE69D48BB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D91FB1D26D4591DA6C8EB8746A219513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7923131C8B069C1E9D3BEAEE7CA8A2CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B876CEC537A44AFE4CFB38F766302DF8 /* Pods-Dota2 plusTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E277FA385DB57140DA0558AFA9F26CF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2881412A025C8E7712E16E23422242E9 /* Pods-Dota2 plus-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD13C3BFD687CEFBAE98C912537C17D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8332CF4C39FC971C7C62E3C18C22DA88 /* Pods-Dota2 plus-Dota2 plusUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3603530DF37BA3BC0B00F1372CBD106F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 797FA85B9FE02BFD153FADCFC8AF80CC /* PBXContainerItemProxy */;
+		};
+		3EBE64C990F7885CE9BEAAA7E3328B7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 504923BD4DC8107518FC17A423663DD2 /* PBXContainerItemProxy */;
+		};
+		9C4E4C3033CEE3992CDA42507036BA2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Dota2 plus";
+			target = 058F75AD163AD7D2439864ABB5CEB5D6 /* Pods-Dota2 plus */;
+			targetProxy = A6D161B0C9B04619CC7EFF585E63E820 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		446BA1B9A1F1F2F95D04E5F82EB1B0F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		56EB458EAD8FA3388FF43E7ED5CD928B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 003524B3D3842406141552FD9703B9E6 /* Pods-Dota2 plusTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Dota2 plusTests/Pods-Dota2 plusTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Dota2 plusTests/Pods-Dota2 plusTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5D47E2EFAC6FAC81A782D9BFD8736F53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		74DDDA0F7DB5514C75F83A92B27688E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CD2D0C61E8E8E203333511EAB1ACC36 /* Pods-Dota2 plus-Dota2 plusUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Dota2 plus-Dota2 plusUITests/Pods-Dota2 plus-Dota2 plusUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Dota2 plus-Dota2 plusUITests/Pods-Dota2 plus-Dota2 plusUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A058FC48989316794B0932687859EDDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 335E39C241F98A7FC42A090185356D87 /* Pods-Dota2 plus-Dota2 plusUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Dota2 plus-Dota2 plusUITests/Pods-Dota2 plus-Dota2 plusUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Dota2 plus-Dota2 plusUITests/Pods-Dota2 plus-Dota2 plusUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AD81E62ACCB0B7A923FC8AA288F9921E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BCBC4782CAC29D8A898F195A9BDC3B36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A153C054572D958C4C20F2FBF6E0BA7 /* Pods-Dota2 plus.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Dota2 plus/Pods-Dota2 plus-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Dota2 plus/Pods-Dota2 plus.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D20B6D10DA22431DDADBD8E454652739 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F41C9DAFBD62DDF3CBCFCFC4CB0DC68 /* Pods-Dota2 plusTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Dota2 plusTests/Pods-Dota2 plusTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Dota2 plusTests/Pods-Dota2 plusTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F72B0C63A3CA5CA01653898D8A8E8D80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C629FF042B83E51496CCA52784D86A9 /* Pods-Dota2 plus.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Dota2 plus/Pods-Dota2 plus-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Dota2 plus/Pods-Dota2 plus.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30299BED3F856201A8C81814DD835F03 /* Build configuration list for PBXNativeTarget "Pods-Dota2 plus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F72B0C63A3CA5CA01653898D8A8E8D80 /* Debug */,
+				BCBC4782CAC29D8A898F195A9BDC3B36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42CAE7C437899346FE3260E4EEE1C969 /* Build configuration list for PBXNativeTarget "Pods-Dota2 plusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56EB458EAD8FA3388FF43E7ED5CD928B /* Debug */,
+				D20B6D10DA22431DDADBD8E454652739 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				446BA1B9A1F1F2F95D04E5F82EB1B0F4 /* Debug */,
+				5D47E2EFAC6FAC81A782D9BFD8736F53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93E6313927A2322B289F88AFFE3183BE /* Build configuration list for PBXNativeTarget "Pods-Dota2 plus-Dota2 plusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A058FC48989316794B0932687859EDDB /* Debug */,
+				74DDDA0F7DB5514C75F83A92B27688E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */,
+				AD81E62ACCB0B7A923FC8AA288F9921E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

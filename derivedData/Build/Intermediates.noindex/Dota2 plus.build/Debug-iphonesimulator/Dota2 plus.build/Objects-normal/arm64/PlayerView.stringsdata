@@ -1,0 +1,72 @@
+{
+  "source": "/Users/diegomonteagudodiaz/Documents/Dota2-Plus/Dota2 plus/PlayerView/PlayerView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Player"
+      },
+      {
+        "comment": "",
+        "key": "Remember to add your id or your friend's id to fetch his data."
+      },
+      {
+        "comment": "",
+        "key": "Player id"
+      },
+      {
+        "comment": "",
+        "key": "Add id"
+      },
+      {
+        "comment": "",
+        "key": "Save"
+      },
+      {
+        "comment": "",
+        "key": "User is not found. Remember to create an account in OpenDotan and connect your steam account."
+      },
+      {
+        "comment": "",
+        "key": "Steam id"
+      },
+      {
+        "comment": "",
+        "key": "Profile url"
+      },
+      {
+        "comment": "",
+        "key": "Dota plus"
+      },
+      {
+        "comment": "",
+        "key": "Leaderboard rank"
+      },
+      {
+        "comment": "",
+        "key": "Mmr estimate"
+      },
+      {
+        "comment": "",
+        "key": "Steam profile"
+      },
+      {
+        "comment": "",
+        "key": "You have dota plus supcrition"
+      },
+      {
+        "comment": "",
+        "key": "You don't have dota plus supcrition"
+      },
+      {
+        "comment": "",
+        "key": "TOP %lld"
+      },
+      {
+        "comment": "",
+        "key": "MMR -> %lld"
+      }
+    ]
+  },
+  "version": 1
+}

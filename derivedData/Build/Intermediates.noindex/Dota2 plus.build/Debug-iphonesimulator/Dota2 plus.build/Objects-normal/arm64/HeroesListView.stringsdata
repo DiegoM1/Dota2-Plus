@@ -1,0 +1,12 @@
+{
+  "source": "/Users/diegomonteagudodiaz/Documents/Dota2-Plus/Dota2 plus/HeroesListView/Views/HeroesListView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Favorites"
+      }
+    ]
+  },
+  "version": 1
+}

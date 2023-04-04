@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>470764BD-F541-4E65-9189-F16B14392F0A</key>
+		<dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.unit.cocoaUnitTest</string>
+			<key>fileName</key>
+			<string>Test-Dota2 plus-2023.04.04_12-01-25--0500.xcresult</string>
+			<key>hasCoverageData</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Dota2 plus project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Dota2 plus</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Test Dota2 plus</string>
+			<key>timeStartedRecording</key>
+			<real>702320485.38406003</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Test Dota2 plus</string>
+			<key>uniqueIdentifier</key>
+			<string>470764BD-F541-4E65-9189-F16B14392F0A</string>
+		</dict>
+		<key>95020298-30A6-4DCB-96EB-B99B9BAAF1BF</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>C2F55FAD-037D-42BE-A6B2-71E4BE78F2CC</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.unit.cocoaUnitTest</string>
+			<key>fileName</key>
+			<string>Run-Dota2 plus-2023.04.04_11-57-49--0500.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasCoverageData</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Dota2 plus project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Dota2 plus</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Dota2 plus</string>
+			<key>timeStartedRecording</key>
+			<real>702320269.88070297</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run Dota2 plus</string>
+			<key>uniqueIdentifier</key>
+			<string>95020298-30A6-4DCB-96EB-B99B9BAAF1BF</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

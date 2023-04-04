@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+SwiftLint in Pods, no dependencies
+Pods-Dota2 plus in Pods, depends on:
+SwiftLint in Pods (explicit)
+Dota2 plus in Dota2 plus, depends on:
+Pods-Dota2 plus in Pods (implicit dependency via file 'Pods_Dota2_plus.framework' in build phase 'Link Binary')

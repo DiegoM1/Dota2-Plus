@@ -70,7 +70,7 @@ class HeroDetailViewModel: ObservableObject {
         }
     }
     
-    func AddOrRemoveFavoriteHero() async {
+    func addOrRemoveFavoriteHero() async {
         if isFavoriteHero {
             favoritesHolder.removeAll { $0.info.id == hero.info.id }
             let value = await apiService.saveData(favoritesHolder)

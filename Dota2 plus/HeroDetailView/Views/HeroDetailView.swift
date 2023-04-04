@@ -32,7 +32,7 @@ struct HeroDetailView: View {
                                 .frame(width: 24, height: 24)
                             Button {
                                 Task {
-                                    await viewModel.AddOrRemoveFavoriteHero()
+                                    await viewModel.addOrRemoveFavoriteHero()
                                 }
                             } label: {
                                 if viewModel.isFavoriteHero {

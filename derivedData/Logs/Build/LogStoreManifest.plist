@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>071CD256-D2DB-4C70-931C-C713A19F5459</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>071CD256-D2DB-4C70-931C-C713A19F5459.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Dota2 plus project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Dota2 plus</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Testing workspace Dota2 plus with scheme Dota2 plus</string>
+			<key>timeStartedRecording</key>
+			<real>702320277.88248897</real>
+			<key>timeStoppedRecording</key>
+			<real>702320280.92904603</real>
+			<key>title</key>
+			<string>Testing workspace Dota2 plus with scheme Dota2 plus</string>
+			<key>uniqueIdentifier</key>
+			<string>071CD256-D2DB-4C70-931C-C713A19F5459</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

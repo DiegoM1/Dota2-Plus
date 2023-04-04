@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "f8caa4e6226e7870bc3705b5eca484bf119658a6a398be6cd5e0b55c021f6b2b"
+build_start_time: [1680627480, 672713994]
+build_end_time: [1680627480, 685273170]
+inputs:
+  "/Users/diegomonteagudodiaz/Documents/Dota2-Plus/Dota2 plusUITests/Dota2_plusUITests.swift": !private [1680625965, 950527191]
+  "/Users/diegomonteagudodiaz/Documents/Dota2-Plus/Dota2 plusUITests/Dota2_plusUITestsLaunchTests.swift": !private [1680625965, 950595378]

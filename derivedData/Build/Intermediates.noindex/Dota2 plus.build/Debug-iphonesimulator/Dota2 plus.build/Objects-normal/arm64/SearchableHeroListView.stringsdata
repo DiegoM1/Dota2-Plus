@@ -1,0 +1,24 @@
+{
+  "source": "/Users/diegomonteagudodiaz/Documents/Dota2-Plus/Dota2 plus/HeroesListView/Views/SearchableHeroListView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Filter"
+      },
+      {
+        "comment": "",
+        "key": "Agility"
+      },
+      {
+        "comment": "",
+        "key": "Strenght"
+      },
+      {
+        "comment": "",
+        "key": "Intelligence"
+      }
+    ]
+  },
+  "version": 1
+}

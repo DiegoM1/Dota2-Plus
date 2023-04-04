@@ -1,0 +1,72 @@
+{
+  "source": "/Users/diegomonteagudodiaz/Documents/Dota2-Plus/Dota2 plus/HeroDetailView/Views/HeroDetailView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld - %lld"
+      },
+      {
+        "comment": "",
+        "key": "%lld"
+      },
+      {
+        "comment": "",
+        "key": "%@"
+      },
+      {
+        "comment": "",
+        "key": "Calculate level stats = %lld"
+      },
+      {
+        "comment": "",
+        "key": "Hero Lore"
+      },
+      {
+        "comment": "",
+        "key": "Hero vision: "
+      },
+      {
+        "comment": "",
+        "key": "/"
+      },
+      {
+        "comment": "",
+        "key": "For more information go to"
+      },
+      {
+        "comment": "",
+        "key": "+ %@"
+      },
+      {
+        "comment": "",
+        "key": "Captain's Mode & Winrate Information:"
+      },
+      {
+        "comment": "",
+        "key": "Captains Mode enabled:"
+      },
+      {
+        "comment": "",
+        "key": "YES"
+      },
+      {
+        "comment": "",
+        "key": "NO"
+      },
+      {
+        "comment": "",
+        "key": "Pro games winrate:"
+      },
+      {
+        "comment": "",
+        "key": "%@ %%"
+      },
+      {
+        "comment": "",
+        "key": "Turbo games winrate:"
+      }
+    ]
+  },
+  "version": 1
+}

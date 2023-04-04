@@ -1,0 +1,6 @@
+framework module Pods_Dota2_plusTests {
+  umbrella header "Pods-Dota2 plusTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
