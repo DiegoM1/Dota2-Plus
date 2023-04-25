@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum AttributeType: String, Codable {
-    case agi, str, int
+    case agi, str, int, all
     
     func iconName() -> String {
         switch self {
@@ -19,6 +19,8 @@ enum AttributeType: String, Codable {
             return "StrengthAttributeSymbol"
         case .int:
             return "IntelligenceAttributeSymbol"
+        case .all:
+            return "AllAttributeSymbol"
         }
     }
     
@@ -30,6 +32,8 @@ enum AttributeType: String, Codable {
             return Color("RedStrength")
         case .int:
             return Color("BlueIntelligence")
+        case .all:
+            return Color.yellow
         }
     }
 }

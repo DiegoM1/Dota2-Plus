@@ -23,7 +23,7 @@ class HeroTabBarService {
             do {
                 let data = try decoder.decode([HeroModel].self, from: data)
                 return data
-            }catch {
+            } catch {
                 print(error)
             }
             

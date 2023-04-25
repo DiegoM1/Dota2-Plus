@@ -64,6 +64,18 @@ struct SearchableHeroListView: View {
                             .background(Circle().fill(viewModel.filterActivated == attribute ? attribute.foregroundColor() : .clear))
                         
                     }
+                    Button {
+                        viewModel.filterBy(atrribute: AttributeType.all)
+                    } label: {
+                        let attribute = AttributeType.all
+                        Text("Universal")
+                            .foregroundColor(attribute.foregroundColor())
+                        Circle()
+                            .strokeBorder(attribute.foregroundColor(), lineWidth: 1)
+                            .frame(width: 12,height: 12)
+                            .background(Circle().fill(viewModel.filterActivated == attribute ? attribute.foregroundColor() : .clear))
+                        
+                    }
                 }
             }
         }
