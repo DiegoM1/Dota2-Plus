@@ -10,7 +10,7 @@ import UniformTypeIdentifiers
 
 struct PlayerView: View {
     @ObservedObject var viewModel: PlayerViewModel
-    @State var idText = "131303779"
+    @State var idText = ""
     
     var body: some View {
         NavigationStack {

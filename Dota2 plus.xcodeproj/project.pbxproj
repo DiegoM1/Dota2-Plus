@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223304132A057A020015D89C /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223304122A057A020015D89C /* CacheAsyncImage.swift */; };
 		225D19CB29B79EA6000E7E44 /* Dota2_plusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D19CA29B79EA6000E7E44 /* Dota2_plusApp.swift */; };
 		225D19CF29B79EA7000E7E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225D19CE29B79EA7000E7E44 /* Assets.xcassets */; };
 		225D19D229B79EA7000E7E44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225D19D129B79EA7000E7E44 /* Preview Assets.xcassets */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		0303D0F0CAD5C729A9C9203C /* Pods_Dota2_plus_Dota2_plusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dota2_plus_Dota2_plusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		223304122A057A020015D89C /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
 		225D19C729B79EA6000E7E44 /* Dota2 plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dota2 plus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		225D19CA29B79EA6000E7E44 /* Dota2_plusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dota2_plusApp.swift; sourceTree = "<group>"; };
 		225D19CE29B79EA7000E7E44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				225D1A1929B7FAA7000E7E44 /* DotaApiService.swift */,
+				223304122A057A020015D89C /* CacheAsyncImage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				225D1A0629B7A647000E7E44 /* Constants.swift in Sources */,
 				22F080AB29CA0927004A80EB /* HeroDetailService.swift in Sources */,
 				225D1A0829B7B37F000E7E44 /* HeroesListViewModel.swift in Sources */,
+				223304132A057A020015D89C /* CacheAsyncImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

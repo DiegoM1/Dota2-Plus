@@ -12,19 +12,20 @@ struct HeroesListView: View {
     @Binding var moreToogle: Bool
     
     var body: some View {
-        List() {
+        List {
             if !viewModel.favoriteHeroList.isEmpty {
                 Section("Favorites") {
                     ForEach(viewModel.favoriteHeroList, id: \.info.id) { hero in
                         NavigationLink {
                             HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
                         } label: {
-                            VStack(alignment: .leading,spacing: 4) {
-                                HStack{
-                                    AsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                HStack {
+                                    CacheAsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
                                         $0.image?
                                             .resizable()
                                             .frame(width: 50, height: 30)
+                                        
                                     }
                                     
                                     Text(hero.info.localizedName)
@@ -62,14 +63,13 @@ struct HeroesListView: View {
                     NavigationLink {
                         HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
                     } label: {
-                        VStack(alignment: .leading,spacing: 4) {
-                            HStack{
-                                AsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
+                        LazyVStack(alignment: .leading, spacing: 4) {
+                            HStack {
+                                CacheAsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
                                     $0.image?
                                         .resizable()
                                         .frame(width: 50, height: 30)
                                 }
-                                
                                 Text(hero.info.localizedName)
                                     .font(.headline)
                                 Spacer()

@@ -37,11 +37,10 @@ class TeamTabBarViewModel: ObservableObject {
     func dataConstruction() {
         topFiveTeams = Array(fetchedTeams.prefix(through: 4))
         teams = Array(fetchedTeams.suffix(95))
-        
-        
     }
+    
     func orderConstruction(_ array: inout [TeamModel]) {
-        for index in 1..<array.count {
+        for index in 1..<array.count + 1 {
             array[index - 1].position = index.ordinal
         }
     }
