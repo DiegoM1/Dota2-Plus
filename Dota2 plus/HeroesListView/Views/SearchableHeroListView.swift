@@ -10,20 +10,31 @@ import SwiftUI
 struct SearchableHeroListView: View {
     @ObservedObject var viewModel: HeroesListViewModel
     var body: some View {
-        List(viewModel.heroesListFiltered, id: \.info.id) { hero in
-            NavigationLink {
-                HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
-            } label: {
-                HStack{
-                    AsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
-                            $0.image?
-                                .resizable()
-                                .frame(width: 35, height: 20)
+        ScrollView {
+            LazyVStack {
+                ForEach(viewModel.heroesListFiltered, id: \.info.id) { hero in
+                    NavigationLink {
+                        HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
+                    } label: {
+                        VStack {
+                            HStack {
+                                AsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
+                                    $0.image?
+                                        .resizable()
+                                        .frame(width: 35, height: 20)
+                                }
+                                Text(hero.info.localizedName)
+                                    .font(.headline)
+                                    .foregroundColor(.black)
+                                Spacer()
+                                Image(hero.info.primaryAttr.iconName())
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(.gray.opacity(0.8))
+                            }
+                            Divider()
                         }
-                    Text(hero.info.localizedName)
-                        .font(.headline)
-                    Spacer()
-                    Image(hero.info.primaryAttr.iconName())
+                        .padding(.horizontal, 16)
+                    }
                 }
             }
         }
