@@ -27,12 +27,12 @@ you are ready to go!
 if you want to run test you can do it in xcode or using terminal with faslane.
 
 ```bash
-  flastlane lint
+  fastlane lint
 ```
 or 
 
 ```bash
-  flastlane tests
+  fastlane tests
 ```
 ## Demo
 
