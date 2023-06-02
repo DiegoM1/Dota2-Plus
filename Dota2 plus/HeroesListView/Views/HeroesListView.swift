@@ -15,90 +15,72 @@ struct HeroesListView: View {
         List {
             if !viewModel.favoriteHeroList.isEmpty {
                 Section("Favorites") {
-                    ForEach(viewModel.favoriteHeroList, id: \.info.id) { hero in
-                        NavigationLink {
-                            HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
-                        } label: {
-                            VStack(alignment: .leading, spacing: 4) {
-                                HStack {
-                                    CacheAsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
-                                        $0.image?
-                                            .resizable()
-                                            .frame(width: 50, height: 30)
-                                        
-                                    }
-                                    
-                                    Text(hero.info.localizedName)
-                                        .font(.headline)
-                                    Spacer()
-                                    Image(systemName: viewModel.favoriteHeroList.contains(where: { $0.info.id == hero.info.id }) ? "star.fill" : "star")
-                                        .foregroundColor(.yellow)
-                                        .onTapGesture {
-                                            viewModel.addOrRemoveFavoriteHero(hero)
-                                        }
-                                    Image(hero.info.primaryAttr.iconName())
-                                }
-                                if moreToogle {
-                                    Rectangle()
-                                        .fill(.black)
-                                        .frame(height: 1)
-                                    HStack {
-                                        ForEach(hero.info.roles, id: \.self) { roles in
-                                            Text(roles.rawValue)
-                                                .font(.system(size: 12))
-                                                .fontDesign(.serif)
-                                            Spacer()
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .listRowBackground(Color("RedSoft"))
-                    }
+                    HeroListComponentView(list: $viewModel.favoriteHeroList, moreToogle: $moreToogle, action: {hero in
+                        viewModel.addOrRemoveFavoriteHero(hero)
+                    },isFavorite: { hero in
+                        return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id } )
+                    })
                 }
             }
-            
             Section {
-                ForEach(viewModel.heroList, id: \.info.id) { hero in
-                    NavigationLink {
-                        HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
-                    } label: {
-                        LazyVStack(alignment: .leading, spacing: 4) {
-                            HStack {
-                                CacheAsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
-                                    $0.image?
-                                        .resizable()
-                                        .frame(width: 50, height: 30)
-                                }
-                                Text(hero.info.localizedName)
-                                    .font(.headline)
-                                Spacer()
-                                Image(systemName: viewModel.favoriteHeroList.contains(where: { $0.info.id == hero.info.id }) ? "star.fill" : "star")
-                                    .foregroundColor(.yellow)
-                                    .onTapGesture {
-                                        viewModel.addOrRemoveFavoriteHero(hero)
-                                    }
-                                Image(hero.info.primaryAttr.iconName())
-                            }
-                            if moreToogle {
-                                Rectangle()
-                                    .fill(.black)
-                                    .frame(height: 1)
-                                HStack {
-                                    ForEach(hero.info.roles, id: \.self) { roles in
-                                        Text(roles.rawValue)
-                                            .font(.system(size: 12))
-                                            .fontDesign(.serif)
-                                        Spacer()
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .listRowBackground(Color("RedSoft"))
-                }
+                HeroListComponentView(list: $viewModel.heroList, moreToogle: $moreToogle, action: {hero in
+                    viewModel.addOrRemoveFavoriteHero(hero)
+                },isFavorite: { hero in
+                    return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id } )
+                })
             }
         }
         .listStyle(.insetGrouped)
+    }
+}
+
+struct HeroListComponentView: View {
+    @Binding var list: [HeroOrganizationModel]
+    @Binding var moreToogle: Bool
+    var action: (HeroOrganizationModel) -> Void
+    var isFavorite: (HeroOrganizationModel) -> Bool
+    
+    var body: some View {
+        ForEach(list, id: \.info.id) { hero in
+            NavigationLink {
+                HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
+            } label: {
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack {
+                        CacheAsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
+                            $0.image?
+                                .resizable()
+                                .frame(width: 50, height: 30)
+                                .clipShape(RoundedRectangle(cornerRadius: 6))                                    }
+                        
+                        
+                        Text(hero.info.localizedName)
+                            .font(.headline)
+                        Spacer()
+                        
+                        Image(systemName: isFavorite(hero) ?  "star.fill" : "star" )
+                            .foregroundColor(.yellow)
+                            .onTapGesture {
+                                action(hero)
+                            }
+                        Image(hero.info.primaryAttr.iconName())
+                    }
+                    if moreToogle {
+                        Rectangle()
+                            .fill(.black)
+                            .frame(height: 1)
+                        HStack {
+                            ForEach(hero.info.roles, id: \.self) { roles in
+                                Text(roles.rawValue)
+                                    .font(.system(size: 12))
+                                    .fontDesign(.serif)
+                                Spacer()
+                            }
+                        }
+                    }
+                }
+            }
+            .listRowBackground(Color("RedSoft"))
+        }
     }
 }
