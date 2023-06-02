@@ -12,7 +12,7 @@ class HeroesListViewModel: ObservableObject {
     @Binding var heroList: [HeroOrganizationModel]
     @Binding var favoriteHeroList: [HeroOrganizationModel]
     @Published var heroesListFiltered: [HeroOrganizationModel]
-    @Published var filterActivated: AttributeType? = nil
+    @Published var filterActivated: AttributeType?
     
     let userDefaults = UserDefaults.standard
     
