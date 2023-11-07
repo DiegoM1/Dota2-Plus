@@ -9,22 +9,22 @@ import SwiftUI
 
 @MainActor
 class TeamTabBarViewModel: ObservableObject {
-    
+
     @Published var topFiveTeams = [TeamModel]()
     @Published var teams = [TeamModel]()
     @Published var isLoading = true
-    
+
     var fetchedTeams = [TeamModel]() {
         didSet {
             dataConstruction()
         }
     }
     var service: TeamsApiService
-    
+
     init(service: TeamsApiService) {
         self.service = service
     }
-    
+
     func fetchTeamsData() {
         service.fetchTeamData { data in
             var teams = data
@@ -33,12 +33,12 @@ class TeamTabBarViewModel: ObservableObject {
             self.isLoading = false
         }
     }
-    
+
     func dataConstruction() {
         topFiveTeams = Array(fetchedTeams.prefix(through: 4))
         teams = Array(fetchedTeams.suffix(95))
     }
-    
+
     func orderConstruction(_ array: inout [TeamModel]) {
         for index in 1..<array.count + 1 {
             array[index - 1].position = index.ordinal

@@ -10,7 +10,7 @@ import WebKit
 
 struct SwiftUIWebView: UIViewRepresentable {
     typealias UIViewType = WKWebView
-    
+
     let webView: WKWebView
     let url: URL
     init(url: URL) {
@@ -19,11 +19,11 @@ struct SwiftUIWebView: UIViewRepresentable {
         webView.pauseAllMediaPlayback()
         self.url = url
     }
-    
+
     func makeUIView(context: Context) -> WKWebView {
         webView
     }
-    
+
     func updateUIView(_ uiView: WKWebView, context: Context) {
     }
 }

@@ -11,12 +11,12 @@ struct HeroesTabBarView: View {
     @ObservedObject var viewModel: HeroTabBarViewModel
     @State var moreToogle = false
     @State var alterView = false
-    
+
     var body: some View {
         NavigationStack {
             if viewModel.isLoading {
                 ProgressView()
-                    .task{
+                    .task {
                         await viewModel.fetchHeroesData()
                     }
             } else {
@@ -54,9 +54,9 @@ struct HeroesTabBarView: View {
                             }
                         }
                     }
-                    
+
                 }
-                .task{
+                .task {
                     await viewModel.fetchHeroesData()
                 }
                 .navigationTitle("Heroes")

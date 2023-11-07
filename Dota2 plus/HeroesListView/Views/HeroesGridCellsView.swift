@@ -29,7 +29,7 @@ struct HeroesGridCellsView: View {
                             VStack(alignment: .center) {
                                 HStack {
                                     Spacer()
-                                    Image(systemName: viewModel.favoriteHeroList.contains{ $0.info.id == hero.info.id } ? "star.fill" : "star")
+                                    Image(systemName: viewModel.favoriteHeroList.contains { $0.info.id == hero.info.id } ? "star.fill" : "star")
                                         .foregroundColor(.yellow)
                                         .onTapGesture {
                                             viewModel.addOrRemoveFavoriteHero(hero)
@@ -39,9 +39,9 @@ struct HeroesGridCellsView: View {
                                     image
                                         .resizable()
                                         .scaledToFill()
-                                    
+
                                         .frame(width: 50, height: 50)
-                                    
+
                                     Spacer()
                                     Text(hero.info.localizedName)
                                         .foregroundColor(Color("Burgundy"))
@@ -52,7 +52,7 @@ struct HeroesGridCellsView: View {
                                     Image(systemName: "photo.fill")
                                 }
                                 .frame(width: UIScreen.main.bounds.width / 5, height: UIScreen.main.bounds.height / 12)
-                                
+
                                 Spacer()
                             }
                         }
@@ -64,7 +64,7 @@ struct HeroesGridCellsView: View {
                     .frame(height: 1)
                     .padding()
             }
-            
+
             LazyVGrid(columns: [GridItem(.flexible()),
                                 GridItem(.flexible()),
                                 GridItem(.flexible()),
@@ -76,7 +76,7 @@ struct HeroesGridCellsView: View {
                         VStack(alignment: .center) {
                             HStack {
                                 Spacer()
-                                Image(systemName: viewModel.favoriteHeroList.contains{ $0.info.id == hero.info.id } ? "star.fill" : "star")
+                                Image(systemName: viewModel.favoriteHeroList.contains { $0.info.id == hero.info.id } ? "star.fill" : "star")
                                     .foregroundColor(.yellow)
                                     .onTapGesture {
                                         viewModel.addOrRemoveFavoriteHero(hero)
@@ -86,15 +86,15 @@ struct HeroesGridCellsView: View {
                                 image
                                     .resizable()
                                     .scaledToFill()
-                                
+
                                     .frame(width: 50, height: 50)
                             } placeholder: {
                                 Image(systemName: "photo.fill")
                             }
                             .frame(width: UIScreen.main.bounds.width / 5, height: UIScreen.main.bounds.height / 12)
-                            
+
                             Spacer()
-                            
+
                             Text(hero.info.localizedName)
                                 .foregroundColor(Color("Burgundy"))
                                 .font(.system(size: 12))
@@ -105,7 +105,7 @@ struct HeroesGridCellsView: View {
                 }
             }
                                 .padding(.horizontal, 6)
-            
+
         } .background(Color("RedSoft"))
     }
 }

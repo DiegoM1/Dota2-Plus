@@ -10,23 +10,23 @@ import SwiftUI
 struct HeroesListView: View {
     @ObservedObject var viewModel: HeroesListViewModel
     @Binding var moreToogle: Bool
-    
+
     var body: some View {
         List {
             if !viewModel.favoriteHeroList.isEmpty {
                 Section("Favorites") {
                     HeroListComponentView(list: $viewModel.favoriteHeroList, moreToogle: $moreToogle, action: {hero in
                         viewModel.addOrRemoveFavoriteHero(hero)
-                    },isFavorite: { hero in
-                        return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id } )
+                    }, isFavorite: { hero in
+                        return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id })
                     })
                 }
             }
             Section {
                 HeroListComponentView(list: $viewModel.heroList, moreToogle: $moreToogle, action: {hero in
                     viewModel.addOrRemoveFavoriteHero(hero)
-                },isFavorite: { hero in
-                    return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id } )
+                }, isFavorite: { hero in
+                    return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id })
                 })
             }
         }
@@ -39,7 +39,7 @@ struct HeroListComponentView: View {
     @Binding var moreToogle: Bool
     var action: (HeroOrganizationModel) -> Void
     var isFavorite: (HeroOrganizationModel) -> Bool
-    
+
     var body: some View {
         ForEach(list, id: \.info.id) { hero in
             NavigationLink {
@@ -51,13 +51,12 @@ struct HeroListComponentView: View {
                             $0.image?
                                 .resizable()
                                 .frame(width: 50, height: 30)
-                                .clipShape(RoundedRectangle(cornerRadius: 6))                                    }
-                        
-                        
+                                .clipShape(RoundedRectangle(cornerRadius: 6))
+                        }
                         Text(hero.info.localizedName)
                             .font(.headline)
                         Spacer()
-                        
+
                         Image(systemName: isFavorite(hero) ?  "star.fill" : "star" )
                             .foregroundColor(.yellow)
                             .onTapGesture {

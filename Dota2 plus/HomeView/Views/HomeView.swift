@@ -9,22 +9,22 @@ import UIKit
 import SwiftUI
 
 struct HomeView: View {
-    
+
     @State var heroesList = [HeroModel]()
-    
+
     var body: some View {
-        TabView{
+        TabView {
             HeroesTabBarView(viewModel: HeroTabBarViewModel(apiService: HeroTabBarService(dotaService: DotaApiService(urlSession: .shared))))
                 .tabItem {
                     Image(systemName: "person")
                     Text("Heroes")
                 }
-            TeamsTabBarView(viewModel: TeamTabBarViewModel(service:TeamsApiService(service: DotaApiService(urlSession: .shared))))
+            TeamsTabBarView(viewModel: TeamTabBarViewModel(service: TeamsApiService(service: DotaApiService(urlSession: .shared))))
                 .tabItem {
                     Image(systemName: "pencil.slash")
                     Text("Teams")
                 }
-            
+
             PlayerView(viewModel: PlayerViewModel(service: PlayerService(service: DotaApiService(urlSession: .shared))))
                 .tabItem {
                     Image(systemName: "shareplay")

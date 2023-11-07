@@ -7,16 +7,14 @@
 
 import SwiftUI
 
-
-
 class HeroTabBarService {
     var dotaService: DotaApiServiceProtocol
-    
+
     init(dotaService: DotaApiServiceProtocol) {
         self.dotaService = dotaService
     }
-    
-    func fetchData(completion: @escaping ([HeroOrganizationModel]) -> ()) {
+
+    func fetchData(completion: @escaping ([HeroOrganizationModel]) -> Void) {
         let resource = Resource<[HeroModel]>(url: Constants.Urls.heroes) { data in
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -26,19 +24,19 @@ class HeroTabBarService {
             } catch {
                 print(error)
             }
-            
+
             return nil
         }
         Task {
             await dotaService.fetchData(request: resource) { data in
                 if let result = data {
-                    
+
                     completion(self.heroModelOrganizationConstructo(result))
                 }
             }
         }
     }
-    
+
     func heroModelOrganizationConstructo(_ heroesModel: [HeroModel]) -> [HeroOrganizationModel] {
         return heroesModel.map { HeroOrganizationModel(info: HeroData(id: $0.id
                                                                       , name: $0.name,

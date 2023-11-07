@@ -9,13 +9,12 @@ import Foundation
 
 class PlayerService {
     var service: DotaApiServiceProtocol
-    
+
     init(service: DotaApiServiceProtocol) {
         self.service = service
     }
-    
-    
-    func fetchData(_ id: Int, completion: @escaping (PlayerModel) -> ()) {
+
+    func fetchData(_ id: Int, completion: @escaping (PlayerModel) -> Void) {
         let resource = Resource(url: Constants.Urls.urlPlayer(id)) { data in
             do {
                 let decoder = JSONDecoder()
@@ -25,11 +24,10 @@ class PlayerService {
             } catch {
                 print(error)
             }
-            
+
             return nil
         }
-        
-        
+
         Task {
            await service.fetchData(request: resource) { data in
                 if let data = data {

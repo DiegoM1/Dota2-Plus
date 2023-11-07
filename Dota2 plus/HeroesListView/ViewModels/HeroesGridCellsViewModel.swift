@@ -10,15 +10,15 @@ import SwiftUI
 class HeroesGridCellsViewModel: ObservableObject {
     @Binding var heroList: [HeroOrganizationModel]
     @Binding var favoriteHeroList: [HeroOrganizationModel]
-    
+
     init(heroList: Binding<[HeroOrganizationModel]>, favoriteHeroList: Binding<[HeroOrganizationModel]>) {
         _heroList = heroList
         _favoriteHeroList = favoriteHeroList
     }
-    
+
     func addOrRemoveFavoriteHero(_ hero: HeroOrganizationModel) {
         if !favoriteHeroList.contains(where: { $0.info.id == hero.info.id }) {
-            
+
             withAnimation(.easeIn) {
                 favoriteHeroList.append(hero)
             }
