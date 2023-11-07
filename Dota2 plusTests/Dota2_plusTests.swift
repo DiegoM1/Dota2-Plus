@@ -12,8 +12,8 @@ import SwiftUI
 @MainActor  final class Dota2_plusTests: XCTestCase {
     var heroTabBarViewModel: HeroTabBarViewModel!
     var heroesListViewModel: HeroesListViewModel!
-    var heroesGridCellsViewModel : HeroesGridCellsViewModel!
-    
+    var heroesGridCellsViewModel: HeroesGridCellsViewModel!
+
     override func setUpWithError() throws {
         let heroTabBarService = HeroTabBarService(dotaService: DotaApiService(urlSession: .shared))
         heroTabBarViewModel = HeroTabBarViewModel(apiService: heroTabBarService)
@@ -28,38 +28,40 @@ import SwiftUI
                 print(error)
             }
         }
-        heroesGridCellsViewModel = HeroesGridCellsViewModel(heroList: .constant(heroTabBarViewModel.heroesList), favoriteHeroList: .constant(heroTabBarViewModel.favoriteHeroes))
-        heroesListViewModel = HeroesListViewModel(heroList: .constant(heroTabBarViewModel.heroesList), favoriteHeroList: .constant(heroTabBarViewModel.favoriteHeroes))
-        
+        heroesGridCellsViewModel = HeroesGridCellsViewModel(heroList: .constant(heroTabBarViewModel.heroesList),
+                                                            favoriteHeroList: .constant(heroTabBarViewModel.favoriteHeroes))
+        heroesListViewModel = HeroesListViewModel(heroList: .constant(heroTabBarViewModel.heroesList),
+                                                  favoriteHeroList: .constant(heroTabBarViewModel.favoriteHeroes))
+
     }
 
     func testFetchDataCorrectly_ShouldReturnTrue() throws {
         XCTAssertTrue(heroTabBarViewModel.heroesList.count > 0)
     }
-    
+
     func testFilterByText_ShouldReturnEqual() throws {
         heroesListViewModel.filter("an")
         XCTAssertEqual(heroesListViewModel.heroesListFiltered.first?.info.localizedName, "Anti-Mage")
     }
-    
+
     func testFilterByAttribute_ShouldReturnEqual() throws {
         heroesListViewModel.filterBy(atrribute: .agi)
         XCTAssertEqual(heroesListViewModel.heroesListFiltered.randomElement()?.info.primaryAttr, .agi)
     }
-    
+
     func testAddOrRemoveFavoriteHero_ShouldReturnTrue() throws {
         guard let  testHero = heroTabBarViewModel.heroesList.first else {
             return
         }
         heroesListViewModel.addOrRemoveFavoriteHero(testHero)
-        
-        XCTAssertTrue(heroesListViewModel.heroList.contains{ $0.info.id == testHero.info.id })
-        
+
+        XCTAssertTrue(heroesListViewModel.heroList.contains { $0.info.id == testHero.info.id })
+
         heroesGridCellsViewModel.addOrRemoveFavoriteHero(testHero)
-        
-        XCTAssertTrue(heroesGridCellsViewModel.heroList.contains{ $0.info.id == testHero.info.id })
+
+        XCTAssertTrue(heroesGridCellsViewModel.heroList.contains { $0.info.id == testHero.info.id })
     }
-    
+
     func testFetchFromFileHeroData_ShouldReturnTrue() throws {
         guard let last = heroTabBarViewModel.heroesList.last else {
             return
@@ -70,14 +72,14 @@ import SwiftUI
         }
         XCTAssertTrue(!heroTabBarViewModel.favoriteHeroes.isEmpty)
     }
-    
+
     func testFetchFromFileHeroData_ShouldReturnFalse() throws {
         Task {
             await heroTabBarViewModel.fetchFromFileHeroesData()
         }
         XCTAssertFalse(!heroTabBarViewModel.favoriteHeroes.isEmpty)
     }
-    
+
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

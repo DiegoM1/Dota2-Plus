@@ -11,7 +11,7 @@ import UniformTypeIdentifiers
 struct PlayerView: View {
     @ObservedObject var viewModel: PlayerViewModel
     @State var idText = ""
-    
+
     var body: some View {
         NavigationStack {
             if viewModel.isLoading {
@@ -42,7 +42,7 @@ struct PlayerView: View {
                             .font(.title)
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color("Burgundy"))
-                        
+
                     }
                     .task {
                         if viewModel.playerId != nil {
@@ -62,7 +62,7 @@ struct PlayerView: View {
                                         .shadow(radius: 32)
                                 }
                             }
-                            
+
                             Text(profile.personaname)
                                 .font(.title2)
                                 .fontDesign(.serif)
@@ -77,9 +77,9 @@ struct PlayerView: View {
                                 }
                                 Section("Profile url") {
                                     Link("Steam profile", destination: URL(string: profile.profileurl)!)
-                                    
+
                                 }
-                                
+
                                 Section("Dota plus") {
                                     Text(profile.plus ? "You have dota plus supcrition" : "You don't have dota plus supcrition")
                                 }
@@ -88,7 +88,7 @@ struct PlayerView: View {
                                         Text("TOP \(viewModel.player.leaderboardRank ?? 0)")
                                     }
                                 }
-                                
+
                                 if viewModel.player.mmrEstimate != nil {
                                     Section("Mmr estimate") {
                                         Text("MMR -> \(viewModel.player.mmrEstimate?["estimate"] ?? 0)")
@@ -113,7 +113,7 @@ struct PlayerView: View {
                             } label: {
                                 Image(systemName: "repeat")
                             }
-                            
+
                         }
                     }
                 }

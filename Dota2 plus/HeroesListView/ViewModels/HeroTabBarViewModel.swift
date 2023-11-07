@@ -9,31 +9,31 @@ import SwiftUI
 
 class HeroTabBarViewModel: ObservableObject {
     var apiService: HeroTabBarService
-    
+
     @Published var isLoading = true
     @Published var heroesListFiltered = [HeroOrganizationModel]()
-    @Published var filterActivated: AttributeType? = nil
+    @Published var filterActivated: AttributeType?
     @Published var heroText = ""
     @Published var favoriteHeroes = [HeroOrganizationModel]() {
         didSet {
             apiService.dotaService.saveData(favoriteHeroes)
         }
     }
-    
+
     var heroesList: [HeroOrganizationModel] = [] {
-        didSet{
+        didSet {
             DispatchQueue.main.async {
                 self.heroesListFiltered = self.heroesList.sorted { $0.info.localizedName < $1.info.localizedName }
                 self.heroesListFiltered = self.heroesListFiltered.filter { value in !self.favoriteHeroes.contains { $0.info.id == value.info.id } }
-                
+
             }
-            
+
         }
     }
     init(apiService: HeroTabBarService) {
         self.apiService = apiService
     }
-    
+
     func fetchHeroesData() async {
         await fetchFromFileHeroesData()
         apiService.fetchData { data in

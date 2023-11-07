@@ -9,13 +9,12 @@ import Foundation
 
 class TeamsApiService {
     var service: DotaApiService
-    
+
     init(service: DotaApiService) {
         self.service = service
     }
 
-    
-    func fetchTeamData(completion: @escaping ([TeamModel]) -> ()) {
+    func fetchTeamData(completion: @escaping ([TeamModel]) -> Void) {
         let request = Resource<[TeamModel]>(url: Constants.Urls.teams) { data in
             let decoded = try? JSONDecoder().decode([TeamModel].self, from: data)
             guard let decoded = decoded else {
@@ -23,7 +22,7 @@ class TeamsApiService {
             }
             return decoded
         }
-        
+
         Task {
             await service.fetchData(request: request) { data in
                 if var result = data {

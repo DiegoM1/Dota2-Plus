@@ -49,7 +49,7 @@ struct SearchableHeroListView: View {
                             .foregroundColor(attribute.foregroundColor())
                         Circle()
                             .strokeBorder(attribute.foregroundColor(), lineWidth: 1)
-                            .frame(width: 12,height: 12)
+                            .frame(width: 12, height: 12)
                             .background(Circle().fill(viewModel.filterActivated == attribute ? attribute.foregroundColor() : .clear))
                     }
                     Button {
@@ -60,7 +60,7 @@ struct SearchableHeroListView: View {
                             .foregroundColor(attribute.foregroundColor())
                         Circle()
                             .strokeBorder(attribute.foregroundColor(), lineWidth: 1)
-                            .frame(width: 12,height: 12)
+                            .frame(width: 12, height: 12)
                             .background(Circle().fill(viewModel.filterActivated == attribute ? attribute.foregroundColor() : .clear))
                     }
                     Button {
@@ -71,9 +71,9 @@ struct SearchableHeroListView: View {
                             .foregroundColor(attribute.foregroundColor())
                         Circle()
                             .strokeBorder(attribute.foregroundColor(), lineWidth: 1)
-                            .frame(width: 12,height: 12)
+                            .frame(width: 12, height: 12)
                             .background(Circle().fill(viewModel.filterActivated == attribute ? attribute.foregroundColor() : .clear))
-                        
+
                     }
                     Button {
                         viewModel.filterBy(atrribute: AttributeType.all)
@@ -83,9 +83,9 @@ struct SearchableHeroListView: View {
                             .foregroundColor(attribute.foregroundColor())
                         Circle()
                             .strokeBorder(attribute.foregroundColor(), lineWidth: 1)
-                            .frame(width: 12,height: 12)
+                            .frame(width: 12, height: 12)
                             .background(Circle().fill(viewModel.filterActivated == attribute ? attribute.foregroundColor() : .clear))
-                        
+
                     }
                 }
             }

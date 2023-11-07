@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TeamsTabBarView: View {
-    
-    @ObservedObject var viewModel:  TeamTabBarViewModel
+
+    @ObservedObject var viewModel: TeamTabBarViewModel
     @State var value: Int = 0
     var body: some View {
         NavigationStack {
@@ -20,32 +20,32 @@ struct TeamsTabBarView: View {
                     }
             } else {
                 VStack(alignment: .leading, spacing: 0) {
-                    
+
                     List {
                         Section("Top 5 teams") {
                             TabView(selection: $value) {
                                 ForEach(viewModel.topFiveTeams, id: \.teamId) { team in
-                                    HStack(alignment: .center,spacing: 24) {
+                                    HStack(alignment: .center, spacing: 24) {
                                         Text(team.position ?? "")
                                             .font(.largeTitle)
                                             .fontWeight(.bold)
                                             .foregroundColor(.yellow)
                                         VStack(alignment: .center) {
-                                            AsyncImage(url: URL(string: team.logoUrl ?? "")) {
+                                            CacheAsyncImage(url: URL(string: team.logoUrl ?? "")!) {
                                                 $0.image?
                                                     .resizable()
                                                     .ignoresSafeArea()
                                                     .frame(width: 65, height: 50)
                                             }
                                             Text(team.name)
-                                            
+
                                         }
                                         VStack(spacing: 4) {
                                             Text("TAG")
                                                 .font(.caption2)
                                             Text("\"\(team.tag)\"")
                                                 .font(.title3)
-                                            
+
                                         }
                                         VStack {
                                             Text(String(Int(team.rating)))
@@ -54,18 +54,18 @@ struct TeamsTabBarView: View {
                                         }
                                     }
                                 }
-                                
+
                             }
                             .foregroundColor(.white)
                             .listRowBackground(Color(#colorLiteral(red: 0.4801908731, green: 0.05009575933, blue: 0.1161286905, alpha: 1)))
-                            .onChange(of: value, perform: { newValue in
+                            .onChange(of: value, perform: { _ in
                                 print(value)
                             })
                             .tabViewStyle(.page(indexDisplayMode: .always))
                             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
                             .frame(height: 180)
                         }
-                        
+
                         Section {
                             ForEach(viewModel.teams, id: \.teamId) { team in
                                 HStack(spacing: 0) {

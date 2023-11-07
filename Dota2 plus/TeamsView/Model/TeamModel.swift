@@ -17,7 +17,7 @@ struct TeamModel: Codable {
     var name: String
     var tag: String
     var logoUrl: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case position = "position"
         case teamId = "team_id"

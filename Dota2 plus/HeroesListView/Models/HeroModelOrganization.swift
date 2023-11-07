@@ -30,7 +30,6 @@ struct HeroData: Codable {
     var icon: String
 }
 
-
 struct  BaseHeroStatsStr: Codable {
     var baseHealth: Int
     var baseHealthRegen: Double

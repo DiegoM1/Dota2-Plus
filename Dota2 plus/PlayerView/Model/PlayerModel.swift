@@ -20,5 +20,5 @@ struct ProfileModel: Codable {
     let steamid: String
     let avatarfull: String
     let profileurl: String
-    
+
 }

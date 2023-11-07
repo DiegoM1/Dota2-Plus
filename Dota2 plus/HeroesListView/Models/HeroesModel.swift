@@ -10,7 +10,7 @@ import SwiftUI
 
 enum AttributeType: String, Codable {
     case agi, str, int, all
-    
+
     func iconName() -> String {
         switch self {
         case .agi:
@@ -23,7 +23,7 @@ enum AttributeType: String, Codable {
             return "AllAttributeSymbol"
         }
     }
-    
+
     func foregroundColor() -> Color {
         switch self {
         case .agi:
