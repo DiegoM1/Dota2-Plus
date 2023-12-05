@@ -54,10 +54,6 @@ struct HeroesTabBarView: View {
                             }
                         }
                     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 6ebcca2 (Created new component to show favorite heroes in a horizontal scrollable view)
                 }
                 .task {
                     await viewModel.fetchHeroesData()

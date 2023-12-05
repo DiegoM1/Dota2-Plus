@@ -50,13 +50,8 @@ class HeroesListViewModel: ObservableObject {
 
     func addOrRemoveFavoriteHero(_ hero: HeroOrganizationModel) {
         if !favoriteHeroList.contains(where: { $0.info.id == hero.info.id }) {
-<<<<<<< HEAD
-            withAnimation {
-                favoriteHeroList.append(hero)
-=======
             withAnimation() {
                 favoriteHeroList.insert(hero, at: 0)
->>>>>>> 6ebcca2 (Created new component to show favorite heroes in a horizontal scrollable view)
             }
 
             heroList.removeAll { $0.info.id == hero.info.id }
