@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		223304132A057A020015D89C /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223304122A057A020015D89C /* CacheAsyncImage.swift */; };
+		22509DE02AFAA0DB00AE5AC5 /* FavoriteHeroesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22509DDF2AFAA0DB00AE5AC5 /* FavoriteHeroesScrollView.swift */; };
 		225D19CB29B79EA6000E7E44 /* Dota2_plusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D19CA29B79EA6000E7E44 /* Dota2_plusApp.swift */; };
 		225D19CF29B79EA7000E7E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225D19CE29B79EA7000E7E44 /* Assets.xcassets */; };
 		225D19D229B79EA7000E7E44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225D19D129B79EA7000E7E44 /* Preview Assets.xcassets */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		0303D0F0CAD5C729A9C9203C /* Pods_Dota2_plus_Dota2_plusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dota2_plus_Dota2_plusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		223304122A057A020015D89C /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
+		22509DDF2AFAA0DB00AE5AC5 /* FavoriteHeroesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHeroesScrollView.swift; sourceTree = "<group>"; };
 		225D19C729B79EA6000E7E44 /* Dota2 plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dota2 plus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		225D19CA29B79EA6000E7E44 /* Dota2_plusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dota2_plusApp.swift; sourceTree = "<group>"; };
 		225D19CE29B79EA7000E7E44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				225D1A1329B7E4E1000E7E44 /* SearchableHeroListView.swift */,
 				225D1A2829BB98BE000E7E44 /* HeroesGridCellsView.swift */,
 				225D1A2A29BB9969000E7E44 /* HeroesListView.swift */,
+				22509DDF2AFAA0DB00AE5AC5 /* FavoriteHeroesScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				225D1A3D29C195DB000E7E44 /* HomeView.swift in Sources */,
 				225D1A1229B7BB27000E7E44 /* SwiftUIWebView.swift in Sources */,
 				225D1A3229C0E4A2000E7E44 /* PlayerView.swift in Sources */,
+				22509DE02AFAA0DB00AE5AC5 /* FavoriteHeroesScrollView.swift in Sources */,
 				225D1A2129B8DD5A000E7E44 /* TeamModel.swift in Sources */,
 				225D1A2B29BB9969000E7E44 /* HeroesListView.swift in Sources */,
 				225D1A1D29B8D99B000E7E44 /* TeamsTabBarView.swift in Sources */,

@@ -15,7 +15,7 @@ struct HeroesListView: View {
         List {
             if !viewModel.favoriteHeroList.isEmpty {
                 Section("Favorites") {
-                    HeroListComponentView(list: $viewModel.favoriteHeroList, moreToogle: $moreToogle, action: {hero in
+                    FavoriteHeroesScrollView(list: $viewModel.favoriteHeroList, action: {hero in
                         viewModel.addOrRemoveFavoriteHero(hero)
                     }, isFavorite: { hero in
                         return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id })
@@ -26,7 +26,7 @@ struct HeroesListView: View {
                 HeroListComponentView(list: $viewModel.heroList, moreToogle: $moreToogle, action: {hero in
                     viewModel.addOrRemoveFavoriteHero(hero)
                 }, isFavorite: { hero in
-                    return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id })
+                    return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id } )
                 })
             }
         }

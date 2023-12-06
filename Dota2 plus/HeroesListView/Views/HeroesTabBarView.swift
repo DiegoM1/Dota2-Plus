@@ -54,7 +54,6 @@ struct HeroesTabBarView: View {
                             }
                         }
                     }
-
                 }
                 .task {
                     await viewModel.fetchHeroesData()
