@@ -24,7 +24,7 @@ install dependencies
 ```
 you are ready to go!
 
-if you want to run test you can do it in xcode or using terminal with faslane.
+if you want to run test you can do it in xcode or using terminal with fastlane.
 
 ```bash
   fastlane lint
