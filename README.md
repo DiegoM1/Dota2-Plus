@@ -1,5 +1,8 @@
 # Dota2-Plus
+## Badges
+[![Dota2](https://img.shields.io/badge/Dota2-red.svg)](https://www.dota2.com/home) [![iOS](https://img.shields.io/badge/iOS-white.svg)](https://developer.apple.com) [![Swift](https://img.shields.io/badge/swift-orange.svg)](https://developer.apple.com/documentation/swift/) [![UnitTests](https://img.shields.io/badge/UnitTests-yellow.svg)](https://developer.apple.com/documentation/xcode/testing)
 
+## About
 App of dota2 to show hero and how their stats increase per level, lore, winrate. Show team world rank and search for a player to see his mmr.
 
 
