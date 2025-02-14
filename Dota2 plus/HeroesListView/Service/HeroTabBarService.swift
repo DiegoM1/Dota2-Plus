@@ -27,6 +27,7 @@ class HeroTabBarService {
 
             return nil
         }
+        
         Task {
             await dotaService.fetchData(request: resource) { data in
                 if let result = data {

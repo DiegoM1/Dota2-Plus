@@ -64,7 +64,7 @@ struct HeroModel: Codable, Identifiable {
     var img: String
     var icon: String
     var baseHealth: Int
-    var baseHealthRegen: Double
+    var baseHealthRegen: Double?
     var baseMana: Int
     var baseManaRegen: Double
     var baseArmor: Double

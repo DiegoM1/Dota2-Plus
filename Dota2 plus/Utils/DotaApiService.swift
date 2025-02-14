@@ -28,7 +28,6 @@ class DotaApiService: DotaApiServiceProtocol {
 
     func fetchData<T>(request: Resource<T>, completion: @escaping (T?) -> Void) async {
         urlSession.dataTask(with: request.url) { data, _, _ in
-
             if let data = data {
                 DispatchQueue.main.async {
                     completion(request.parse(data))

@@ -159,7 +159,9 @@ struct HeroDetailView: View {
                     Text("Hero Lore")
                         .bold()
                     Button {
-                        viewModel.showLore.toggle()
+                        withAnimation {
+                            viewModel.showLore.toggle()
+                        }
                     } label: {
                         Image(systemName: "arrow.up.and.down.text.horizontal")
                     }
@@ -175,7 +177,10 @@ struct HeroDetailView: View {
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 4).stroke())
                         .padding(.horizontal)
+                        .padding(.top, 4)
+                        .transition(.opacity)
                 }
+                
                 HStack {
                     Text("Hero vision: ")
                     Spacer()

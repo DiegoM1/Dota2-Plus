@@ -7,6 +7,7 @@
 
 import Foundation
 private let baseStringUrl = "https://api.opendota.com"
+private let iconBaseStringUrl = "https://cdn.cloudflare.steamstatic.com/"
 struct Constants {
     struct Urls {
         static var heroes = URL(string: "\(baseStringUrl)/api/heroStats")!
@@ -23,7 +24,7 @@ struct Constants {
         }
 
         static func heroIconImage(_ icon: String) -> URL {
-            return URL(string: "\(baseStringUrl)\(icon)")!
+            return URL(string: "\(iconBaseStringUrl)\(icon)")!
         }
 
         static func urlHeroLink(_ name: String) -> URL {

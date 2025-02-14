@@ -32,7 +32,7 @@ struct HeroData: Codable {
 
 struct  BaseHeroStatsStr: Codable {
     var baseHealth: Int
-    var baseHealthRegen: Double
+    var baseHealthRegen: Double?
     var baseStr: Int
     var strGain: Double
 }

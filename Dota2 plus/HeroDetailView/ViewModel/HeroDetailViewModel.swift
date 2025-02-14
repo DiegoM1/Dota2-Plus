@@ -8,13 +8,14 @@
 import SwiftUI
 @MainActor
 class HeroDetailViewModel: ObservableObject {
-    var apiService: HeroDetailService
     @Published var hero: HeroOrganizationModel
     @Published var level = 1.0
     @Published var loreHolder: String = ""
-    var favoritesHolder = [HeroOrganizationModel]()
     @Published var isFavoriteHero = false
     @Published var showLore = false
+
+    var favoritesHolder = [HeroOrganizationModel]()
+    var apiService: HeroDetailService
 
     init(apiService: HeroDetailService, hero: HeroOrganizationModel ) {
         self.apiService = apiService
@@ -74,8 +75,6 @@ class HeroDetailViewModel: ObservableObject {
         if isFavoriteHero {
             favoritesHolder.removeAll { $0.info.id == hero.info.id }
             let value = await apiService.saveData(favoritesHolder)
-            // Just a small work with await response values and how to bad paths.
-
             if value {
                 isFavoriteHero = false
             } else {

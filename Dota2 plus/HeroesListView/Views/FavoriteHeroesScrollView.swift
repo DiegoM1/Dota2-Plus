@@ -13,8 +13,8 @@ struct FavoriteHeroesScrollView: View {
     var isFavorite: (HeroOrganizationModel) -> Bool
     
     var body: some View {
-        ScrollViewReader { scrollView in
-            ScrollView(.horizontal) {
+        ScrollViewReader { _ in
+            ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 10) {
                     ForEach(list, id: \.info.id ) { hero in
                         NavigationLink {
@@ -41,6 +41,7 @@ struct FavoriteHeroesScrollView: View {
                                         .bold()
                                         .padding(.horizontal, 10)
                                     Image(hero.info.primaryAttr.iconName())
+                                        .clipShape(Circle())
                                 }
                             }
                         }
@@ -48,16 +49,15 @@ struct FavoriteHeroesScrollView: View {
                         .id(hero.info.id)
                         .frame(width: 280, height: 150)
                         .background(
-                            ZStack {
-                                CacheAsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
-                                    $0.image?
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .cornerRadius(20)
-                                }
-
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(.ultraThinMaterial)
+                            CacheAsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
+                                $0.image?
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipShape(RoundedRectangle(cornerRadius: 30, style: .circular))
+                                    .overlay(content: {
+                                        RoundedRectangle(cornerRadius: 30)
+                                                            .fill(Color.black.opacity(0.7))
+                                    })
                             }
                         )
                     }
