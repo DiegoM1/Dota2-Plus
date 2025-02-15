@@ -11,7 +11,7 @@ struct FavoriteHeroesScrollView: View {
     @Binding var list: [HeroOrganizationModel]
     var action: (HeroOrganizationModel) -> Void
     var isFavorite: (HeroOrganizationModel) -> Bool
-    
+
     var body: some View {
         ScrollViewReader { _ in
             ScrollView(.horizontal, showsIndicators: false) {
@@ -66,6 +66,7 @@ struct FavoriteHeroesScrollView: View {
                 .padding(.trailing, 20)
             }
             .frame(height: 150)
+            .scrollClipDisabled()
         }
     }
 }

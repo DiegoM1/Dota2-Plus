@@ -14,23 +14,32 @@ struct HeroesListView: View {
     var body: some View {
         List {
             if !viewModel.favoriteHeroList.isEmpty {
-                Section("Favorites") {
+                Section(header: Text("Favorites")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)) {
                     FavoriteHeroesScrollView(list: $viewModel.favoriteHeroList, action: {hero in
                         viewModel.addOrRemoveFavoriteHero(hero)
                     }, isFavorite: { hero in
                         return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id })
                     })
                 }
+                .listRowBackground(Color("RedSoft"))
             }
-            Section {
-                HeroListComponentView(list: $viewModel.heroList, moreToogle: $moreToogle, action: {hero in
+
+
+            Section(header: Text("Heros")
+                .font(.headline)
+                .fontWeight(.bold)
+                .foregroundColor(.black)) {
+                    HeroListComponentView(list: $viewModel.heroList, moreToogle: $moreToogle, action: {hero in
                     viewModel.addOrRemoveFavoriteHero(hero)
                 }, isFavorite: { hero in
                     return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id } )
                 })
             }
         }
-        .listStyle(.insetGrouped)
+        .listStyle(.inset)
     }
 }
 
@@ -63,6 +72,7 @@ struct HeroListComponentView: View {
                                 action(hero)
                             }
                         Image(hero.info.primaryAttr.iconName())
+                            .clipShape(Circle())
                     }
                     if moreToogle {
                         Rectangle()

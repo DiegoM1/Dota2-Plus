@@ -14,20 +14,27 @@ struct HeroDetailView: View {
         ScrollView {
             VStack(spacing: 0) {
                 HStack(alignment: .center, spacing: 0) {
-                    AsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) {
-                        $0.image?
+                    AsyncImage(url: Constants.Urls.heroLogoImage(hero.info.name)) { image in
+                        image
                             .resizable()
                             .cornerRadius(12)
                             .frame(width: 130)
                             .padding()
+                    } placeholder: {
+                        ProgressView()
                     }
                     VStack {
                         HStack {
                             Text(hero.info.localizedName)
                                 .fontWeight(.semibold)
                                 .fontDesign(.serif)
-                            AsyncImage(url: Constants.Urls.heroIconImage(hero.info.icon))
-                                .frame(width: 24, height: 24)
+                            AsyncImage(url: Constants.Urls.heroIconImage(hero.info.icon)) { image in
+                                image
+                                    .frame(width: 24, height: 24)
+                            } placeholder: {
+                                ProgressView()
+                            }
+
                             Button {
                                 Task {
                                     await viewModel.addOrRemoveFavoriteHero()
