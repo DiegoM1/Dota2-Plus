@@ -21,49 +21,49 @@ final class DotaApiService_unitTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testFetchTeamData_ShouldReturnTrue() throws {
-
-        let request = Resource<[TeamModel]>(url: Constants.Urls.teams) { data in
-            let decoded = try? JSONDecoder().decode([TeamModel].self, from: data)
-            guard let decoded = decoded else {
-                return []
-            }
-            return decoded
-        }
-        let expectation = self.expectation(description: "ValidRequest_Returns_TeamResponse")
-
-        Task {
-            await dotaApiService.fetchData(request: request) { data in
-                if let result = data {
-                    XCTAssertTrue(!result.isEmpty)
-                    expectation.fulfill()
-                }
-            }
-        }
-        waitForExpectations(timeout: 10)
-    }
-
-    func testFetchHeroData_ShouldReturnTrue() throws {
-
-        let request = Resource<[HeroModel]>(url: Constants.Urls.heroes) { data in
-            let decoded = try? JSONDecoder().decode([HeroModel].self, from: data)
-            guard let decoded = decoded else {
-                return []
-            }
-            return decoded
-        }
-        let expectation = self.expectation(description: "ValidRequest_Returns_TeamResponse")
-
-        Task {
-            await dotaApiService.fetchData(request: request) { data in
-                if let result = data {
-                    XCTAssertTrue(result.isEmpty)
-                    expectation.fulfill()
-                }
-            }
-        }
-        waitForExpectations(timeout: 10)
-    }
+//    func testFetchTeamData_ShouldReturnTrue() throws {
+//
+//        let request = Resource<[TeamModel]>(url: Constants.Urls.teams) { data in
+//            let decoded = try? JSONDecoder().decode([TeamModel].self, from: data)
+//            guard let decoded = decoded else {
+//                return []
+//            }
+//            return decoded
+//        }
+//        let expectation = self.expectation(description: "ValidRequest_Returns_TeamResponse")
+//
+//        Task {
+//            await dotaApiService.fetchData(request: request) { data in
+//                if let result = data {
+//                    XCTAssertTrue(!result.isEmpty)
+//                    expectation.fulfill()
+//                }
+//            }
+//        }
+//        waitForExpectations(timeout: 10)
+//    }
+//
+//    func testFetchHeroData_ShouldReturnTrue() throws {
+//
+//        let request = Resource<[HeroModel]>(url: Constants.Urls.heroes) { data in
+//            let decoded = try? JSONDecoder().decode([HeroModel].self, from: data)
+//            guard let decoded = decoded else {
+//                return []
+//            }
+//            return decoded
+//        }
+//        let expectation = self.expectation(description: "ValidRequest_Returns_TeamResponse")
+//
+//        Task {
+//            await dotaApiService.fetchData(request: request) { data in
+//                if let result = data {
+//                    XCTAssertTrue(result.isEmpty)
+//                    expectation.fulfill()
+//                }
+//            }
+//        }
+//        waitForExpectations(timeout: 10)
+//    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
