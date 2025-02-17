@@ -43,6 +43,7 @@
 		225D1A4B29C4B350000E7E44 /* HeroModelOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4A29C4B350000E7E44 /* HeroModelOrganization.swift */; };
 		225D1A4D29C4D07E000E7E44 /* DotaApiService_unitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D1A4C29C4D07E000E7E44 /* DotaApiService_unitTests.swift */; };
 		226550DF29DC8CD400CAAA77 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 226550DE29DC8CD400CAAA77 /* .swiftlint.yml */; };
+		22863EFB2D62FC2C0054BF45 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22863EFA2D62FC2C0054BF45 /* MockURLSession.swift */; };
 		22F080AB29CA0927004A80EB /* HeroDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F080AA29CA0927004A80EB /* HeroDetailService.swift */; };
 		3039BD9F09E3BC3F3D95976D /* Pods_Dota2_plusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A6644F67B904AF596A8AD /* Pods_Dota2_plusTests.framework */; };
 		6F71B50F9CAFCBE33EC03616 /* Pods_Dota2_plus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F719CBF2A61E9768E071C4 /* Pods_Dota2_plus.framework */; };
@@ -106,6 +107,7 @@
 		225D1A4A29C4B350000E7E44 /* HeroModelOrganization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModelOrganization.swift; sourceTree = "<group>"; };
 		225D1A4C29C4D07E000E7E44 /* DotaApiService_unitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotaApiService_unitTests.swift; sourceTree = "<group>"; };
 		226550DE29DC8CD400CAAA77 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		22863EFA2D62FC2C0054BF45 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		22F080AA29CA0927004A80EB /* HeroDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailService.swift; sourceTree = "<group>"; };
 		540830AEB310832D51D37DF5 /* Pods-Dota2 plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2 plus.release.xcconfig"; path = "Target Support Files/Pods-Dota2 plus/Pods-Dota2 plus.release.xcconfig"; sourceTree = "<group>"; };
 		76D19850464938ED344E493B /* Pods-Dota2 plus-Dota2 plusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2 plus-Dota2 plusUITests.debug.xcconfig"; path = "Target Support Files/Pods-Dota2 plus-Dota2 plusUITests/Pods-Dota2 plus-Dota2 plusUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		225D1A1829B7FA92000E7E44 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				22863EF92D62FC210054BF45 /* MockServices */,
 				225D1A1929B7FAA7000E7E44 /* DotaApiService.swift */,
 				223304122A057A020015D89C /* CacheAsyncImage.swift */,
 			);
@@ -403,6 +406,14 @@
 				225D1A4829C3D0A2000E7E44 /* PlayerService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		22863EF92D62FC210054BF45 /* MockServices */ = {
+			isa = PBXGroup;
+			children = (
+				22863EFA2D62FC2C0054BF45 /* MockURLSession.swift */,
+			);
+			path = MockServices;
 			sourceTree = "<group>";
 		};
 		22F080A929CA0918004A80EB /* Service */ = {
@@ -670,6 +681,7 @@
 				225D1A0229B7A4A9000E7E44 /* HeroesModel.swift in Sources */,
 				225D1A2D29BFC989000E7E44 /* HeroesGridCellsViewModel.swift in Sources */,
 				225D1A4029C2803D000E7E44 /* HeroDetailViewModel.swift in Sources */,
+				22863EFB2D62FC2C0054BF45 /* MockURLSession.swift in Sources */,
 				225D1A0629B7A647000E7E44 /* Constants.swift in Sources */,
 				22F080AB29CA0927004A80EB /* HeroDetailService.swift in Sources */,
 				225D1A0829B7B37F000E7E44 /* HeroesListViewModel.swift in Sources */,

@@ -9,12 +9,13 @@ import XCTest
 @testable import Dota2_plus
 
 final class DotaApiService_unitTests: XCTestCase {
-    var dotaApiService: DotaApiService!
-    var teamResponse = [TeamModel]()
-    var heroResponse = [HeroModel]()
+    var mockSession: MockURLSession!
+    var service: DotaApiService!
 
     override func setUpWithError() throws {
-        dotaApiService = DotaApiService(urlSession: .shared)
+        super.setUp()
+        mockSession = MockURLSession()
+        service = DotaApiService(urlSession: mockSession)
     }
 
     override func tearDownWithError() throws {
@@ -43,27 +44,35 @@ final class DotaApiService_unitTests: XCTestCase {
 //        waitForExpectations(timeout: 10)
 //    }
 //
-//    func testFetchHeroData_ShouldReturnTrue() throws {
 //
-//        let request = Resource<[HeroModel]>(url: Constants.Urls.heroes) { data in
-//            let decoded = try? JSONDecoder().decode([HeroModel].self, from: data)
-//            guard let decoded = decoded else {
-//                return []
-//            }
-//            return decoded
-//        }
-//        let expectation = self.expectation(description: "ValidRequest_Returns_TeamResponse")
-//
-//        Task {
-//            await dotaApiService.fetchData(request: request) { data in
-//                if let result = data {
-//                    XCTAssertTrue(result.isEmpty)
-//                    expectation.fulfill()
-//                }
-//            }
-//        }
-//        waitForExpectations(timeout: 10)
-//    }
+    func testFetchHeroData_ShouldReturnTrue() async throws {
+        // Given
+        if let url: URL = Bundle.main.url(forResource: "heroesServiceResponse", withExtension: "json") {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            mockSession.mockData = data
+        }
+        let request = Resource<[HeroModel]>(url: URL(string: "https://example.com")!) { data in
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            return try? decoder.decode([HeroModel].self, from: data)
+        }
+
+        let expectation = expectation(description: "Fetching mock heroes")
+        var result: [HeroModel]?
+
+        // When
+        await service.fetchData(request: request) { data in
+            result = data
+            expectation.fulfill()
+        }
+
+        // Then
+        await fulfillment(of: [expectation], timeout: 2)
+        XCTAssertEqual(result?.count, 124)
+        XCTAssertEqual(result?.first?.name, "npc_dota_hero_antimage")
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
