@@ -50,7 +50,7 @@ class HeroesListViewModel: ObservableObject {
 
     func addOrRemoveFavoriteHero(_ hero: HeroOrganizationModel) {
         if !favoriteHeroList.contains(where: { $0.info.id == hero.info.id }) {
-            withAnimation() {
+            withAnimation {
                 favoriteHeroList.insert(hero, at: 0)
             }
 

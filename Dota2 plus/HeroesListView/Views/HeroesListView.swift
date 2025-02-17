@@ -27,7 +27,6 @@ struct HeroesListView: View {
                 .listRowBackground(Color("RedSoft"))
             }
 
-
             Section(header: Text("Heros")
                 .font(.headline)
                 .fontWeight(.bold)
@@ -35,7 +34,7 @@ struct HeroesListView: View {
                     HeroListComponentView(list: $viewModel.heroList, moreToogle: $moreToogle, action: {hero in
                     viewModel.addOrRemoveFavoriteHero(hero)
                 }, isFavorite: { hero in
-                    return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id } )
+                    return  viewModel.favoriteHeroList.contains(where: { hero.info.id == $0.info.id })
                 })
             }
         }

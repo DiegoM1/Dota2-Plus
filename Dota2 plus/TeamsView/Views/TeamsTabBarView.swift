@@ -58,9 +58,6 @@ struct TeamsTabBarView: View {
                             }
                             .foregroundColor(.white)
                             .listRowBackground(Color(#colorLiteral(red: 0.4801908731, green: 0.05009575933, blue: 0.1161286905, alpha: 1)))
-                            .onChange(of: value, perform: { _ in
-                                print(value)
-                            })
                             .tabViewStyle(.page(indexDisplayMode: .always))
                             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
                             .frame(height: 180)

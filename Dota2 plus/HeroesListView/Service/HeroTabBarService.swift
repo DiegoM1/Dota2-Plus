@@ -65,6 +65,14 @@ class HeroTabBarService {
                                                                           baseAttackTime: $0.baseAttackTime,
                                                                           attackPoint: $0.attackPoint),
                                                        movement: MovementHero(speed: $0.moveSpeed,
-                                                                              legs: $0.legs), draft: PicksWinRateHero(cmEnabled: $0.cmEnabled, turboPicks: $0.turboPicks, turboWins: $0.turboWins, proBan: $0.proBan, proWin: $0.proWin, proPick: $0.proPick), vision: VisionHero(dayVision: $0.dayVision, nightVision: $0.nightVision))}
+                                                                              legs: $0.legs),
+                                                       draft: PicksWinRateHero(cmEnabled: $0.cmEnabled,
+                                                                               turboPicks: $0.turboPicks,
+                                                                               turboWins: $0.turboWins,
+                                                                               proBan: $0.proBan,
+                                                                               proWin: $0.proWin,
+                                                                               proPick: $0.proPick),
+                                                       vision: VisionHero(dayVision: $0.dayVision,
+                                                                          nightVision: $0.nightVision))}
     }
 }

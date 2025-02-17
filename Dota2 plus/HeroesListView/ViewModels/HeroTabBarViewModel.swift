@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 class HeroTabBarViewModel: ObservableObject {
     var apiService: HeroTabBarService
 
@@ -41,10 +42,11 @@ class HeroTabBarViewModel: ObservableObject {
             self.isLoading = false
         }
     }
+    
     func fetchFromFileHeroesData() async {
         apiService.dotaService.readFromFile { data in
-            DispatchQueue.main.async {
-                self.favoriteHeroes = data
+            DispatchQueue.main.async { [weak self] in
+                self?.favoriteHeroes = data
             }
         }
     }

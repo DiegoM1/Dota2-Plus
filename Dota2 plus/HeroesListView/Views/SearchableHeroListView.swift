@@ -90,9 +90,9 @@ struct SearchableHeroListView: View {
                 }
             }
         }
-        .onChange(of: viewModel.heroText, perform: { newValue in
+        .onChange(of: viewModel.heroText) { _, newValue in
             viewModel.filter(newValue)
-        })
+        }
         .navigationBarTitleDisplayMode(.inline)
         .listStyle(.plain)
         .searchable(text: $viewModel.heroText, placement: .navigationBarDrawer(displayMode: .always))

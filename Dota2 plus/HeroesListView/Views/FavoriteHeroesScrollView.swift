@@ -75,7 +75,12 @@ struct FavoriteHeroesScrollView_Previews: PreviewProvider {
     static var previews: some View {
         @State var list: [HeroOrganizationModel] = [HeroOrganizationModel(info: HeroData(id: 1,
                                                                                          name: "npc_dota_hero_antimage",
-                                                                                         localizedName: "Anti-mage", primaryAttr: .agi, attackType: .meele, roles: [.carry, .escape, .nuker], img: "/apps/dota2/images/dota_react/heroes/antimage.png?", icon: "/apps/dota2/images/dota_react/heroes/icons/antimage.png?"),
+                                                                                         localizedName: "Anti-mage",
+                                                                                         primaryAttr: .agi,
+                                                                                         attackType: .meele,
+                                                                                         roles: [.carry, .escape, .nuker],
+                                                                                         img: "/apps/dota2/images/dota_react/heroes/antimage.png?",
+                                                                                         icon: "/apps/dota2/images/dota_react/heroes/icons/antimage.png?"),
                                                                           healthStr: BaseHeroStatsStr(baseHealth: 200, baseHealthRegen: 0.25, baseStr: 21, strGain: 1.6),
                                                                           manaInt: BaseHeroStatsInt(baseMana: 75, baseManaRegen: 0, baseInt: 12, intGain: 1.8),
                                                                           armorAgi: BaseHeroStatsAgi(baseArmor: 0, agiGain: 2.0, baseAgi: 24),
@@ -84,7 +89,12 @@ struct FavoriteHeroesScrollView_Previews: PreviewProvider {
                                                                           draft: PicksWinRateHero(cmEnabled: true, turboPicks: 371300, turboWins: 202315, proBan: 194, proWin: 37, proPick: 80), vision: VisionHero(dayVision: 1800, nightVision: 800)),
                                                     HeroOrganizationModel(info: HeroData(id: 1,
                                                                                          name: "npc_dota_hero_antimage",
-                                                                                         localizedName: "Anti-mage", primaryAttr: .agi, attackType: .meele, roles: [.carry, .escape, .nuker], img: "/apps/dota2/images/dota_react/heroes/antimage.png?", icon: "/apps/dota2/images/dota_react/heroes/icons/antimage.png?"),
+                                                                                         localizedName: "Anti-mage",
+                                                                                         primaryAttr: .agi,
+                                                                                         attackType: .meele,
+                                                                                         roles: [.carry, .escape, .nuker],
+                                                                                         img: "/apps/dota2/images/dota_react/heroes/antimage.png?",
+                                                                                         icon: "/apps/dota2/images/dota_react/heroes/icons/antimage.png?"),
                                                                           healthStr: BaseHeroStatsStr(baseHealth: 200, baseHealthRegen: 0.25, baseStr: 21, strGain: 1.6),
                                                                           manaInt: BaseHeroStatsInt(baseMana: 75, baseManaRegen: 0, baseInt: 12, intGain: 1.8),
                                                                           armorAgi: BaseHeroStatsAgi(baseArmor: 0, agiGain: 2.0, baseAgi: 24),
@@ -94,7 +104,7 @@ struct FavoriteHeroesScrollView_Previews: PreviewProvider {
         return FavoriteHeroesScrollView(list: $list, action: { hero in
             print(hero.info.localizedName)
 
-        }, isFavorite: { hero in
+        }, isFavorite: { _ in
             return true
         })
     }
