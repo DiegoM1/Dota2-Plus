@@ -16,7 +16,9 @@ class TeamsApiService {
 
     func fetchTeamData(completion: @escaping ([TeamModel]) -> Void) {
         let request = Resource<[TeamModel]>(url: Constants.Urls.teams) { data in
-            let decoded = try? JSONDecoder().decode([TeamModel].self, from: data)
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+            let decoded = try? jsonDecoder.decode([TeamModel].self, from: data)
             guard let decoded = decoded else {
                 return []
             }

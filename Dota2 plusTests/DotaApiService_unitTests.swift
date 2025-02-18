@@ -22,29 +22,37 @@ final class DotaApiService_unitTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-//    func testFetchTeamData_ShouldReturnTrue() throws {
-//
-//        let request = Resource<[TeamModel]>(url: Constants.Urls.teams) { data in
-//            let decoded = try? JSONDecoder().decode([TeamModel].self, from: data)
-//            guard let decoded = decoded else {
-//                return []
-//            }
-//            return decoded
-//        }
-//        let expectation = self.expectation(description: "ValidRequest_Returns_TeamResponse")
-//
-//        Task {
-//            await dotaApiService.fetchData(request: request) { data in
-//                if let result = data {
-//                    XCTAssertTrue(!result.isEmpty)
-//                    expectation.fulfill()
-//                }
-//            }
-//        }
-//        waitForExpectations(timeout: 10)
-//    }
-//
-//
+    func testFetchTeamData_ShouldReturnTrue() async throws {
+        if let url: URL = Bundle.main.url(forResource: "teamsServiceResponse", withExtension: "json") {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            mockSession.mockData = data
+        }
+
+        let request = Resource<[TeamModel]>(url: URL(string: "https://example.com")!) { data in
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            return try? decoder.decode([TeamModel].self, from: data)
+        }
+
+        let expectation = expectation(description: "Fetching mock teams")
+        var result: [TeamModel]?
+
+        // When
+        await service.fetchData(request: request) { data in
+            result = data
+            expectation.fulfill()
+        }
+
+        await fulfillment(of: [expectation], timeout: 2)
+        XCTAssertEqual(result?.count, 19)
+        XCTAssertEqual(result?.first?.teamId, 8291895)
+        XCTAssertEqual(result?.last?.wins, 415)
+        XCTAssertEqual(result?.last?.logoUrl, "https://steamusercontent-a.akamaihd.net/ugc/2028347991408203552/8DC9872DA88071D728A914CE17279959423FA340/")
+
+    }
+
     func testFetchHeroData_ShouldReturnTrue() async throws {
         // Given
         if let url: URL = Bundle.main.url(forResource: "heroesServiceResponse", withExtension: "json") {
