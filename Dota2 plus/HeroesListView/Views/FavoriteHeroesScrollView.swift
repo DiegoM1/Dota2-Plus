@@ -58,6 +58,7 @@ struct FavoriteHeroesScrollView: View {
                                         RoundedRectangle(cornerRadius: 30)
                                                             .fill(Color.black.opacity(0.7))
                                     })
+                                    .shadow(radius: 8)
                             }
                         )
                     }

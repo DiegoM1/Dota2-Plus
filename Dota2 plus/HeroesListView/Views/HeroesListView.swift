@@ -60,6 +60,7 @@ struct HeroListComponentView: View {
                                 .resizable()
                                 .frame(width: 50, height: 30)
                                 .clipShape(RoundedRectangle(cornerRadius: 6))
+                                .shadow(color: .black, radius: 5)
                         }
                         Text(hero.info.localizedName)
                             .font(.headline)
