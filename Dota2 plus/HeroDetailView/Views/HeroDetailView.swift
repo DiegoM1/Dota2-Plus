@@ -18,8 +18,9 @@ struct HeroDetailView: View {
                         image
                             .resizable()
                             .cornerRadius(12)
-                            .frame(width: 130)
+                            .frame(width: 135, height: 135)
                             .padding()
+                            .shadow(color: .white, radius: 10)
                     } placeholder: {
                         ProgressView()
                     }
@@ -95,17 +96,17 @@ struct HeroDetailView: View {
                         }
                     }
                 }
-                VStack(spacing: 0) {
-                    HStack(alignment: .center) {
-                        ForEach(viewModel.hero.info.roles, id: \.self) { role in
-                            Spacer()
-                            Text(role.rawValue)
-                                .font(.system(size: 14))
-                                .bold()
-                            Spacer()
-                        }
+                HStack(alignment: .center) {
+                    ForEach(viewModel.hero.info.roles, id: \.self) { role in
+                        Spacer()
+                        Text(role.rawValue)
+                            .font(.system(size: 14))
+                            .bold()
+                        Spacer()
                     }
-                    .padding(.bottom, 8)
+                }
+                .padding(.bottom, 8)
+                VStack(spacing: 0) {
                     Rectangle()
                         .frame(height: 25)
                         .foregroundColor(.green)
@@ -129,7 +130,9 @@ struct HeroDetailView: View {
                             }
                         }
                 }
-                .cornerRadius(3)
+                .clipShape(RoundedRectangle(cornerRadius: 3))
+                .shadow(color: .green.opacity(0.5), radius: 2, y: -2)
+                .shadow(color: .blue.opacity(0.5), radius: 2, y: 2)
                 .padding(.horizontal, 6)
                 .padding(.vertical, 8)
                 VStack {
@@ -217,7 +220,13 @@ struct HeroDetailView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("\(hero.info.localizedName)")
+                    HStack {
+                        Text("\(hero.info.localizedName)")
+                        Image(hero.info.primaryAttr.iconName())
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .clipShape(Circle())
+                    }
                 }
             }
             .toolbarBackground(.visible, for: .tabBar)

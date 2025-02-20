@@ -23,6 +23,7 @@ struct HeroesTabBarView: View {
                 VStack {
                     if alterView {
                         HeroesGridCellsView(viewModel: HeroesGridCellsViewModel(heroList: $viewModel.heroesListFiltered, favoriteHeroList: $viewModel.favoriteHeroes))
+                            .transition(.opacity)
                     } else {
                         HeroesListView(viewModel: HeroesListViewModel(heroList: $viewModel.heroesListFiltered, favoriteHeroList: $viewModel.favoriteHeroes), moreToogle: $moreToogle)
                     }
@@ -38,7 +39,9 @@ struct HeroesTabBarView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         HStack {
                             Button {
-                                alterView.toggle()
+                                withAnimation {
+                                    alterView.toggle()
+                                }
                             }label: {
                                 if !alterView {
                                     Image(systemName: "square.grid.3x3.bottommiddle.fill")
@@ -48,7 +51,9 @@ struct HeroesTabBarView: View {
                             }
                             Button {
                                 alterView = false
-                                moreToogle.toggle()
+                                withAnimation {
+                                    moreToogle.toggle()
+                                }
                             }label: {
                                 Image(systemName: "plus")
                             }
