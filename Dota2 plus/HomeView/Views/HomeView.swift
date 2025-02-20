@@ -9,23 +9,25 @@ import UIKit
 import SwiftUI
 
 struct HomeView: View {
-
+    @StateObject var heroesViewModel = HeroTabBarViewModel(apiService: HeroTabBarService(dotaService: DotaApiService(urlSession: .shared)))
+    @StateObject var teamViewModel = TeamTabBarViewModel(service: TeamsApiService(service: DotaApiService(urlSession: .shared)))
+    @StateObject var playerViewModel = PlayerViewModel(service: PlayerService(service: DotaApiService(urlSession: .shared)))
     @State var heroesList = [HeroModel]()
 
     var body: some View {
         TabView {
-            HeroesTabBarView(viewModel: HeroTabBarViewModel(apiService: HeroTabBarService(dotaService: DotaApiService(urlSession: .shared))))
+            HeroesTabBarView(viewModel: heroesViewModel)
                 .tabItem {
                     Image(systemName: "person")
                     Text("Heroes")
                 }
-            TeamsTabBarView(viewModel: TeamTabBarViewModel(service: TeamsApiService(service: DotaApiService(urlSession: .shared))))
+            TeamsTabBarView(viewModel: teamViewModel)
                 .tabItem {
                     Image(systemName: "pencil.slash")
                     Text("Teams")
                 }
 
-            PlayerView(viewModel: PlayerViewModel(service: PlayerService(service: DotaApiService(urlSession: .shared))))
+            PlayerView(viewModel: playerViewModel)
                 .tabItem {
                     Image(systemName: "shareplay")
                     Text("Players")

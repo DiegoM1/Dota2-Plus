@@ -9,6 +9,11 @@ import SwiftUI
 
 struct HeroesGridCellsView: View {
     @ObservedObject var viewModel: HeroesGridCellsViewModel
+    var columnsFormat = [GridItem(.flexible()),
+                         GridItem(.flexible()),
+                         GridItem(.flexible()),
+                         GridItem(.flexible())]
+
     var body: some View {
         ScrollView {
             if !viewModel.favoriteHeroList.isEmpty {
@@ -18,10 +23,7 @@ struct HeroesGridCellsView: View {
                     Spacer()
                 }
                 .padding(.horizontal, 6)
-                LazyVGrid(columns: [GridItem(.flexible()),
-                                    GridItem(.flexible()),
-                                    GridItem(.flexible()),
-                                    GridItem(.flexible())], spacing: 4) {
+                LazyVGrid(columns: columnsFormat, spacing: 4) {
                     ForEach(viewModel.favoriteHeroList, id: \.info.id) { hero in
                         NavigationLink {
                             HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
@@ -65,10 +67,7 @@ struct HeroesGridCellsView: View {
                     .padding()
             }
 
-            LazyVGrid(columns: [GridItem(.flexible()),
-                                GridItem(.flexible()),
-                                GridItem(.flexible()),
-                                GridItem(.flexible())], spacing: 4) {
+            LazyVGrid(columns: columnsFormat, spacing: 4) {
                 ForEach(viewModel.heroList, id: \.info.id) { hero in
                     NavigationLink {
                         HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
@@ -86,7 +85,6 @@ struct HeroesGridCellsView: View {
                                 image
                                     .resizable()
                                     .scaledToFill()
-
                                     .frame(width: 50, height: 50)
                             } placeholder: {
                                 Image(systemName: "photo.fill")

@@ -74,16 +74,19 @@ struct HeroListComponentView: View {
                         Image(hero.info.primaryAttr.iconName())
                             .clipShape(Circle())
                     }
+
                     if moreToogle {
-                        Rectangle()
-                            .fill(.black)
-                            .frame(height: 1)
-                        HStack {
-                            ForEach(hero.info.roles, id: \.self) { roles in
-                                Text(roles.rawValue)
-                                    .font(.system(size: 12))
-                                    .fontDesign(.serif)
-                                Spacer()
+                        Group {
+                            Rectangle()
+                                .fill(.black)
+                                .frame(height: 1)
+                            HStack {
+                                ForEach(hero.info.roles, id: \.self) { roles in
+                                    Text(roles.rawValue)
+                                        .font(.system(size: 12))
+                                        .fontDesign(.serif)
+                                    Spacer()
+                                }
                             }
                         }
                     }
