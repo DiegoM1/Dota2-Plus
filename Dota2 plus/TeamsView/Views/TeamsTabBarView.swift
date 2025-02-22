@@ -67,13 +67,21 @@ struct TeamsTabBarView: View {
                             ForEach(viewModel.teams, id: \.teamId) { team in
                                 HStack(spacing: 0) {
                                     Text(team.position ?? "")
+                                        .font(.title2)
+                                        .padding(.trailing, 4)
                                         .fontWeight(.black)
-                                    AsyncImage(url: URL(string: team.logoUrl ?? "")) {
-                                        $0.image?
-                                            .resizable()
-                                            .frame(width: 60, height: 50)
+                                    
+                                    if let logoUrl = team.logoUrl {
+                                        AsyncImage(url: URL(string: team.logoUrl ?? "")) { image in
+                                            image
+                                                .resizable()
+                                                .frame(width: 60, height: 50)
+                                        } placeholder: {
+                                            ProgressView()
+                                        }
+                                        .padding(.trailing, 8)
                                     }
-                                    .padding(.trailing, 8)
+
                                     Text(team.name)
                                         .font(.title2)
                                     Spacer()
@@ -82,9 +90,11 @@ struct TeamsTabBarView: View {
                                             .frame(minWidth: 30)
                                             .font(.caption2)
                                             .fontWeight(.semibold)
+                                            .fixedSize()
                                         Text(String(Int(team.rating)))
                                             .font(.caption)
                                             .fontWeight(.black)
+                                            .fixedSize()
                                     }
                                 }
                             }
