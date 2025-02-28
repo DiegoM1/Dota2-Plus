@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct HeroOrganizationModel: Codable {
+struct HeroOrganizationModel: Codable, Identifiable {
+    var id: Int {
+        info.id
+    }
     var info: HeroData
     var healthStr: BaseHeroStatsStr
     var manaInt: BaseHeroStatsInt

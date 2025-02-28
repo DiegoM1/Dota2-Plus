@@ -24,7 +24,7 @@ struct HeroesGridCellsView: View {
                 }
                 .padding(.horizontal, 6)
                 LazyVGrid(columns: columnsFormat, spacing: 4) {
-                    ForEach(viewModel.favoriteHeroList, id: \.info.id) { hero in
+                    ForEach(viewModel.favoriteHeroList) { hero in
                         NavigationLink {
                             HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
                         } label: {
@@ -68,7 +68,7 @@ struct HeroesGridCellsView: View {
             }
 
             LazyVGrid(columns: columnsFormat, spacing: 4) {
-                ForEach(viewModel.heroList, id: \.info.id) { hero in
+                ForEach(viewModel.heroList) { hero in
                     NavigationLink {
                         HeroDetailView(viewModel: HeroDetailViewModel(apiService: HeroDetailService(dotaService: DotaApiService(urlSession: .shared)), hero: hero))
                     } label: {
